@@ -121,7 +121,7 @@ nav {
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 80px;
+  gap: 60px;
   align-items: center;
   position: relative;
   z-index: 1;
@@ -203,16 +203,20 @@ nav {
 
 .hero-photo-wrap {
   flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-photo {
-  width: 220px;
-  height: 220px;
+  width: 320px;
+  height: 320px;
   border-radius: 50%;
   object-fit: cover;
   object-position: center 10%;
-  border: 4px solid var(--orange);
+  border: 5px solid var(--orange);
   display: block;
+  box-shadow: 0 0 0 10px rgba(245,166,35,0.12);
 }
 
 .hero-badges {
@@ -540,6 +544,106 @@ nav {
   border-top: 1px solid var(--border);
 }
 
+/* ── PRICING ── */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 48px;
+}
+
+.pricing-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 24px;
+  position: relative;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.pricing-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
+}
+
+.pricing-card-featured {
+  border-color: var(--orange);
+  border-width: 2px;
+}
+
+.featured-badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--orange);
+  color: var(--navy);
+  font-size: 10px;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 20px;
+  white-space: nowrap;
+  letter-spacing: 0.05em;
+}
+
+.pricing-name {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.pricing-lessons {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.pricing-amount {
+  font-size: 36px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 4px;
+  letter-spacing: -0.02em;
+}
+
+.pricing-per {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.pricing-save {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--teal);
+  margin-bottom: 24px;
+}
+
+.pricing-divider {
+  height: 1px;
+  background: var(--border);
+  margin-bottom: 20px;
+}
+
+.pricing-feature {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+  padding-left: 14px;
+  position: relative;
+}
+
+.pricing-feature::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--teal);
+  font-weight: 600;
+}
+
 /* ── SUMMER INTENSIVE ── */
 .summer-hero {
   background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
@@ -739,106 +843,6 @@ nav {
   margin-top: 12px;
 }
 
-/* ── PRICING ── */
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-top: 48px;
-}
-
-.pricing-card {
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 28px 24px;
-  position: relative;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.pricing-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
-}
-
-.pricing-card-featured {
-  border-color: var(--orange);
-  border-width: 2px;
-}
-
-.featured-badge {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--orange);
-  color: var(--navy);
-  font-size: 10px;
-  font-weight: 700;
-  padding: 4px 14px;
-  border-radius: 20px;
-  white-space: nowrap;
-  letter-spacing: 0.05em;
-}
-
-.pricing-name {
-  font-size: 18px;
-  font-weight: 800;
-  color: var(--navy);
-  margin-bottom: 4px;
-}
-
-.pricing-lessons {
-  font-size: 12px;
-  font-weight: 500;
-  color: var(--text-muted);
-  margin-bottom: 20px;
-}
-
-.pricing-amount {
-  font-size: 36px;
-  font-weight: 800;
-  color: var(--navy);
-  margin-bottom: 4px;
-  letter-spacing: -0.02em;
-}
-
-.pricing-per {
-  font-size: 12px;
-  color: var(--text-muted);
-  margin-bottom: 8px;
-}
-
-.pricing-save {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--teal);
-  margin-bottom: 24px;
-}
-
-.pricing-divider {
-  height: 1px;
-  background: var(--border);
-  margin-bottom: 20px;
-}
-
-.pricing-feature {
-  font-size: 12px;
-  font-weight: 300;
-  color: var(--text-secondary);
-  margin-bottom: 8px;
-  padding-left: 14px;
-  position: relative;
-}
-
-.pricing-feature::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  color: var(--teal);
-  font-weight: 600;
-}
-
 /* ── POLICIES ── */
 .policy-grid {
   display: grid;
@@ -991,10 +995,79 @@ footer {
 
 .footer-brand span { color: var(--orange); }
 
+.footer-links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
 .footer-note {
   font-size: 12px;
   font-weight: 300;
   color: rgba(255,255,255,0.35);
+}
+
+.footer-privacy {
+  font-size: 12px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.45);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.footer-privacy:hover { color: var(--orange); }
+
+/* ── COOKIE BANNER ── */
+.cookie-banner {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 999;
+  background: var(--navy-dark);
+  border-top: 1px solid rgba(245,166,35,0.25);
+  padding: 16px 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.cookie-text {
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+  max-width: 720px;
+}
+
+.cookie-text a {
+  color: var(--orange);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.cookie-btn {
+  background: var(--orange);
+  color: var(--navy);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 20px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: 'Poppins', sans-serif;
+  flex-shrink: 0;
+}
+
+.cookie-btn:hover { background: #e8971a; }
+
+/* ── SECTION DIVIDER ── */
+.section-divider {
+  height: 6px;
+  background: linear-gradient(90deg, var(--navy) 0%, var(--teal) 50%, var(--orange) 100%);
+  opacity: 0.15;
 }
 
 /* ── HAMBURGER ── */
@@ -1083,10 +1156,19 @@ footer {
   .testimonials-featured { padding: 32px 24px; }
   .featured-quote-text { font-size: 16px; }
   footer { flex-direction: column; text-align: center; }
+  .cookie-banner { padding: 16px 24px; }
 }
 </style>
 </head>
 <body>
+
+<!-- COOKIE BANNER -->
+<div class="cookie-banner" id="cookieBanner">
+  <p class="cookie-text">
+    This site uses Google Fonts, which may transfer data to Google servers. No tracking cookies are set by this website. By continuing to use this site you acknowledge this. <a href="#privacy">Privacy Policy</a>
+  </p>
+  <button class="cookie-btn" onclick="dismissCookie()">Got it</button>
+</div>
 
 <!-- NAV -->
 <nav>
@@ -1094,8 +1176,8 @@ footer {
   <ul class="nav-links">
     <li><a href="#method">Method</a></li>
     <li><a href="#who">Who It's For</a></li>
-    <li><a href="#summer">Summer Intensive</a></li>
     <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#summer">Summer Intensive</a></li>
     <li><a href="#start" class="nav-cta">Book a Call</a></li>
   </ul>
   <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
@@ -1106,8 +1188,8 @@ footer {
 <div class="nav-mobile" id="mobileMenu">
   <a href="#method" onclick="closeMobile()">Method</a>
   <a href="#who" onclick="closeMobile()">Who It's For</a>
-  <a href="#summer" onclick="closeMobile()">Summer Intensive</a>
   <a href="#pricing" onclick="closeMobile()">Pricing</a>
+  <a href="#summer" onclick="closeMobile()">Summer Intensive</a>
   <a href="#start" class="nav-cta-mobile" onclick="closeMobile()">Book a Free Discovery Call</a>
 </div>
 
@@ -1221,7 +1303,7 @@ footer {
       </div>
       <div class="who-card">
         <div class="who-card-title">Children who learn differently</div>
-        <div class="who-card-text">Learners who need a different approach. Certified teacher of exceptional children with a track record of results others couldn't achieve.</div>
+        <div class="who-card-text">Not every child learns the same way, and that's not a problem to fix. It's a starting point. Dr. Overstreet has years of experience working with learners who think differently, and a track record of results.</div>
       </div>
       <div class="who-card">
         <div class="who-card-title">Families in Rome</div>
@@ -1287,17 +1369,81 @@ footer {
   </div>
 </section>
 
+<!-- PRICING -->
+<section class="section" id="pricing">
+  <div class="section-inner">
+    <div class="section-label">Pricing</div>
+    <h2 class="section-title">One-on-one lesson packages.</h2>
+    <p class="section-body" style="font-size:18px; font-weight:600; color:var(--navy); margin-bottom:8px;">Transparent pricing. No surprises.</p>
+    <p class="section-body">All lessons are one-on-one and fully personalized. Choose the package that fits your child's needs. Payment via Wise bank transfer, in full before the first lesson.</p>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-name">Single</div>
+        <div class="pricing-lessons">1 lesson</div>
+        <div class="pricing-amount">€100</div>
+        <div class="pricing-per">per lesson</div>
+        <div class="pricing-save">&nbsp;</div>
+        <div class="pricing-divider"></div>
+        <div class="pricing-feature">One personalized lesson</div>
+        <div class="pricing-feature">Initial assessment included</div>
+        <div class="pricing-feature">Ideal for trying a first lesson</div>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-name">Spark</div>
+        <div class="pricing-lessons">4 lessons</div>
+        <div class="pricing-amount">€380</div>
+        <div class="pricing-per">€95 per lesson</div>
+        <div class="pricing-save">Save €20</div>
+        <div class="pricing-divider"></div>
+        <div class="pricing-feature">4 personalized lessons</div>
+        <div class="pricing-feature">Initial assessment included</div>
+        <div class="pricing-feature">Progress check-in</div>
+      </div>
+      <div class="pricing-card pricing-card-featured">
+        <div class="featured-badge">Most Popular</div>
+        <div class="pricing-name">Bright</div>
+        <div class="pricing-lessons">8 lessons</div>
+        <div class="pricing-amount">€720</div>
+        <div class="pricing-per">€90 per lesson</div>
+        <div class="pricing-save">Save €80</div>
+        <div class="pricing-divider"></div>
+        <div class="pricing-feature">8 personalized lessons</div>
+        <div class="pricing-feature">Initial assessment included</div>
+        <div class="pricing-feature">Detailed progress tracking</div>
+        <div class="pricing-feature">Parent progress updates</div>
+      </div>
+      <div class="pricing-card">
+        <div class="pricing-name">Shine</div>
+        <div class="pricing-lessons">12 lessons</div>
+        <div class="pricing-amount">€1,020</div>
+        <div class="pricing-per">€85 per lesson</div>
+        <div class="pricing-save">Save €180</div>
+        <div class="pricing-divider"></div>
+        <div class="pricing-feature">12 personalized lessons</div>
+        <div class="pricing-feature">Initial assessment included</div>
+        <div class="pricing-feature">Comprehensive progress tracking</div>
+        <div class="pricing-feature">Parent progress updates</div>
+        <div class="pricing-feature">Written progress summary</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIVIDER between Pricing and Summer Intensive -->
+<div class="section-divider"></div>
+
 <!-- SUMMER INTENSIVE -->
 <section class="section section-teal" id="summer">
   <div class="section-inner">
     <div class="section-label" style="color: var(--teal);">Summer 2026</div>
+    <h2 class="section-title" style="color: var(--navy); margin-bottom: 32px;">Summer Intensive 2026.</h2>
     <div class="summer-hero">
-      <div class="summer-hero-eyebrow">Summer Intensive 2026 — Online</div>
+      <div class="summer-hero-eyebrow">Online · July &amp; August 2026</div>
       <div class="summer-hero-title">Focused literacy lessons.<br>Real progress in three weeks.</div>
       <div class="summer-hero-sub">Two rounds of intensive one-on-one lessons this summer, delivered by Dr. Jenn Overstreet and her team. Limited enrollment. Built for families who want meaningful progress, not busy work.</div>
       <div class="summer-meta">
         <span class="summer-tag">1-on-1 Online</span>
-        <span class="summer-tag">30 min per session</span>
+        <span class="summer-tag">30 min per lesson</span>
         <span class="summer-tag">Tue, Wed, Thu</span>
         <span class="summer-tag">9 lessons per round</span>
         <span class="summer-tag">Max 8 students per round</span>
@@ -1314,11 +1460,11 @@ footer {
         </div>
         <div class="include-item">
           <div class="include-dot"></div>
-          <div class="include-text"><strong>9 private 30-minute lessons</strong>Structured sessions built on the Science of Reading and Science of Writing.</div>
+          <div class="include-text"><strong>9 private 30-minute lessons</strong>Structured lessons built on the Science of Reading and Science of Writing.</div>
         </div>
         <div class="include-item">
           <div class="include-dot"></div>
-          <div class="include-text"><strong>Tailored lesson plans</strong>Every session designed around your child's specific needs, not a generic curriculum.</div>
+          <div class="include-text"><strong>Tailored lesson plans</strong>Every lesson designed around your child's specific needs, not a generic curriculum.</div>
         </div>
         <div class="include-item">
           <div class="include-dot"></div>
@@ -1378,65 +1524,6 @@ footer {
   </div>
 </section>
 
-<!-- PRICING -->
-<section class="section section-alt" id="pricing">
-  <div class="section-inner">
-    <div class="section-label">Pricing</div>
-    <h2 class="section-title">Transparent pricing.<br>No surprises.</h2>
-    <p class="section-body">All lessons are one-on-one and fully personalized. Choose the package that fits your child's needs. Payment via Wise bank transfer, in full before the first lesson.</p>
-    <div class="pricing-grid">
-      <div class="pricing-card">
-        <div class="pricing-name">Single</div>
-        <div class="pricing-lessons">1 lesson</div>
-        <div class="pricing-amount">€100</div>
-        <div class="pricing-per">per lesson</div>
-        <div class="pricing-save">&nbsp;</div>
-        <div class="pricing-divider"></div>
-        <div class="pricing-feature">One personalized lesson</div>
-        <div class="pricing-feature">Initial assessment included</div>
-        <div class="pricing-feature">Ideal for trying a first lesson</div>
-      </div>
-      <div class="pricing-card">
-        <div class="pricing-name">Spark</div>
-        <div class="pricing-lessons">4 lessons</div>
-        <div class="pricing-amount">€380</div>
-        <div class="pricing-per">€95 per lesson</div>
-        <div class="pricing-save">Save €20</div>
-        <div class="pricing-divider"></div>
-        <div class="pricing-feature">4 personalized lessons</div>
-        <div class="pricing-feature">Initial assessment included</div>
-        <div class="pricing-feature">Progress check-in</div>
-      </div>
-      <div class="pricing-card pricing-card-featured">
-        <div class="featured-badge">Most Popular</div>
-        <div class="pricing-name">Bright</div>
-        <div class="pricing-lessons">8 lessons</div>
-        <div class="pricing-amount">€720</div>
-        <div class="pricing-per">€90 per lesson</div>
-        <div class="pricing-save">Save €80</div>
-        <div class="pricing-divider"></div>
-        <div class="pricing-feature">8 personalized lessons</div>
-        <div class="pricing-feature">Initial assessment included</div>
-        <div class="pricing-feature">Detailed progress tracking</div>
-        <div class="pricing-feature">Parent progress updates</div>
-      </div>
-      <div class="pricing-card">
-        <div class="pricing-name">Shine</div>
-        <div class="pricing-lessons">12 lessons</div>
-        <div class="pricing-amount">€1,020</div>
-        <div class="pricing-per">€85 per lesson</div>
-        <div class="pricing-save">Save €180</div>
-        <div class="pricing-divider"></div>
-        <div class="pricing-feature">12 personalized lessons</div>
-        <div class="pricing-feature">Initial assessment included</div>
-        <div class="pricing-feature">Comprehensive progress tracking</div>
-        <div class="pricing-feature">Parent progress updates</div>
-        <div class="pricing-feature">Written progress summary</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- POLICIES -->
 <section class="section section-dark" id="policies">
   <div class="section-inner">
@@ -1492,10 +1579,69 @@ footer {
   <a class="cta-email" href="mailto:drjennoverstreet@gmail.com">drjennoverstreet@gmail.com</a>
 </section>
 
+<!-- PRIVACY POLICY -->
+<section class="section section-alt" id="privacy" style="padding: 72px 48px;">
+  <div class="section-inner">
+    <div class="section-label">Privacy Policy</div>
+    <h2 class="section-title" style="margin-bottom: 32px;">How your data is used</h2>
+
+    <div style="max-width: 720px; display: flex; flex-direction: column; gap: 28px;">
+
+      <div>
+        <h3 style="font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 8px;">Who we are</h3>
+        <p style="font-size: 14px; font-weight: 300; color: var(--text-secondary); line-height: 1.8;">This website is operated by Dr. Jenn Overstreet, trading as Expert Literacy Lessons / Bright Spiral Literacy, based in Rome, Italy. Contact: <a href="mailto:drjennoverstreet@gmail.com" style="color: var(--teal);">drjennoverstreet@gmail.com</a></p>
+      </div>
+
+      <div>
+        <h3 style="font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 8px;">What data we collect and why</h3>
+        <p style="font-size: 14px; font-weight: 300; color: var(--text-secondary); line-height: 1.8;">This website does not collect personal data through forms or cookies set by us. When you contact us via email, we receive your name and email address. This information is used solely to respond to your inquiry and, if you become a client, to deliver our services. The lawful basis for this processing is contract performance and legitimate interest.</p>
+      </div>
+
+      <div>
+        <h3 style="font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 8px;">Google Fonts</h3>
+        <p style="font-size: 14px; font-weight: 300; color: var(--text-secondary); line-height: 1.8;">This site loads fonts from Google Fonts. When your browser requests these fonts, your IP address is transferred to Google's servers. Google may process this data in accordance with their own privacy policy. No personal data is passed to Google beyond what is inherent in a standard browser request.</p>
+      </div>
+
+      <div>
+        <h3 style="font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 8px;">Hosting</h3>
+        <p style="font-size: 14px; font-weight: 300; color: var(--text-secondary); line-height: 1.8;">This site is hosted via GitHub Pages (GitHub, Inc., a Microsoft company). GitHub may log standard server access data including IP addresses as part of their infrastructure operations. See GitHub's privacy policy for details.</p>
+      </div>
+
+      <div>
+        <h3 style="font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 8px;">Children's data</h3>
+        <p style="font-size: 14px; font-weight: 300; color: var(--text-secondary); line-height: 1.8;">Our services are directed at children in grades K–5, but this website is intended for use by parents and guardians only. We do not knowingly collect personal data directly from children. Any information about a child shared with us by a parent or guardian is treated with the highest level of confidentiality and used only to deliver our literacy services.</p>
+      </div>
+
+      <div>
+        <h3 style="font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 8px;">Your rights under GDPR</h3>
+        <p style="font-size: 14px; font-weight: 300; color: var(--text-secondary); line-height: 1.8;">If you are based in the EU, you have the right to access, correct, or request deletion of any personal data we hold about you. You also have the right to object to processing and to data portability. To exercise any of these rights, contact us at <a href="mailto:drjennoverstreet@gmail.com" style="color: var(--teal);">drjennoverstreet@gmail.com</a>. We will respond within 30 days.</p>
+      </div>
+
+      <div>
+        <h3 style="font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 8px;">Data retention</h3>
+        <p style="font-size: 14px; font-weight: 300; color: var(--text-secondary); line-height: 1.8;">Email correspondence is retained for as long as necessary to deliver our services and meet any legal obligations. Client records are kept for a maximum of three years after the end of the service relationship, after which they are deleted.</p>
+      </div>
+
+      <div>
+        <h3 style="font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 8px;">Complaints</h3>
+        <p style="font-size: 14px; font-weight: 300; color: var(--text-secondary); line-height: 1.8;">If you have a concern about how your data is handled, you have the right to lodge a complaint with the Italian data protection authority, the Garante per la protezione dei dati personali, at <a href="https://www.garanteprivacy.it" target="_blank" style="color: var(--teal);">garanteprivacy.it</a>.</p>
+      </div>
+
+      <div>
+        <p style="font-size: 12px; font-weight: 300; color: var(--text-muted); line-height: 1.7;">Last updated: April 2026</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-brand">Dr. Jenn Overstreet <span>·</span> Expert Literacy Lessons</div>
-  <div class="footer-note">Rome, Italy · Online Worldwide · brightspiralliteracy.com</div>
+  <div class="footer-links">
+    <span class="footer-note">Rome, Italy · Online Worldwide · brightspiralliteracy.com</span>
+    <a href="#privacy" class="footer-privacy">Privacy Policy</a>
+  </div>
 </footer>
 
 <script>
@@ -1510,6 +1656,15 @@ hamburger.addEventListener('click', () => {
 function closeMobile() {
   hamburger.classList.remove('open');
   mobileMenu.classList.remove('open');
+}
+
+function dismissCookie() {
+  document.getElementById('cookieBanner').style.display = 'none';
+  localStorage.setItem('cookieAck', '1');
+}
+
+if (localStorage.getItem('cookieAck')) {
+  document.getElementById('cookieBanner').style.display = 'none';
 }
 </script>
 
