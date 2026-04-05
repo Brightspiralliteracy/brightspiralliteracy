@@ -579,30 +579,30 @@ nav {
 }
 
 /* ── PRICING ── */
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  margin-top: 48px;
+.pricing-intro {
+  margin-bottom: 48px;
 }
 
-.pricing-card {
+/* Package header row */
+.pkg-header-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.pkg-header-cell {
   background: #fff;
   border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 28px 24px;
+  border-radius: 12px 12px 0 0;
+  border-bottom: none;
+  padding: 28px 24px 20px;
   position: relative;
-  transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.pricing-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(0,0,0,0.08);
-}
-
-.pricing-card-featured {
+.pkg-header-cell.featured {
   border-color: var(--orange);
   border-width: 2px;
+  border-bottom: none;
 }
 
 .featured-badge {
@@ -631,7 +631,8 @@ nav {
   font-size: 12px;
   font-weight: 500;
   color: var(--text-muted);
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+  min-height: 34px;
 }
 
 .pricing-amount {
@@ -645,37 +646,228 @@ nav {
 .pricing-per {
   font-size: 12px;
   color: var(--text-muted);
-  margin-bottom: 8px;
+  margin-bottom: 4px;
 }
 
 .pricing-save {
   font-size: 12px;
   font-weight: 600;
   color: var(--teal);
-  margin-bottom: 24px;
+  min-height: 18px;
 }
 
-.pricing-divider {
+.pkg-divider-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.pkg-divider-cell {
   height: 1px;
   background: var(--border);
-  margin-bottom: 20px;
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
 }
 
-.pricing-feature {
-  font-size: 12px;
+.pkg-divider-cell.featured {
+  border-left: 2px solid var(--orange);
+  border-right: 2px solid var(--orange);
+  background: var(--orange);
+  opacity: 0.3;
+}
+
+.pkg-desc-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.pkg-desc-cell {
+  background: #fff;
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  padding: 16px 24px 20px;
+  font-size: 13px;
   font-weight: 300;
   color: var(--text-secondary);
-  margin-bottom: 8px;
-  padding-left: 14px;
-  position: relative;
+  line-height: 1.65;
+  min-height: 100px;
 }
 
-.pricing-feature::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  color: var(--teal);
+.pkg-desc-cell.featured {
+  border-left: 2px solid var(--orange);
+  border-right: 2px solid var(--orange);
+}
+
+/* Includes label row */
+.pkg-includes-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.pkg-includes-cell {
+  background: var(--off-white);
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  border-top: 1px solid var(--border);
+  padding: 10px 24px;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.pkg-includes-cell.featured {
+  border-left: 2px solid var(--orange);
+  border-right: 2px solid var(--orange);
+  border-top: 1px solid var(--border);
+}
+
+/* Feature rows */
+.pkg-features-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.pkg-feature-col {
+  background: #fff;
+  border-left: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+}
+
+.pkg-feature-col.featured {
+  border-left: 2px solid var(--orange);
+  border-right: 2px solid var(--orange);
+}
+
+.pkg-feature-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 24px;
+  border-bottom: 1px solid var(--border);
+  min-height: 38px;
+}
+
+.pkg-feature-item:last-child {
+  border-bottom: none;
+}
+
+.feat-check {
+  width: 16px;
+  height: 16px;
+  min-width: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feat-check-yes { background: var(--teal); }
+.feat-check-no { background: var(--border); opacity: 0.5; }
+
+.feat-check svg {
+  width: 8px;
+  height: 8px;
+}
+
+.feat-label {
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.feat-label-on {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.feat-label-off {
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+.bonus-tag {
+  display: inline-block;
+  background: #FEF5E7;
+  color: #8B5E00;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 1px 6px;
+  border-radius: 10px;
+  border: 1px solid rgba(245,166,35,0.4);
+  margin-left: 5px;
+  vertical-align: middle;
+}
+
+/* CTA row */
+.pkg-cta-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.pkg-cta-cell {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 12px 12px;
+  padding: 20px 24px;
+}
+
+.pkg-cta-cell.featured {
+  border: 2px solid var(--orange);
+  border-top: none;
+}
+
+.pkg-btn {
+  display: block;
+  width: 100%;
+  padding: 11px;
+  border-radius: 8px;
+  font-size: 13px;
   font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  border: 1.5px solid var(--navy);
+  color: var(--navy);
+  background: transparent;
+  font-family: 'Poppins', sans-serif;
+  transition: background 0.2s, color 0.2s;
+}
+
+.pkg-btn:hover {
+  background: var(--navy);
+  color: #fff;
+}
+
+.pkg-btn-primary {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
+
+.pkg-btn-primary:hover {
+  background: var(--navy-light);
+}
+
+.pricing-discovery {
+  text-align: center;
+  margin-top: 28px;
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--text-muted);
+}
+
+.pricing-discovery a {
+  color: var(--navy);
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 3px;
 }
 
 /* ── SUMMER INTENSIVE ── */
@@ -1176,12 +1368,30 @@ footer {
   nav { padding: 0 24px; }
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
-  .hero { padding: 120px 24px 72px; }
-  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
-  .hero-photo-wrap { display: none; }
+
+  .hero { padding: 100px 24px 64px; }
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    text-align: center;
+  }
+  .hero-photo-wrap {
+    display: flex;
+    order: -1;
+    justify-content: center;
+  }
+  .hero-photo {
+    width: 200px;
+    height: 200px;
+  }
+  .hero-sub { margin-left: auto; margin-right: auto; }
+  .hero-actions { justify-content: center; }
+  .hero-badges { justify-content: center; }
+
   .section { padding: 72px 24px; }
-  .belief-grid, .method-grid, .who-grid, .pricing-grid, .about-grid { grid-template-columns: 1fr; }
+  .belief-grid, .about-grid { grid-template-columns: 1fr; }
   .method-grid { grid-template-columns: 1fr 1fr; }
+  .who-grid { grid-template-columns: 1fr; }
   .summer-body { grid-template-columns: 1fr; }
   .policy-grid, .steps-row { grid-template-columns: 1fr; }
   .steps-row::before { display: none; }
@@ -1191,6 +1401,89 @@ footer {
   .featured-quote-text { font-size: 16px; }
   footer { flex-direction: column; text-align: center; }
   .cookie-banner { padding: 16px 24px; }
+
+  /* Pricing: stack to single column on mobile */
+  .pkg-header-row,
+  .pkg-divider-row,
+  .pkg-desc-row,
+  .pkg-includes-row,
+  .pkg-features-row,
+  .pkg-cta-row {
+    grid-template-columns: 1fr;
+  }
+
+  .pkg-header-cell,
+  .pkg-header-cell.featured {
+    border-radius: 12px 12px 0 0;
+    border: 1px solid var(--border);
+    border-bottom: none;
+  }
+
+  .pkg-header-cell.featured {
+    border-color: var(--orange);
+    border-width: 2px;
+    border-bottom: none;
+  }
+
+  .pkg-divider-cell,
+  .pkg-divider-cell.featured {
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+  }
+
+  .pkg-divider-cell.featured {
+    border-left: 2px solid var(--orange);
+    border-right: 2px solid var(--orange);
+  }
+
+  .pkg-desc-cell,
+  .pkg-desc-cell.featured {
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+  }
+
+  .pkg-desc-cell.featured {
+    border-left: 2px solid var(--orange);
+    border-right: 2px solid var(--orange);
+  }
+
+  .pkg-includes-cell,
+  .pkg-includes-cell.featured {
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+  }
+
+  .pkg-includes-cell.featured {
+    border-left: 2px solid var(--orange);
+    border-right: 2px solid var(--orange);
+  }
+
+  .pkg-feature-col,
+  .pkg-feature-col.featured {
+    border-left: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+  }
+
+  .pkg-feature-col.featured {
+    border-left: 2px solid var(--orange);
+    border-right: 2px solid var(--orange);
+  }
+
+  .pkg-cta-cell,
+  .pkg-cta-cell.featured {
+    border: 1px solid var(--border);
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+  }
+
+  .pkg-cta-cell.featured {
+    border: 2px solid var(--orange);
+    border-top: none;
+  }
+
+  /* Add spacing between stacked packages on mobile */
+  .pkg-cta-cell { margin-bottom: 32px; }
+  .pkg-cta-cell:last-child { margin-bottom: 0; }
 }
 </style>
 </head>
@@ -1208,6 +1501,7 @@ footer {
 <nav>
   <div class="nav-brand">Dr. Jenn Overstreet <span>·</span> Expert Literacy Lessons</div>
   <ul class="nav-links">
+    <li><a href="#about">About</a></li>
     <li><a href="#method">Method</a></li>
     <li><a href="#who">Who It's For</a></li>
     <li><a href="#pricing">Pricing</a></li>
@@ -1220,6 +1514,7 @@ footer {
 </nav>
 
 <div class="nav-mobile" id="mobileMenu">
+  <a href="#about" onclick="closeMobile()">About</a>
   <a href="#method" onclick="closeMobile()">Method</a>
   <a href="#who" onclick="closeMobile()">Who It's For</a>
   <a href="#pricing" onclick="closeMobile()">Pricing</a>
@@ -1427,58 +1722,283 @@ footer {
   <div class="section-inner">
     <div class="section-label">Pricing</div>
     <h2 class="section-title">One-on-one lesson packages.</h2>
-    <p class="section-body" style="font-size:18px; font-weight:600; color:var(--navy); margin-bottom:8px;">Transparent pricing. No surprises.</p>
-    <p class="section-body">All lessons are one-on-one and fully personalized. Choose the package that fits your child's needs. Payment via Wise bank transfer, in full before the first lesson.</p>
-    <div class="pricing-grid">
-      <div class="pricing-card">
+    <div class="pricing-intro">
+      <p class="section-body" style="font-size:18px; font-weight:600; color:var(--navy); margin-bottom:8px;">Transparent pricing. No surprises.</p>
+      <p class="section-body">All lessons are one-on-one and fully personalized. Payment via Wise bank transfer, in full before the first lesson.</p>
+    </div>
+
+    <!-- Header row -->
+    <div class="pkg-header-row">
+      <div class="pkg-header-cell">
         <div class="pricing-name">Single</div>
         <div class="pricing-lessons">1 lesson</div>
         <div class="pricing-amount">€100</div>
         <div class="pricing-per">per lesson</div>
         <div class="pricing-save">&nbsp;</div>
-        <div class="pricing-divider"></div>
-        <div class="pricing-feature">One personalized lesson</div>
-        <div class="pricing-feature">Initial assessment included</div>
-        <div class="pricing-feature">Perfect for getting started</div>
       </div>
-      <div class="pricing-card">
+      <div class="pkg-header-cell">
         <div class="pricing-name">Spark</div>
-        <div class="pricing-lessons">4 lessons</div>
-        <div class="pricing-amount">€380</div>
-        <div class="pricing-per">€95 per lesson</div>
+        <div class="pricing-lessons">4 lessons + pre-assessment</div>
+        <div class="pricing-amount">€480</div>
+        <div class="pricing-per">€96 per lesson</div>
         <div class="pricing-save">Save €20</div>
-        <div class="pricing-divider"></div>
-        <div class="pricing-feature">4 personalized lessons</div>
-        <div class="pricing-feature">Initial assessment included</div>
-        <div class="pricing-feature">Progress check-in</div>
       </div>
-      <div class="pricing-card pricing-card-featured">
+      <div class="pkg-header-cell featured">
         <div class="featured-badge">Most Popular</div>
         <div class="pricing-name">Bright</div>
-        <div class="pricing-lessons">8 lessons</div>
-        <div class="pricing-amount">€720</div>
+        <div class="pricing-lessons">8 lessons + pre and post assessment</div>
+        <div class="pricing-amount">€900</div>
         <div class="pricing-per">€90 per lesson</div>
         <div class="pricing-save">Save €80</div>
-        <div class="pricing-divider"></div>
-        <div class="pricing-feature">8 personalized lessons</div>
-        <div class="pricing-feature">Initial assessment included</div>
-        <div class="pricing-feature">Detailed progress tracking</div>
-        <div class="pricing-feature">Parent progress updates</div>
       </div>
-      <div class="pricing-card">
+      <div class="pkg-header-cell">
         <div class="pricing-name">Shine</div>
-        <div class="pricing-lessons">12 lessons</div>
-        <div class="pricing-amount">€1,020</div>
+        <div class="pricing-lessons">12 lessons + pre and post assessment</div>
+        <div class="pricing-amount">€1,200</div>
         <div class="pricing-per">€85 per lesson</div>
         <div class="pricing-save">Save €180</div>
-        <div class="pricing-divider"></div>
-        <div class="pricing-feature">12 personalized lessons</div>
-        <div class="pricing-feature">Initial assessment included</div>
-        <div class="pricing-feature">Comprehensive progress tracking</div>
-        <div class="pricing-feature">Parent progress updates</div>
-        <div class="pricing-feature">Written progress summary</div>
       </div>
     </div>
+
+    <!-- Divider -->
+    <div class="pkg-divider-row">
+      <div class="pkg-divider-cell"></div>
+      <div class="pkg-divider-cell"></div>
+      <div class="pkg-divider-cell featured"></div>
+      <div class="pkg-divider-cell"></div>
+    </div>
+
+    <!-- Description row -->
+    <div class="pkg-desc-row">
+      <div class="pkg-desc-cell">One lesson with a specialist who knows exactly what your child needs. A clear picture of where they are, what's getting in the way, and what focused support could change.</div>
+      <div class="pkg-desc-cell">Spark begins before the first lesson. A formal diagnostic tells Dr. Overstreet exactly where your child is and why, so every lesson targets the right thing from day one.</div>
+      <div class="pkg-desc-cell featured">The full Bright Spiral Literacy Method, start to finish. A diagnostic before, targeted lessons throughout, and a formal post-assessment with a written summary at the end.</div>
+      <div class="pkg-desc-cell">The complete experience. Everything in Bright, plus a midway progress report, a personalized home literacy plan, and a next steps recommendation so the progress outlasts the package.</div>
+    </div>
+
+    <!-- Includes label row -->
+    <div class="pkg-includes-row">
+      <div class="pkg-includes-cell">What's included</div>
+      <div class="pkg-includes-cell">What's included</div>
+      <div class="pkg-includes-cell featured">What's included</div>
+      <div class="pkg-includes-cell">What's included</div>
+    </div>
+
+    <!-- Feature rows -->
+    <div class="pkg-features-row">
+
+      <!-- Single -->
+      <div class="pkg-feature-col">
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-no"></div>
+          <span class="feat-label feat-label-off">Formal pre-assessment</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="feat-label feat-label-on">1 teaching lesson</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="feat-label feat-label-on">Same-day lesson debrief</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-no"></div>
+          <span class="feat-label feat-label-off">Between-lesson practice plan</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-no"></div>
+          <span class="feat-label feat-label-off">Personalized reading list</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-no"></div>
+          <span class="feat-label feat-label-off">Formal post-assessment</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-no"></div>
+          <span class="feat-label feat-label-off">Written progress summary</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-no"></div>
+          <span class="feat-label feat-label-off">Midway progress report</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-no"></div>
+          <span class="feat-label feat-label-off">Home literacy plan</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-no"></div>
+          <span class="feat-label feat-label-off">Next steps recommendation</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-no"></div>
+          <span class="feat-label feat-label-off">Priority scheduling</span>
+        </div>
+      </div>
+
+      <!-- Spark -->
+      <div class="pkg-feature-col">
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="feat-label feat-label-on">Formal pre-assessment</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="feat-label feat-label-on">4 teaching lessons</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="feat-label feat-label-on">Same-day lesson debrief</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="feat-label feat-label-on">Between-lesson practice plan</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="feat-label feat-label-on">Personalized reading list</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-no"></div>
+          <span class="feat-label feat-label-off">Formal post-assessment</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-no"></div>
+          <span class="feat-label feat-label-off">Written progress summary</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-no"></div>
+          <span class="feat-label feat-label-off">Midway progress report</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-no"></div>
+          <span class="feat-label feat-label-off">Home literacy plan</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-no"></div>
+          <span class="feat-label feat-label-off">Next steps recommendation</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-no"></div>
+          <span class="feat-label feat-label-off">Priority scheduling</span>
+        </div>
+      </div>
+
+      <!-- Bright -->
+      <div class="pkg-feature-col featured">
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="feat-label feat-label-on">Formal pre-assessment</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="feat-label feat-label-on">8 teaching lessons</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="feat-label feat-label-on">Same-day lesson debrief</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="feat-label feat-label-on">Between-lesson practice plan</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="feat-label feat-label-on">Personalized reading list</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="feat-label feat-label-on">Formal post-assessment</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="feat-label feat-label-on">Written progress summary</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-no"></div>
+          <span class="feat-label feat-label-off">Midway progress report</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-no"></div>
+          <span class="feat-label feat-label-off">Home literacy plan</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-no"></div>
+          <span class="feat-label feat-label-off">Next steps recommendation</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-no"></div>
+          <span class="feat-label feat-label-off">Priority scheduling</span>
+        </div>
+      </div>
+
+      <!-- Shine -->
+      <div class="pkg-feature-col">
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="feat-label feat-label-on">Formal pre-assessment</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="feat-label feat-label-on">12 teaching lessons</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="feat-label feat-label-on">Same-day lesson debrief</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="feat-label feat-label-on">Between-lesson practice plan</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="feat-label feat-label-on">Personalized reading list</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="feat-label feat-label-on">Formal post-assessment</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="feat-label feat-label-on">Written progress summary</span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="feat-label feat-label-on">Midway progress report <span class="bonus-tag">bonus</span></span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="feat-label feat-label-on">Home literacy plan <span class="bonus-tag">bonus</span></span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="feat-label feat-label-on">Next steps recommendation <span class="bonus-tag">bonus</span></span>
+        </div>
+        <div class="pkg-feature-item">
+          <div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <span class="feat-label feat-label-on">Priority scheduling <span class="bonus-tag">bonus</span></span>
+        </div>
+      </div>
+
+    </div><!-- end pkg-features-row -->
+
+    <!-- CTA row -->
+    <div class="pkg-cta-row">
+      <div class="pkg-cta-cell">
+        <a href="mailto:drjennoverstreet@gmail.com" class="pkg-btn">Get started</a>
+      </div>
+      <div class="pkg-cta-cell">
+        <a href="mailto:drjennoverstreet@gmail.com" class="pkg-btn">Get started</a>
+      </div>
+      <div class="pkg-cta-cell featured">
+        <a href="mailto:drjennoverstreet@gmail.com" class="pkg-btn pkg-btn-primary">Get started</a>
+      </div>
+      <div class="pkg-cta-cell">
+        <a href="mailto:drjennoverstreet@gmail.com" class="pkg-btn">Get started</a>
+      </div>
+    </div>
+
+    <p class="pricing-discovery">Not sure which package is right? <a href="mailto:drjennoverstreet@gmail.com">Book a free discovery call first.</a></p>
+
   </div>
 </section>
 
@@ -1489,7 +2009,7 @@ footer {
 <section class="section section-teal" id="summer">
   <div class="section-inner">
     <div class="section-label" style="color: var(--teal);">Summer 2026</div>
-    <h2 class="section-title" style="color: var(--navy); margin-bottom: 32px;">Summer Intensive 2026.</h2>
+    <h2 class="section-title" style="color: var(--navy); margin-bottom: 32px;">Summer Intensive 2026. ☀️📚😎🏖️</h2>
     <div class="summer-hero">
       <div class="summer-hero-eyebrow">Online · July &amp; August 2026</div>
       <div class="summer-hero-title">Focused literacy lessons.<br>Real progress in three weeks.</div>
@@ -1539,7 +2059,8 @@ footer {
           <div class="round-dates">July 15 – 31, 2026</div>
           <div class="round-detail">
             Tue, Wed, Thu<br>
-            Morning: 9:00–11:15am · Evening: 4:00–6:15pm (Rome time)<br>
+            Morning slots: 9:00 · 9:35 · 10:10 · 10:45 (Rome time)<br>
+            Evening slots: 4:00 · 4:35 · 5:10 · 5:45 (Rome time)<br>
             9 lessons · Limited to 8 students
           </div>
         </div>
@@ -1548,7 +2069,8 @@ footer {
           <div class="round-dates">August 3 – 21, 2026</div>
           <div class="round-detail">
             Tue, Wed, Thu<br>
-            Morning: 9:00–11:15am · Evening: 4:00–6:15pm (Rome time)<br>
+            Morning slots: 9:00 · 9:35 · 10:10 · 10:45 (Rome time)<br>
+            Evening slots: 4:00 · 4:35 · 5:10 · 5:45 (Rome time)<br>
             9 lessons · Limited to 8 students
           </div>
         </div>
@@ -1559,28 +2081,9 @@ footer {
       </div>
     </div>
 
-    <div style="
-      background: #EAF5F5;
-      border-left: 4px solid var(--teal);
-      border-radius: 12px;
-      padding: 28px 32px;
-      margin-bottom: 32px;
-    ">
-      <p style="
-        font-size: 16px;
-        font-weight: 500;
-        color: var(--navy);
-        line-height: 1.7;
-        font-style: italic;
-        margin-bottom: 12px;
-      ">"More time doesn't mean more progress. For young readers, the research consistently shows that short, frequent sessions produce stronger outcomes than long ones."</p>
-      <p style="
-        font-size: 11px;
-        font-weight: 600;
-        color: var(--teal);
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-      ">Nickow, Oreopoulos &amp; Quan &mdash; American Educational Research Journal, 2024</p>
+    <div style="background: #EAF5F5; border-left: 4px solid var(--teal); border-radius: 12px; padding: 28px 32px; margin-bottom: 32px;">
+      <p style="font-size: 16px; font-weight: 500; color: var(--navy); line-height: 1.7; font-style: italic; margin-bottom: 12px;">"More time doesn't mean more progress. For young readers, the research consistently shows that short, frequent sessions produce stronger outcomes than long ones."</p>
+      <p style="font-size: 11px; font-weight: 600; color: var(--teal); letter-spacing: 0.1em; text-transform: uppercase;">Nickow, Oreopoulos &amp; Quan &mdash; American Educational Research Journal, 2024</p>
     </div>
 
     <div class="summer-price-bar">
