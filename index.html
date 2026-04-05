@@ -855,6 +855,8 @@ nav {
   background: var(--navy-light);
 }
 
+.mobile-pkg-cards { display: none; }
+
 .pricing-discovery {
   text-align: center;
   margin-top: 28px;
@@ -1402,88 +1404,59 @@ footer {
   footer { flex-direction: column; text-align: center; }
   .cookie-banner { padding: 16px 24px; }
 
-  /* Pricing: stack to single column on mobile */
+  /* Pricing: hide desktop grid, show mobile cards */
   .pkg-header-row,
   .pkg-divider-row,
   .pkg-desc-row,
   .pkg-includes-row,
   .pkg-features-row,
-  .pkg-cta-row {
-    grid-template-columns: 1fr;
-  }
+  .pkg-cta-row { display: none; }
 
-  .pkg-header-cell,
-  .pkg-header-cell.featured {
-    border-radius: 12px 12px 0 0;
+  .mobile-pkg-cards { display: flex; flex-direction: column; gap: 32px; }
+
+  .mobile-pkg-card {
+    background: #fff;
     border: 1px solid var(--border);
-    border-bottom: none;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
   }
 
-  .pkg-header-cell.featured {
-    border-color: var(--orange);
-    border-width: 2px;
-    border-bottom: none;
+  .mobile-pkg-card.featured { border: 2px solid var(--orange); }
+
+  .mobile-pkg-header { padding: 28px 24px 20px; border-bottom: 1px solid var(--border); }
+
+  .mobile-pkg-desc {
+    padding: 16px 24px;
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    border-bottom: 1px solid var(--border);
   }
 
-  .pkg-divider-cell,
-  .pkg-divider-cell.featured {
-    border-left: 1px solid var(--border);
-    border-right: 1px solid var(--border);
+  .mobile-pkg-includes-label {
+    background: var(--off-white);
+    padding: 10px 24px;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border-bottom: 1px solid var(--border);
   }
 
-  .pkg-divider-cell.featured {
-    border-left: 2px solid var(--orange);
-    border-right: 2px solid var(--orange);
+  .mobile-pkg-feature {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 24px;
+    border-bottom: 1px solid var(--border);
   }
 
-  .pkg-desc-cell,
-  .pkg-desc-cell.featured {
-    border-left: 1px solid var(--border);
-    border-right: 1px solid var(--border);
-  }
+  .mobile-pkg-feature:last-of-type { border-bottom: none; }
 
-  .pkg-desc-cell.featured {
-    border-left: 2px solid var(--orange);
-    border-right: 2px solid var(--orange);
-  }
-
-  .pkg-includes-cell,
-  .pkg-includes-cell.featured {
-    border-left: 1px solid var(--border);
-    border-right: 1px solid var(--border);
-  }
-
-  .pkg-includes-cell.featured {
-    border-left: 2px solid var(--orange);
-    border-right: 2px solid var(--orange);
-  }
-
-  .pkg-feature-col,
-  .pkg-feature-col.featured {
-    border-left: 1px solid var(--border);
-    border-right: 1px solid var(--border);
-  }
-
-  .pkg-feature-col.featured {
-    border-left: 2px solid var(--orange);
-    border-right: 2px solid var(--orange);
-  }
-
-  .pkg-cta-cell,
-  .pkg-cta-cell.featured {
-    border: 1px solid var(--border);
-    border-top: none;
-    border-radius: 0 0 12px 12px;
-  }
-
-  .pkg-cta-cell.featured {
-    border: 2px solid var(--orange);
-    border-top: none;
-  }
-
-  /* Add spacing between stacked packages on mobile */
-  .pkg-cta-cell { margin-bottom: 32px; }
-  .pkg-cta-cell:last-child { margin-bottom: 0; }
+  .mobile-pkg-cta { padding: 20px 24px; border-top: 1px solid var(--border); }
 }
 </style>
 </head>
@@ -1997,6 +1970,111 @@ footer {
       </div>
     </div>
 
+    <!-- Mobile package cards (shown only on mobile) -->
+    <div class="mobile-pkg-cards">
+
+      <!-- Single -->
+      <div class="mobile-pkg-card">
+        <div class="mobile-pkg-header">
+          <div class="pricing-name">Single</div>
+          <div class="pricing-lessons">1 lesson</div>
+          <div class="pricing-amount">€100</div>
+          <div class="pricing-per">per lesson</div>
+        </div>
+        <div class="mobile-pkg-desc">One lesson with a specialist who knows exactly what your child needs. A clear picture of where they are, what's getting in the way, and what focused support could change.</div>
+        <div class="mobile-pkg-includes-label">What's included</div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-no"></div><span class="feat-label feat-label-off">Formal pre-assessment</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="feat-label feat-label-on">1 teaching lesson</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="feat-label feat-label-on">Same-day lesson debrief</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-no"></div><span class="feat-label feat-label-off">Between-lesson practice plan</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-no"></div><span class="feat-label feat-label-off">Personalized reading list</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-no"></div><span class="feat-label feat-label-off">Formal post-assessment</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-no"></div><span class="feat-label feat-label-off">Written progress summary</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-no"></div><span class="feat-label feat-label-off">Midway progress report</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-no"></div><span class="feat-label feat-label-off">Home literacy plan</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-no"></div><span class="feat-label feat-label-off">Next steps recommendation</span></div>
+        <div class="mobile-pkg-feature" style="border-bottom:none;"><div class="feat-check feat-check-no"></div><span class="feat-label feat-label-off">Priority scheduling</span></div>
+        <div class="mobile-pkg-cta"><a href="mailto:drjennoverstreet@gmail.com" class="pkg-btn">Get started</a></div>
+      </div>
+
+      <!-- Spark -->
+      <div class="mobile-pkg-card">
+        <div class="mobile-pkg-header">
+          <div class="pricing-name">Spark</div>
+          <div class="pricing-lessons">4 lessons + pre-assessment</div>
+          <div class="pricing-amount">€480</div>
+          <div class="pricing-per">€96 per lesson</div>
+          <div class="pricing-save">Save €20</div>
+        </div>
+        <div class="mobile-pkg-desc">Spark begins before the first lesson. A formal diagnostic tells Dr. Overstreet exactly where your child is and why, so every lesson targets the right thing from day one.</div>
+        <div class="mobile-pkg-includes-label">What's included</div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="feat-label feat-label-on">Formal pre-assessment</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="feat-label feat-label-on">4 teaching lessons</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="feat-label feat-label-on">Same-day lesson debrief</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="feat-label feat-label-on">Between-lesson practice plan</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="feat-label feat-label-on">Personalized reading list</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-no"></div><span class="feat-label feat-label-off">Formal post-assessment</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-no"></div><span class="feat-label feat-label-off">Written progress summary</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-no"></div><span class="feat-label feat-label-off">Midway progress report</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-no"></div><span class="feat-label feat-label-off">Home literacy plan</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-no"></div><span class="feat-label feat-label-off">Next steps recommendation</span></div>
+        <div class="mobile-pkg-feature" style="border-bottom:none;"><div class="feat-check feat-check-no"></div><span class="feat-label feat-label-off">Priority scheduling</span></div>
+        <div class="mobile-pkg-cta"><a href="mailto:drjennoverstreet@gmail.com" class="pkg-btn">Get started</a></div>
+      </div>
+
+      <!-- Bright -->
+      <div class="mobile-pkg-card featured">
+        <div class="featured-badge">Most Popular</div>
+        <div class="mobile-pkg-header">
+          <div class="pricing-name">Bright</div>
+          <div class="pricing-lessons">8 lessons + pre and post assessment</div>
+          <div class="pricing-amount">€900</div>
+          <div class="pricing-per">€90 per lesson</div>
+          <div class="pricing-save">Save €80</div>
+        </div>
+        <div class="mobile-pkg-desc">The full Bright Spiral Literacy Method, start to finish. A diagnostic before, targeted lessons throughout, and a formal post-assessment with a written summary at the end.</div>
+        <div class="mobile-pkg-includes-label">What's included</div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="feat-label feat-label-on">Formal pre-assessment</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="feat-label feat-label-on">8 teaching lessons</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="feat-label feat-label-on">Same-day lesson debrief</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="feat-label feat-label-on">Between-lesson practice plan</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="feat-label feat-label-on">Personalized reading list</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="feat-label feat-label-on">Formal post-assessment</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="feat-label feat-label-on">Written progress summary</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-no"></div><span class="feat-label feat-label-off">Midway progress report</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-no"></div><span class="feat-label feat-label-off">Home literacy plan</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-no"></div><span class="feat-label feat-label-off">Next steps recommendation</span></div>
+        <div class="mobile-pkg-feature" style="border-bottom:none;"><div class="feat-check feat-check-no"></div><span class="feat-label feat-label-off">Priority scheduling</span></div>
+        <div class="mobile-pkg-cta"><a href="mailto:drjennoverstreet@gmail.com" class="pkg-btn pkg-btn-primary">Get started</a></div>
+      </div>
+
+      <!-- Shine -->
+      <div class="mobile-pkg-card">
+        <div class="mobile-pkg-header">
+          <div class="pricing-name">Shine</div>
+          <div class="pricing-lessons">12 lessons + pre and post assessment</div>
+          <div class="pricing-amount">€1,200</div>
+          <div class="pricing-per">€85 per lesson</div>
+          <div class="pricing-save">Save €180</div>
+        </div>
+        <div class="mobile-pkg-desc">The complete experience. Everything in Bright, plus a midway progress report, a personalized home literacy plan, and a next steps recommendation so the progress outlasts the package.</div>
+        <div class="mobile-pkg-includes-label">What's included</div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="feat-label feat-label-on">Formal pre-assessment</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="feat-label feat-label-on">12 teaching lessons</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="feat-label feat-label-on">Same-day lesson debrief</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="feat-label feat-label-on">Between-lesson practice plan</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="feat-label feat-label-on">Personalized reading list</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="feat-label feat-label-on">Formal post-assessment</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="feat-label feat-label-on">Written progress summary</span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="feat-label feat-label-on">Midway progress report <span class="bonus-tag">bonus</span></span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="feat-label feat-label-on">Home literacy plan <span class="bonus-tag">bonus</span></span></div>
+        <div class="mobile-pkg-feature"><div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="feat-label feat-label-on">Next steps recommendation <span class="bonus-tag">bonus</span></span></div>
+        <div class="mobile-pkg-feature" style="border-bottom:none;"><div class="feat-check feat-check-yes"><svg viewBox="0 0 8 8" fill="none"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="feat-label feat-label-on">Priority scheduling <span class="bonus-tag">bonus</span></span></div>
+        <div class="mobile-pkg-cta"><a href="mailto:drjennoverstreet@gmail.com" class="pkg-btn">Get started</a></div>
+      </div>
+
+    </div><!-- end mobile-pkg-cards -->
+
     <p class="pricing-discovery">Not sure which package is right? <a href="mailto:drjennoverstreet@gmail.com">Book a free discovery call first.</a></p>
 
   </div>
@@ -2026,30 +2104,30 @@ footer {
 
     <div class="summer-body">
       <div class="summer-includes">
-        <div class="summer-includes-title">What's included</div>
+        <div class="summer-includes-title">What your child gets</div>
         <div class="include-item">
           <div class="include-dot"></div>
-          <div class="include-text"><strong>Initial assessment</strong>A focused evaluation of your child's reading and writing before lessons begin.</div>
+          <div class="include-text"><strong>Formal pre-assessment</strong>Before lesson one, Dr. Overstreet assesses exactly where your child is and why. Every lesson that follows is built on that picture, not a guess.</div>
         </div>
         <div class="include-item">
           <div class="include-dot"></div>
-          <div class="include-text"><strong>9 private 30-minute lessons</strong>Structured lessons built on the Science of Reading and Science of Writing.</div>
+          <div class="include-text"><strong>9 private 30-minute lessons</strong>One specialist, one child, three weeks. Short and frequent, because that's what the research says works. No distractions. No generic curriculum. Just targeted, expert teaching.</div>
         </div>
         <div class="include-item">
           <div class="include-dot"></div>
-          <div class="include-text"><strong>Tailored lesson plans</strong>Every lesson designed around your child's specific needs, not a generic curriculum.</div>
+          <div class="include-text"><strong>Tailored lesson plans</strong>Every lesson is built around your child's specific gaps and strengths. What works for one child won't work for another, and Dr. Overstreet knows the difference.</div>
         </div>
         <div class="include-item">
           <div class="include-dot"></div>
-          <div class="include-text"><strong>End-of-round progress summary</strong>A written report showing what was covered, what improved, and recommended next steps.</div>
+          <div class="include-text"><strong>End-of-round progress summary</strong>A written report at the close of every round. What was covered, what improved, what's next. You leave with evidence, not just a feeling.</div>
         </div>
         <div class="include-item">
           <div class="include-dot"></div>
-          <div class="include-text"><strong>Direct parent communication</strong>Access to Dr. Overstreet and her team throughout the round for questions and updates.</div>
+          <div class="include-text"><strong>Direct parent communication</strong>Questions during the round? You have direct access to Dr. Overstreet and her team throughout. No chasing, no waiting.</div>
         </div>
         <div class="include-item">
           <div class="include-dot"></div>
-          <div class="include-text"><strong>Multilingual family support</strong>Experienced working with students whose home language is not English.</div>
+          <div class="include-text"><strong>Multilingual family support</strong>15 years working with children whose home language is not English. Your child's full linguistic context is part of the teaching, not an afterthought.</div>
         </div>
       </div>
 
@@ -2075,8 +2153,8 @@ footer {
           </div>
         </div>
         <div style="background: #EAF5F5; border: 1px solid #C0DFE0; border-radius: 12px; padding: 20px 24px;">
-          <div style="font-size: 12px; font-weight: 600; color: var(--teal); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.08em;">Flexible enrollment</div>
-          <div style="font-size: 14px; font-weight: 300; color: var(--text-secondary); line-height: 1.7;">Enroll in Round 1, Round 2, or both. Each round is independent. Families who enroll in both secure 18 lessons of focused growth across the full summer.</div>
+          <div style="font-size: 12px; font-weight: 600; color: var(--teal); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.08em;">Enroll in one round or both</div>
+          <div style="font-size: 14px; font-weight: 300; color: var(--text-secondary); line-height: 1.7;">Each round is independent. Families who enroll in both secure 18 lessons of focused, expert teaching across the full summer. That's a complete cycle of the Bright Spiral Literacy Method, start to finish, in two months.</div>
         </div>
       </div>
     </div>
@@ -2088,8 +2166,8 @@ footer {
 
     <div class="summer-price-bar">
       <div class="summer-price-left">
-        <strong>Investment per round</strong>
-        <p>Enroll in one round or both. Spots are limited to 8 students per round.</p>
+        <strong>€675 per round. 8 spots per round. That's it.</strong>
+        <p>When it's full, it's full. Enroll in one round or both. Payment in full before the first lesson.</p>
       </div>
       <div>
         <span class="summer-price-amount">€675</span>
@@ -2099,7 +2177,7 @@ footer {
 
     <div class="summer-cta">
       <a href="mailto:drjennoverstreet@gmail.com" class="btn-primary" style="font-size: 15px; padding: 16px 36px;">Reserve Your Child's Spot</a>
-      <p class="summer-note">Email drjennoverstreet@gmail.com to inquire about availability.</p>
+      <p class="summer-note">Email drjennoverstreet@gmail.com to check availability.</p>
     </div>
   </div>
 </section>
