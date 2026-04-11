@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What to Notice — Bright Spiral Literacy</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --navy: #1B3A5C;
+  --orange: #F5A623;
+  --teal: #2A8A8A;
+  --red: #C0392B;
+  --bg: #F7F6F3;
+  --surface: #FFFFFF;
+  --text: #1a1a1a;
+  --muted: #6b7280;
+  --border: #E5E3DE;
+}
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  padding: 48px 24px 80px;
+}
+.page {
+  max-width: 680px;
+  margin: 0 auto;
+}
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 24px;
+}
+.eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--teal);
+}
+.title-block {
+  margin-bottom: 12px;
+}
+h1 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+.subtitle {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--muted);
+  font-style: italic;
+  line-height: 1.5;
+}
+.divider {
+  height: 1px;
+  background: var(--border);
+  margin: 28px 0;
+}
+.intro {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #374151;
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+.intro p + p {
+  margin-top: 14px;
+}
+.section {
+  margin-top: 36px;
+}
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.section-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+.section-title {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy);
+}
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 6px;
+  transition: background 0.15s;
+  cursor: default;
+}
+.check-item:hover {
+  background: rgba(27, 58, 92, 0.04);
+}
+.check-item:hover .checkbox {
+  border-color: var(--navy);
+}
+.checkbox {
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid #D1D5DB;
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: border-color 0.15s, background 0.15s;
+  position: relative;
+  cursor: pointer;
+}
+.checkbox.checked {
+  background: var(--navy);
+  border-color: var(--navy);
+}
+.checkbox.checked::after {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 1.5px;
+  width: 5px;
+  height: 9px;
+  border: 2px solid white;
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+.check-text {
+  font-size: 14.5px;
+  font-weight: 400;
+  color: #374151;
+  line-height: 1.6;
+}
+.check-item.is-checked .check-text {
+  color: var(--text);
+}
+.counter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding: 16px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.counter-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+}
+.counter-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--navy);
+}
+.counter-sub {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 400;
+  margin-left: 4px;
+}
+.callout {
+  margin-top: 28px;
+  padding: 24px 28px;
+  background: var(--navy);
+  border-radius: 12px;
+  color: white;
+}
+.callout-body {
+  font-size: 14.5px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.88);
+  margin-bottom: 20px;
+}
+.callout-body strong {
+  color: white;
+  font-weight: 600;
+}
+.cta-btn {
+  display: inline-block;
+  background: var(--orange);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 12px 24px;
+  border-radius: 7px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.15s, transform 0.15s;
+}
+.cta-btn:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+.footer {
+  margin-top: 48px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.footer-logo {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.02em;
+}
+.footer-dot {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--border);
+}
+.footer-site {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 300;
+}
+.spiral-accent {
+  position: fixed;
+  top: -60px;
+  right: -60px;
+  width: 240px;
+  height: 240px;
+  opacity: 0.035;
+  pointer-events: none;
+}
+@media (max-width: 600px) {
+  body { padding: 32px 20px 64px; }
+  h1 { font-size: 26px; }
+}
+</style>
+</head>
+<body>
+
+<svg class="spiral-accent" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <path d="M100,100 m0,-80 a80,80 0 1,1 -0.1,0 m0,15 a65,65 0 1,1 -0.1,0 m0,15 a50,50 0 1,1 -0.1,0 m0,15 a35,35 0 1,1 -0.1,0 m0,15 a20,20 0 1,1 -0.1,0" fill="none" stroke="#1B3A5C" stroke-width="3"/>
+</svg>
+
+<div class="page">
+
+  <div class="eyebrow">
+    <span class="eyebrow-dot"></span>
+    Bright Spiral Literacy
+  </div>
+
+  <div class="title-block">
+    <h1>What to Notice</h1>
+    <p class="subtitle">A parent's checklist for reading and literacy at home</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="intro">
+    <p>You know your child better than anyone. And sometimes that means noticing things that are hard to name. Maybe reading feels like a battle every night. Maybe your child seems fine but something feels off. Maybe their teacher says not to worry, and you're still worried.</p>
+    <p>This checklist won't diagnose anything. What it will do is give you a clearer picture of what you're actually seeing, so you can trust your instincts and know what questions to ask.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- Section 1 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:#EFF6FF;">📖</div>
+      <span class="section-title">At homework time</span>
+    </div>
+    <div class="checklist">
+      <div class="check-item" onclick="toggle(this)">
+        <div class="checkbox"></div>
+        <span class="check-text">Writing assignments get started late, kept short, or avoided entirely</span>
+      </div>
+      <div class="check-item" onclick="toggle(this)">
+        <div class="checkbox"></div>
+        <span class="check-text">Spelling looks inconsistent, the same word spelled differently in the same paragraph</span>
+      </div>
+      <div class="check-item" onclick="toggle(this)">
+        <div class="checkbox"></div>
+        <span class="check-text">They erase constantly, or refuse to write anything they're not sure about</span>
+      </div>
+      <div class="check-item" onclick="toggle(this)">
+        <div class="checkbox"></div>
+        <span class="check-text">Reading assignments take much longer than they seem like they should</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 2 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:#FFF7ED;">🌙</div>
+      <span class="section-title">During bedtime reading</span>
+    </div>
+    <div class="checklist">
+      <div class="check-item" onclick="toggle(this)">
+        <div class="checkbox"></div>
+        <span class="check-text">They guess at unfamiliar words using the first letter or the picture rather than working through it</span>
+      </div>
+      <div class="check-item" onclick="toggle(this)">
+        <div class="checkbox"></div>
+        <span class="check-text">They can read the words but struggle to tell you what just happened</span>
+      </div>
+      <div class="check-item" onclick="toggle(this)">
+        <div class="checkbox"></div>
+        <span class="check-text">They rush, or find reasons to stop early</span>
+      </div>
+      <div class="check-item" onclick="toggle(this)">
+        <div class="checkbox"></div>
+        <span class="check-text">They'll listen to a story happily but resist reading one themselves</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 3 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:#F0FDF4;">✏️</div>
+      <span class="section-title">When they write anything down</span>
+    </div>
+    <div class="checklist">
+      <div class="check-item" onclick="toggle(this)">
+        <div class="checkbox"></div>
+        <span class="check-text">Letters or words reversed beyond early first grade</span>
+      </div>
+      <div class="check-item" onclick="toggle(this)">
+        <div class="checkbox"></div>
+        <span class="check-text">Sentences are short and simple even when they can talk about the same topic in detail</span>
+      </div>
+      <div class="check-item" onclick="toggle(this)">
+        <div class="checkbox"></div>
+        <span class="check-text">They know what they want to say but it doesn't come out on the page</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 4 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-icon" style="background:#FFF1F2;">💬</div>
+      <span class="section-title">How they talk about reading and school</span>
+    </div>
+    <div class="checklist">
+      <div class="check-item" onclick="toggle(this)">
+        <div class="checkbox"></div>
+        <span class="check-text">"I'm not a reader" said with real feeling, not just preference</span>
+      </div>
+      <div class="check-item" onclick="toggle(this)">
+        <div class="checkbox"></div>
+        <span class="check-text">They were managing fine in earlier grades and now things feel harder</span>
+      </div>
+      <div class="check-item" onclick="toggle(this)">
+        <div class="checkbox"></div>
+        <span class="check-text">They get frustrated with tasks that peers seem to handle easily</span>
+      </div>
+      <div class="check-item" onclick="toggle(this)">
+        <div class="checkbox"></div>
+        <span class="check-text">They describe themselves as bad at school, or have stopped talking about it</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Counter -->
+  <div class="counter-bar">
+    <span class="counter-label">Items you recognized</span>
+    <span>
+      <span class="counter-value" id="count">0</span>
+      <span class="counter-sub">/ 15</span>
+    </span>
+  </div>
+
+  <!-- Closing callout -->
+  <div class="callout">
+    <p class="callout-body">If two or more of these feel familiar, that's not something to wait out. Reading gaps at this age are <strong>very responsive to the right support</strong>, and the earlier you have a clear picture, the easier it is to act on it.<br><br>I offer a free 20-minute discovery call for parents who want to talk through what they're noticing. You'll leave with a clearer sense of what's going on and some specific things you can try at home, whether or not we work together.</p>
+    <a class="cta-btn" href="https://app.paperbell.com/checkout/packages/210796" target="_blank">Book a free discovery call &rarr;</a>
+  </div>
+
+  <div class="divider"></div>
+
+  <div class="footer">
+    <span class="footer-logo">Bright Spiral Literacy</span>
+    <span class="footer-dot"></span>
+    <span class="footer-site">brightspiralliteracy.com</span>
+  </div>
+
+</div>
+
+<script>
+function toggle(item) {
+  const box = item.querySelector('.checkbox');
+  box.classList.toggle('checked');
+  item.classList.toggle('is-checked');
+  updateCount();
+}
+function updateCount() {
+  const checked = document.querySelectorAll('.checkbox.checked').length;
+  document.getElementById('count').textContent = checked;
+  const counter = document.querySelector('.counter-bar');
+  if (checked >= 5) {
+    counter.style.borderColor = '#C0392B';
+    counter.style.background = '#FFF5F5';
+  } else if (checked >= 2) {
+    counter.style.borderColor = '#F5A623';
+    counter.style.background = '#FFFBF0';
+  } else {
+    counter.style.borderColor = 'var(--border)';
+    counter.style.background = 'var(--surface)';
+  }
+}
+</script>
+</body>
+</html>
