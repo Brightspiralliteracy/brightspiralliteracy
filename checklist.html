@@ -3,438 +3,641 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>What to Notice — Bright Spiral Literacy</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&display=swap" rel="stylesheet">
+<title>What to Notice: A Parent's Reading Checklist | Bright Spiral Literacy</title>
+<meta name="robots" content="noindex, nofollow">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --navy: #1B3A5C;
-  --orange: #F5A623;
-  --teal: #2A8A8A;
-  --red: #C0392B;
-  --bg: #F7F6F3;
-  --surface: #FFFFFF;
-  --text: #1a1a1a;
-  --muted: #6b7280;
-  --border: #E5E3DE;
-}
-body {
-  font-family: 'Poppins', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  min-height: 100vh;
-  padding: 48px 24px 80px;
-}
-.page {
-  max-width: 680px;
-  margin: 0 auto;
-}
-.eyebrow {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--teal);
-  margin-bottom: 24px;
-}
-.eyebrow-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--teal);
-}
-.title-block {
-  margin-bottom: 12px;
-}
-h1 {
-  font-size: 32px;
-  font-weight: 700;
-  color: var(--navy);
-  line-height: 1.2;
-  margin-bottom: 8px;
-}
-.subtitle {
-  font-size: 15px;
-  font-weight: 300;
-  color: var(--muted);
-  font-style: italic;
-  line-height: 1.5;
-}
-.divider {
-  height: 1px;
-  background: var(--border);
-  margin: 28px 0;
-}
-.intro {
-  font-size: 15px;
-  line-height: 1.8;
-  color: #374151;
-  font-weight: 300;
-  margin-bottom: 8px;
-}
-.intro p + p {
-  margin-top: 14px;
-}
-.section {
-  margin-top: 36px;
-}
-.section-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 14px;
-}
-.section-icon {
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  flex-shrink: 0;
-}
-.section-title {
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--navy);
-}
-.checklist {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-.check-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
-  padding: 10px 12px;
-  border-radius: 6px;
-  transition: background 0.15s;
-  cursor: default;
-}
-.check-item:hover {
-  background: rgba(27, 58, 92, 0.04);
-}
-.check-item:hover .checkbox {
-  border-color: var(--navy);
-}
-.checkbox {
-  width: 16px;
-  height: 16px;
-  border: 1.5px solid #D1D5DB;
-  border-radius: 4px;
-  flex-shrink: 0;
-  margin-top: 2px;
-  transition: border-color 0.15s, background 0.15s;
-  position: relative;
-  cursor: pointer;
-}
-.checkbox.checked {
-  background: var(--navy);
-  border-color: var(--navy);
-}
-.checkbox.checked::after {
-  content: '';
-  position: absolute;
-  left: 4px;
-  top: 1.5px;
-  width: 5px;
-  height: 9px;
-  border: 2px solid white;
-  border-top: none;
-  border-left: none;
-  transform: rotate(45deg);
-}
-.check-text {
-  font-size: 14.5px;
-  font-weight: 400;
-  color: #374151;
-  line-height: 1.6;
-}
-.check-item.is-checked .check-text {
-  color: var(--text);
-}
-.counter-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 40px;
-  padding: 16px 20px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-}
-.counter-label {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--muted);
-}
-.counter-value {
-  font-size: 22px;
-  font-weight: 700;
-  color: var(--navy);
-}
-.counter-sub {
-  font-size: 11px;
-  color: var(--muted);
-  font-weight: 400;
-  margin-left: 4px;
-}
-.callout {
-  margin-top: 28px;
-  padding: 24px 28px;
-  background: var(--navy);
-  border-radius: 12px;
-  color: white;
-}
-.callout-body {
-  font-size: 14.5px;
-  font-weight: 300;
-  line-height: 1.8;
-  color: rgba(255,255,255,0.88);
-  margin-bottom: 20px;
-}
-.callout-body strong {
-  color: white;
-  font-weight: 600;
-}
-.cta-btn {
-  display: inline-block;
-  background: var(--orange);
-  color: white;
-  font-family: 'Poppins', sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  padding: 12px 24px;
-  border-radius: 7px;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-  transition: opacity 0.15s, transform 0.15s;
-}
-.cta-btn:hover {
-  opacity: 0.92;
-  transform: translateY(-1px);
-}
-.footer {
-  margin-top: 48px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.footer-logo {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--navy);
-  letter-spacing: 0.02em;
-}
-.footer-dot {
-  width: 4px;
-  height: 4px;
-  border-radius: 50%;
-  background: var(--border);
-}
-.footer-site {
-  font-size: 12px;
-  color: var(--muted);
-  font-weight: 300;
-}
-.spiral-accent {
-  position: fixed;
-  top: -60px;
-  right: -60px;
-  width: 240px;
-  height: 240px;
-  opacity: 0.035;
-  pointer-events: none;
-}
-@media (max-width: 600px) {
-  body { padding: 32px 20px 64px; }
-  h1 { font-size: 26px; }
-}
+  :root {
+    --navy: #1B3A5C;
+    --navy-deep: #122840;
+    --orange: #F5A623;
+    --teal: #2A8A8A;
+    --red: #C0392B;
+    --cream: #F9F7F4;
+    --cream-dark: #F0EDE8;
+    --white: #ffffff;
+    --g400: #9ca3af;
+    --g500: #6b7280;
+    --g600: #4b5563;
+    --g700: #374151;
+    --g800: #1f2937;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--cream);
+    color: var(--g800);
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  .site-header {
+    background: var(--navy);
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid var(--orange);
+  }
+
+  .logo-text {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.2px;
+  }
+
+  .logo-sub {
+    font-size: 10px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.5);
+    margin-top: 2px;
+  }
+
+  .header-link {
+    font-size: 11px;
+    font-weight: 500;
+    color: rgba(255,255,255,0.6);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+  .header-link:hover { color: var(--orange); }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    padding: 56px 32px 48px;
+    text-align: center;
+  }
+
+  .hero-eyebrow {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--orange);
+    margin-bottom: 20px;
+  }
+
+  .hero h1 {
+    font-size: clamp(26px, 4vw, 38px);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    max-width: 640px;
+    margin: 0 auto 16px;
+  }
+
+  .hero-sub {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.7;
+    max-width: 520px;
+    margin: 0 auto 32px;
+  }
+
+  .download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--orange);
+    color: var(--navy);
+    font-size: 14px;
+    font-weight: 700;
+    padding: 16px 32px;
+    border-radius: 4px;
+    text-decoration: none;
+    letter-spacing: -0.1px;
+    transition: all 0.2s;
+    box-shadow: 0 4px 20px rgba(245,166,35,0.3);
+  }
+  .download-btn:hover {
+    background: #e8981a;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 24px rgba(245,166,35,0.4);
+  }
+  .download-btn svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  /* ── INTRO ── */
+  .intro-strip {
+    background: var(--cream-dark);
+    border-bottom: 1px solid #e5e0d8;
+    padding: 32px;
+    text-align: center;
+  }
+  .intro-strip p {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--g600);
+    line-height: 1.8;
+    max-width: 580px;
+    margin: 0 auto;
+  }
+  .intro-strip p + p { margin-top: 12px; }
+
+  /* ── CHECKLIST BODY ── */
+  .page-wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 48px 24px 80px;
+  }
+
+  /* Area block */
+  .area {
+    background: var(--white);
+    border: 1px solid #e5e0d8;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    animation: fadeUp 0.4s ease both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .area:nth-child(1) { animation-delay: 0.05s; }
+  .area:nth-child(2) { animation-delay: 0.10s; }
+  .area:nth-child(3) { animation-delay: 0.15s; }
+  .area:nth-child(4) { animation-delay: 0.20s; }
+  .area:nth-child(5) { animation-delay: 0.25s; }
+
+  .area-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    background: var(--cream);
+    border-bottom: 1px solid #e5e0d8;
+  }
+
+  .area-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .area-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1.3;
+  }
+
+  .area-items {
+    padding: 16px 20px;
+    border-bottom: 1px solid #e5e0d8;
+  }
+
+  .check-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 8px 0;
+    border-bottom: 1px solid #f3f0eb;
+    cursor: pointer;
+    user-select: none;
+  }
+  .check-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .check-item:first-child { padding-top: 0; }
+
+  .check-box {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #d1c9be;
+    border-radius: 3px;
+    flex-shrink: 0;
+    margin-top: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s;
+    background: var(--white);
+  }
+
+  .check-item.checked .check-box {
+    background: var(--teal);
+    border-color: var(--teal);
+  }
+
+  .check-box svg {
+    display: none;
+    width: 12px;
+    height: 12px;
+  }
+  .check-item.checked .check-box svg { display: block; }
+
+  .check-label {
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--g700);
+    line-height: 1.65;
+    transition: color 0.15s;
+  }
+  .check-item.checked .check-label {
+    color: var(--g500);
+  }
+
+  .area-insight {
+    padding: 14px 20px;
+    background: #f5f2ed;
+    border-left: 3px solid var(--teal);
+  }
+  .area-insight-label {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--teal);
+    margin-bottom: 6px;
+  }
+  .area-insight p {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--g600);
+    line-height: 1.75;
+  }
+
+  /* ── TALLY BAR ── */
+  .tally-bar {
+    position: sticky;
+    bottom: 0;
+    background: var(--white);
+    border-top: 2px solid var(--orange);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+    z-index: 50;
+  }
+
+  .tally-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .tally-count {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--navy);
+    line-height: 1;
+  }
+
+  .tally-label {
+    font-size: 11px;
+    color: var(--g500);
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  .tally-msg {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--g600);
+    max-width: 320px;
+    line-height: 1.5;
+    display: none;
+  }
+  .tally-msg.visible { display: block; }
+
+  .tally-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--navy);
+    color: var(--white);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 11px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+  .tally-cta:hover { background: var(--navy-deep); }
+
+  /* ── CLOSING BLOCK ── */
+  .closing {
+    background: var(--navy);
+    padding: 56px 32px;
+    text-align: center;
+    margin-top: 0;
+  }
+
+  .closing h2 {
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.3;
+    max-width: 520px;
+    margin: 0 auto 16px;
+    letter-spacing: -0.3px;
+  }
+
+  .closing p {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.8;
+    max-width: 480px;
+    margin: 0 auto 32px;
+  }
+
+  .closing-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--orange);
+    color: var(--navy);
+    font-size: 14px;
+    font-weight: 700;
+    padding: 16px 32px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.2s;
+    box-shadow: 0 4px 20px rgba(245,166,35,0.25);
+  }
+  .closing-btn:hover {
+    background: #e8981a;
+    transform: translateY(-1px);
+  }
+
+  .closing-note {
+    margin-top: 16px;
+    font-size: 11px;
+    color: rgba(255,255,255,0.35);
+  }
+
+  /* ── FOOTER ── */
+  .site-footer {
+    background: var(--navy-deep);
+    padding: 20px 32px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  .site-footer p {
+    font-size: 11px;
+    color: rgba(255,255,255,0.3);
+  }
+  .site-footer a {
+    color: rgba(255,255,255,0.4);
+    text-decoration: none;
+  }
+  .site-footer a:hover { color: var(--orange); }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .site-header { padding: 16px 20px; }
+    .hero { padding: 40px 20px 36px; }
+    .intro-strip { padding: 24px 20px; }
+    .page-wrap { padding: 32px 16px 120px; }
+    .tally-bar { flex-wrap: wrap; gap: 10px; padding: 12px 16px; }
+    .tally-msg { display: none !important; }
+    .closing { padding: 40px 20px; }
+    .site-footer { padding: 16px 20px; }
+  }
 </style>
 </head>
 <body>
 
-<svg class="spiral-accent" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-  <path d="M100,100 m0,-80 a80,80 0 1,1 -0.1,0 m0,15 a65,65 0 1,1 -0.1,0 m0,15 a50,50 0 1,1 -0.1,0 m0,15 a35,35 0 1,1 -0.1,0 m0,15 a20,20 0 1,1 -0.1,0" fill="none" stroke="#1B3A5C" stroke-width="3"/>
-</svg>
-
-<div class="page">
-
-  <div class="eyebrow">
-    <span class="eyebrow-dot"></span>
-    Bright Spiral Literacy
+<!-- HEADER -->
+<header class="site-header">
+  <div>
+    <div class="logo-text">Bright Spiral Literacy</div>
+    <div class="logo-sub">brightspiralliteracy.com</div>
   </div>
+  <a href="https://brightspiralliteracy.com" class="header-link">Back to website</a>
+</header>
 
-  <div class="title-block">
-    <h1>What to Notice</h1>
-    <p class="subtitle">A parent's checklist for reading and literacy at home</p>
-  </div>
+<!-- HERO -->
+<section class="hero">
+  <span class="hero-eyebrow">Free Parent Resource</span>
+  <h1>What to Notice: A Parent's Reading Checklist</h1>
+  <p class="hero-sub">For families wondering whether what they're seeing at home is worth paying attention to.</p>
+  <a href="#checklist" class="download-btn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="6 9 12 15 18 9"></polyline>
+    </svg>
+    Read the checklist
+  </a>
+</section>
 
-  <div class="divider"></div>
-
-  <div class="intro">
-    <p>You know your child better than anyone. And sometimes that means noticing things that are hard to name. Maybe reading feels like a battle every night. Maybe your child seems fine but something feels off. Maybe their teacher says not to worry, and you're still worried.</p>
-    <p>This checklist won't diagnose anything. What it will do is give you a clearer picture of what you're actually seeing, so you can trust your instincts and know what questions to ask.</p>
-  </div>
-
-  <div class="divider"></div>
-
-  <!-- Section 1 -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-icon" style="background:#EFF6FF;">📖</div>
-      <span class="section-title">At homework time</span>
-    </div>
-    <div class="checklist">
-      <div class="check-item" onclick="toggle(this)">
-        <div class="checkbox"></div>
-        <span class="check-text">Writing assignments get started late, kept short, or avoided entirely</span>
-      </div>
-      <div class="check-item" onclick="toggle(this)">
-        <div class="checkbox"></div>
-        <span class="check-text">Spelling looks inconsistent, the same word spelled differently in the same paragraph</span>
-      </div>
-      <div class="check-item" onclick="toggle(this)">
-        <div class="checkbox"></div>
-        <span class="check-text">They erase constantly, or refuse to write anything they're not sure about</span>
-      </div>
-      <div class="check-item" onclick="toggle(this)">
-        <div class="checkbox"></div>
-        <span class="check-text">Reading assignments take much longer than they seem like they should</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Section 2 -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-icon" style="background:#FFF7ED;">🌙</div>
-      <span class="section-title">During bedtime reading</span>
-    </div>
-    <div class="checklist">
-      <div class="check-item" onclick="toggle(this)">
-        <div class="checkbox"></div>
-        <span class="check-text">They guess at unfamiliar words using the first letter or the picture rather than working through it</span>
-      </div>
-      <div class="check-item" onclick="toggle(this)">
-        <div class="checkbox"></div>
-        <span class="check-text">They can read the words but struggle to tell you what just happened</span>
-      </div>
-      <div class="check-item" onclick="toggle(this)">
-        <div class="checkbox"></div>
-        <span class="check-text">They rush, or find reasons to stop early</span>
-      </div>
-      <div class="check-item" onclick="toggle(this)">
-        <div class="checkbox"></div>
-        <span class="check-text">They'll listen to a story happily but resist reading one themselves</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Section 3 -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-icon" style="background:#F0FDF4;">✏️</div>
-      <span class="section-title">When they write anything down</span>
-    </div>
-    <div class="checklist">
-      <div class="check-item" onclick="toggle(this)">
-        <div class="checkbox"></div>
-        <span class="check-text">Letters or words reversed beyond early first grade</span>
-      </div>
-      <div class="check-item" onclick="toggle(this)">
-        <div class="checkbox"></div>
-        <span class="check-text">Sentences are short and simple even when they can talk about the same topic in detail</span>
-      </div>
-      <div class="check-item" onclick="toggle(this)">
-        <div class="checkbox"></div>
-        <span class="check-text">They know what they want to say but it doesn't come out on the page</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Section 4 -->
-  <div class="section">
-    <div class="section-header">
-      <div class="section-icon" style="background:#FFF1F2;">💬</div>
-      <span class="section-title">How they talk about reading and school</span>
-    </div>
-    <div class="checklist">
-      <div class="check-item" onclick="toggle(this)">
-        <div class="checkbox"></div>
-        <span class="check-text">"I'm not a reader" said with real feeling, not just preference</span>
-      </div>
-      <div class="check-item" onclick="toggle(this)">
-        <div class="checkbox"></div>
-        <span class="check-text">They were managing fine in earlier grades and now things feel harder</span>
-      </div>
-      <div class="check-item" onclick="toggle(this)">
-        <div class="checkbox"></div>
-        <span class="check-text">They get frustrated with tasks that peers seem to handle easily</span>
-      </div>
-      <div class="check-item" onclick="toggle(this)">
-        <div class="checkbox"></div>
-        <span class="check-text">They describe themselves as bad at school, or have stopped talking about it</span>
-      </div>
-    </div>
-  </div>
-
-  <!-- Counter -->
-  <div class="counter-bar">
-    <span class="counter-label">Items you recognized</span>
-    <span>
-      <span class="counter-value" id="count">0</span>
-      <span class="counter-sub">/ 15</span>
-    </span>
-  </div>
-
-  <!-- Closing callout -->
-  <div class="callout">
-    <p class="callout-body">If two or more of these feel familiar, that's not something to wait out. Reading gaps at this age are <strong>very responsive to the right support</strong>, and the earlier you have a clear picture, the easier it is to act on it.<br><br>I offer a free 20-minute discovery call for parents who want to talk through what they're noticing. You'll leave with a clearer sense of what's going on and some specific things you can try at home, whether or not we work together.</p>
-    <a class="cta-btn" href="https://app.paperbell.com/checkout/packages/210796" target="_blank">Book a free discovery call &rarr;</a>
-  </div>
-
-  <div class="divider"></div>
-
-  <div class="footer">
-    <span class="footer-logo">Bright Spiral Literacy</span>
-    <span class="footer-dot"></span>
-    <span class="footer-site">brightspiralliteracy.com</span>
-  </div>
-
+<!-- INTRO -->
+<div class="intro-strip">
+  <p>You know your child. You know the difference between a hard week and a pattern. This checklist is for parents who keep noticing something, even when the school says everything is fine.</p>
+  <p>It won't give you a diagnosis. It will give you language for what you're already seeing, so you can trust your instincts and know what questions to ask.</p>
 </div>
 
+<!-- CHECKLIST -->
+<div class="page-wrap" id="checklist">
+
+  <!-- Area 1 -->
+  <div class="area">
+    <div class="area-header">
+      <div class="area-num">1</div>
+      <div class="area-title">How they approach unfamiliar words</div>
+    </div>
+    <div class="area-items">
+      <div class="check-item" onclick="toggle(this)">
+        <div class="check-box"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 3"></polyline></svg></div>
+        <div class="check-label">They guess at words using the first letter or the picture rather than working through the sounds</div>
+      </div>
+      <div class="check-item" onclick="toggle(this)">
+        <div class="check-box"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 3"></polyline></svg></div>
+        <div class="check-label">They skip words they don't recognize and keep going</div>
+      </div>
+      <div class="check-item" onclick="toggle(this)">
+        <div class="check-box"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 3"></polyline></svg></div>
+        <div class="check-label">They read the same unfamiliar word differently each time it appears on the page</div>
+      </div>
+    </div>
+    <div class="area-insight">
+      <div class="area-insight-label">What this tells you</div>
+      <p>A child who is truly decoding uses the sounds in the word, not context clues. Guessing from pictures or first letters is a coping strategy, not a reading strategy. It works in early kindergarten and stops working around second grade.</p>
+    </div>
+  </div>
+
+  <!-- Area 2 -->
+  <div class="area">
+    <div class="area-header">
+      <div class="area-num">2</div>
+      <div class="area-title">What happens when they read aloud</div>
+    </div>
+    <div class="area-items">
+      <div class="check-item" onclick="toggle(this)">
+        <div class="check-box"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 3"></polyline></svg></div>
+        <div class="check-label">Reading is slow and labored, or too fast and flat with no attention to meaning</div>
+      </div>
+      <div class="check-item" onclick="toggle(this)">
+        <div class="check-box"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 3"></polyline></svg></div>
+        <div class="check-label">They can read the words accurately but can't tell you what they just read</div>
+      </div>
+      <div class="check-item" onclick="toggle(this)">
+        <div class="check-box"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 3"></polyline></svg></div>
+        <div class="check-label">They resist reading aloud or find reasons to stop early</div>
+      </div>
+    </div>
+    <div class="area-insight">
+      <div class="area-insight-label">What this tells you</div>
+      <p>Fluency and comprehension are connected. A child working very hard to decode individual words has very little mental energy left for understanding the text. Avoidance almost always means the task feels harder than it looks from the outside.</p>
+    </div>
+  </div>
+
+  <!-- Area 3 -->
+  <div class="area">
+    <div class="area-header">
+      <div class="area-num">3</div>
+      <div class="area-title">Writing and spelling</div>
+    </div>
+    <div class="area-items">
+      <div class="check-item" onclick="toggle(this)">
+        <div class="check-box"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 3"></polyline></svg></div>
+        <div class="check-label">Spelling is inconsistent, the same word spelled differently in the same paragraph</div>
+      </div>
+      <div class="check-item" onclick="toggle(this)">
+        <div class="check-box"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 3"></polyline></svg></div>
+        <div class="check-label">Sentences are short and simple even when they can talk about the same topic in detail</div>
+      </div>
+      <div class="check-item" onclick="toggle(this)">
+        <div class="check-box"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 3"></polyline></svg></div>
+        <div class="check-label">They know what they want to say but it doesn't come out on the page</div>
+      </div>
+    </div>
+    <div class="area-insight">
+      <div class="area-insight-label">What this tells you</div>
+      <p>Spelling and reading are two sides of the same skill. A child who cannot hold the sounds of a word in sequence to read it will also struggle to hold them in sequence to spell it. The gap between how a child talks and how they write is often a reliable signal.</p>
+    </div>
+  </div>
+
+  <!-- Area 4 -->
+  <div class="area">
+    <div class="area-header">
+      <div class="area-num">4</div>
+      <div class="area-title">How they feel about reading</div>
+    </div>
+    <div class="area-items">
+      <div class="check-item" onclick="toggle(this)">
+        <div class="check-box"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 3"></polyline></svg></div>
+        <div class="check-label">They say "I'm not a reader" or "I hate reading" with real feeling, not just preference</div>
+      </div>
+      <div class="check-item" onclick="toggle(this)">
+        <div class="check-box"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 3"></polyline></svg></div>
+        <div class="check-label">They were keeping up in earlier grades and things feel harder now</div>
+      </div>
+      <div class="check-item" onclick="toggle(this)">
+        <div class="check-box"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 3"></polyline></svg></div>
+        <div class="check-label">They describe themselves as bad at school or avoid talking about it</div>
+      </div>
+    </div>
+    <div class="area-insight">
+      <div class="area-insight-label">What this tells you</div>
+      <p>Reader identity forms early and is hard to rebuild once it's set. A child who has tried and failed to decode accurately will eventually stop trying. When you hear "I'm stupid" or "reading is boring," something about the instruction has not worked for this particular child.</p>
+    </div>
+  </div>
+
+  <!-- Area 5 -->
+  <div class="area">
+    <div class="area-header">
+      <div class="area-num">5</div>
+      <div class="area-title">The school picture vs. what you see at home</div>
+    </div>
+    <div class="area-items">
+      <div class="check-item" onclick="toggle(this)">
+        <div class="check-box"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 3"></polyline></svg></div>
+        <div class="check-label">The school says they are making progress, but reading at home is still a struggle</div>
+      </div>
+      <div class="check-item" onclick="toggle(this)">
+        <div class="check-box"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 3"></polyline></svg></div>
+        <div class="check-label">Progress feels invisible, no clear sense of what they can do now that they couldn't three months ago</div>
+      </div>
+      <div class="check-item" onclick="toggle(this)">
+        <div class="check-box"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1.5 6 4.5 9 10.5 3"></polyline></svg></div>
+        <div class="check-label">You've tried an app or a generic tutor and the results were hard to see</div>
+      </div>
+    </div>
+    <div class="area-insight">
+      <div class="area-insight-label">What this tells you</div>
+      <p>Schools measure progress against group norms. A child can be "within the normal range" on a school report and still be working much harder than their peers to produce the same output. What you see at homework time is real data.</p>
+    </div>
+  </div>
+
+</div><!-- /page-wrap -->
+
+<!-- STICKY TALLY -->
+<div class="tally-bar" id="tallyBar">
+  <div class="tally-left">
+    <div class="tally-count" id="tallyNum">0</div>
+    <div class="tally-label">of 15<br>checked</div>
+  </div>
+  <div class="tally-msg" id="tallyMsg"></div>
+  <a href="https://brightspiralliteracy.com/book" class="tally-cta" id="tallyCta">Book a free Discovery Call</a>
+</div>
+
+<!-- CLOSING -->
+<section class="closing">
+  <h2>If two or more of these feel familiar, that's worth paying attention to.</h2>
+  <p>Reading gaps at this age are responsive to the right instruction. The research is clear on this. The earlier you have a specific picture of what your child needs, the easier it is to act on it.</p>
+  <p>The BSL Discovery Call is a free 20-minute conversation. You'll walk away with a plain-English explanation of what's happening and a specific recommendation for what to do next, whether or not we work together.</p>
+  <a href="https://brightspiralliteracy.com/book" class="closing-btn">Book your free Discovery Call</a>
+  <div class="closing-note">No obligation. 20 minutes. A clear answer.</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <p>Bright Spiral Literacy &nbsp;|&nbsp; <a href="https://brightspiralliteracy.com">brightspiralliteracy.com</a> &nbsp;|&nbsp; <a href="mailto:hello@brightspiralliteracy.com">hello@brightspiralliteracy.com</a> &nbsp;|&nbsp; <a href="https://brightspiralliteracy.com/privacy">Privacy Policy</a></p>
+</footer>
+
 <script>
-function toggle(item) {
-  const box = item.querySelector('.checkbox');
-  box.classList.toggle('checked');
-  item.classList.toggle('is-checked');
-  updateCount();
-}
-function updateCount() {
-  const checked = document.querySelectorAll('.checkbox.checked').length;
-  document.getElementById('count').textContent = checked;
-  const counter = document.querySelector('.counter-bar');
-  if (checked >= 5) {
-    counter.style.borderColor = '#C0392B';
-    counter.style.background = '#FFF5F5';
-  } else if (checked >= 2) {
-    counter.style.borderColor = '#F5A623';
-    counter.style.background = '#FFFBF0';
-  } else {
-    counter.style.borderColor = 'var(--border)';
-    counter.style.background = 'var(--surface)';
+  let checked = 0;
+  const total = 15;
+
+  const msgs = {
+    2:  "Two areas. That's a pattern, not a bad week.",
+    5:  "Five items. This is worth a closer look.",
+    8:  "More than half. The right instruction hasn't found your child yet.",
+    12: "You've been seeing this for a while. You're not imagining it.",
+    15: "All 15. Book the call. You already know something needs to change."
+  };
+
+  function toggle(el) {
+    el.classList.toggle('checked');
+    checked = document.querySelectorAll('.check-item.checked').length;
+    document.getElementById('tallyNum').textContent = checked;
+
+    const msgEl = document.getElementById('tallyMsg');
+    const thresholds = [15, 12, 8, 5, 2];
+    const hit = thresholds.find(t => checked >= t);
+    if (hit) {
+      msgEl.textContent = msgs[hit];
+      msgEl.classList.add('visible');
+    } else {
+      msgEl.textContent = '';
+      msgEl.classList.remove('visible');
+    }
   }
-}
 </script>
+
 </body>
 </html>
