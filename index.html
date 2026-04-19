@@ -1454,138 +1454,12 @@ footer {
   .mobile-pkg-cta { padding: 20px 24px; border-top: 1px solid var(--border); }
 }
 
-/* ── POPUP OVERLAY ── */
-.popup-overlay {
-  position: fixed;
-  inset: 0;
-  z-index: 1000;
-  background: rgba(18, 39, 65, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-}
 
-.popup-overlay.visible {
-  opacity: 1;
-  pointer-events: all;
-}
-
-.popup-box {
-  background: #fff;
-  border-radius: 16px;
-  max-width: 780px;
-  width: 100%;
-  overflow: hidden;
-  position: relative;
-  box-shadow: 0 24px 64px rgba(0,0,0,0.2);
-  transform: translateY(16px);
-  transition: transform 0.3s ease;
-}
-
-.popup-overlay.visible .popup-box {
-  transform: translateY(0);
-}
-
-.popup-close {
-  position: absolute;
-  top: 14px;
-  right: 14px;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: rgba(27,58,92,0.08);
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 10;
-  transition: background 0.2s;
-}
-
-.popup-close:hover { background: rgba(27,58,92,0.15); }
-
-.popup-close svg {
-  width: 14px;
-  height: 14px;
-  stroke: var(--navy);
-  stroke-width: 2;
-  stroke-linecap: round;
-}
-
-.popup-header {
-  background: var(--navy);
-  padding: 28px 32px 24px;
-}
-
-.popup-eyebrow {
-  font-size: 10px;
-  font-weight: 600;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--orange);
-  margin-bottom: 8px;
-}
-
-.popup-title {
-  font-size: 22px;
-  font-weight: 800;
-  color: #fff;
-  line-height: 1.2;
-  margin-bottom: 8px;
-}
-
-.popup-sub {
-  font-size: 13px;
-  font-weight: 300;
-  color: rgba(255,255,255,0.7);
-  line-height: 1.6;
-}
-
-.popup-body {
-  padding: 0;
-}
-
-@media (max-width: 600px) {
-  .popup-title { font-size: 18px; }
-  .popup-header { padding: 24px 20px 20px; }
-}
 
 </style>
 </head>
 <body>
 
-
-<!-- POPUP OVERLAY -->
-<div class="popup-overlay" id="popupOverlay">
-  <div class="popup-box">
-    <button class="popup-close" onclick="closePopup()" aria-label="Close">
-      <svg viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <line x1="1" y1="1" x2="13" y2="13"/>
-        <line x1="13" y1="1" x2="1" y2="13"/>
-      </svg>
-    </button>
-    <div class="popup-header">
-      <div class="popup-eyebrow">Free Resource &middot; Bright Spiral Literacy</div>
-      <div class="popup-title">Not sure if your child needs support?</div>
-      <div class="popup-sub">Get the free parent checklist — 15 signs worth noticing, straight to your inbox.</div>
-    </div>
-    <div class="popup-body">
-      <script async src="https://subscribe-forms.beehiiv.com/embed.js"></script>
-      <iframe src="https://subscribe-forms.beehiiv.com/3c7a887b-f4db-4a25-94eb-54b1a5e34eed"
-        class="beehiiv-embed"
-        data-test-id="beehiiv-embed"
-        frameborder="0"
-        scrolling="no"
-        style="width: 100%; height: 339px; margin: 0; border-radius: 0px 0px 16px 16px !important; background-color: transparent; box-shadow: 0 0 #0000; max-width: 100%;">
-      </iframe>
-    </div>
-  </div>
-</div>
 
 <!-- COOKIE BANNER -->
 <div class="cookie-banner" id="cookieBanner">
@@ -2745,21 +2619,6 @@ function closeMobile() {
   mobileMenu.classList.remove('open');
 }
 
-// Popup logic
-function closePopup() {
-  document.getElementById('popupOverlay').classList.remove('visible');
-  sessionStorage.setItem('popupDismissed', '1');
-}
-
-document.getElementById('popupOverlay').addEventListener('click', function(e) {
-  if (e.target === this) closePopup();
-});
-
-if (!sessionStorage.getItem('popupDismissed')) {
-  setTimeout(function() {
-    document.getElementById('popupOverlay').classList.add('visible');
-  }, 5000);
-}
 </script>
 </body>
 </html>
