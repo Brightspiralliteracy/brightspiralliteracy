@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Workshop: When 20 Minutes of Reading Isn't Working | Bright Spiral Literacy</title>
+<meta name="description" content="A complimentary 45-minute Zoom workshop for international school parents. Friday, May 1, 2026 — 7am EST / 1pm CEST. Led by Dr. Jenn Overstreet.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+/* ── RESET & ROOT ── */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --navy:   #1B3A5C;
+  --orange: #F5A623;
+  --teal:   #2A8A8A;
+  --red:    #C0392B;
+  --cream:  #F9F7F4;
+  --white:  #ffffff;
+  --g100:   #f3f4f6;
+  --g200:   #e5e7eb;
+  --g300:   #d1d5db;
+  --g500:   #6b7280;
+  --g700:   #374151;
+  --g800:   #1f2937;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--cream);
+  color: var(--g800);
+  line-height: 1.6;
+}
+
+/* ── NAV ── */
+nav {
+  background: var(--navy);
+  border-bottom: 3px solid var(--orange);
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.nav-logo-mark {
+  width: 36px;
+  height: 36px;
+  background: var(--orange);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.nav-logo-mark svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--navy);
+}
+
+.nav-logo-text {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.2px;
+  line-height: 1.2;
+}
+
+.nav-logo-text span {
+  display: block;
+  font-size: 9px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.nav-links a:hover { color: #fff; }
+
+.nav-cta {
+  background: var(--orange);
+  color: var(--navy) !important;
+  font-weight: 700 !important;
+  padding: 8px 18px;
+  border-radius: 4px;
+  transition: opacity 0.15s !important;
+}
+
+.nav-cta:hover { opacity: 0.9; color: var(--navy) !important; }
+
+/* ── HERO ── */
+.hero {
+  background: var(--navy);
+  padding: 64px 32px 56px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(245,166,35,0.06);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  left: -40px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: rgba(42,138,138,0.07);
+  pointer-events: none;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(245,166,35,0.12);
+  border: 1px solid rgba(245,166,35,0.25);
+  border-radius: 20px;
+  padding: 5px 14px;
+  margin-bottom: 24px;
+}
+
+.hero-eyebrow span {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--orange);
+}
+
+.hero-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--orange);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.hero h1 {
+  font-size: clamp(24px, 4vw, 38px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  max-width: 720px;
+  margin: 0 auto 20px;
+  letter-spacing: -0.5px;
+}
+
+.hero-subtitle {
+  font-size: 16px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.7);
+  max-width: 560px;
+  margin: 0 auto 36px;
+  line-height: 1.7;
+}
+
+.hero-meta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.hero-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-meta-icon {
+  width: 32px;
+  height: 32px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.hero-meta-text {
+  text-align: left;
+}
+
+.hero-meta-label {
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--orange);
+  display: block;
+}
+
+.hero-meta-value {
+  font-size: 13px;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* ── MAIN LAYOUT ── */
+.page-wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 56px 32px;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 48px;
+  align-items: start;
+}
+
+/* ── LEFT COLUMN ── */
+.content-col h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 16px;
+  letter-spacing: -0.3px;
+}
+
+.intro-text {
+  font-size: 15px;
+  color: var(--g700);
+  line-height: 1.75;
+  margin-bottom: 32px;
+}
+
+/* ── WHAT WE COVER ── */
+.covers-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--g500);
+  margin-bottom: 16px;
+}
+
+.cover-item {
+  display: flex;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--g200);
+}
+
+.cover-item:last-child { border-bottom: none; }
+
+.cover-badge {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.cover-badge.navy  { background: rgba(27,58,92,0.08); }
+.cover-badge.orange { background: rgba(245,166,35,0.12); }
+.cover-badge.teal  { background: rgba(42,138,138,0.10); }
+
+.cover-body h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.cover-body p {
+  font-size: 13px;
+  color: var(--g500);
+  line-height: 1.65;
+}
+
+/* ── WHO THIS IS FOR ── */
+.who-section {
+  background: var(--navy);
+  border-radius: 10px;
+  padding: 28px;
+  margin-top: 36px;
+}
+
+.who-section h3 {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--orange);
+  margin-bottom: 16px;
+}
+
+.who-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.who-list li {
+  font-size: 14px;
+  color: rgba(255,255,255,0.85);
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  line-height: 1.5;
+}
+
+.who-list li::before {
+  content: '✓';
+  color: var(--teal);
+  font-weight: 700;
+  font-size: 13px;
+  margin-top: 1px;
+  flex-shrink: 0;
+}
+
+/* ── DR JENN BIO ── */
+.bio-section {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  margin-top: 32px;
+  padding: 24px;
+  background: var(--white);
+  border: 1px solid var(--g200);
+  border-radius: 10px;
+}
+
+.bio-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 3px solid var(--orange);
+}
+
+.bio-text h4 {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 2px;
+}
+
+.bio-text p {
+  font-size: 12px;
+  color: var(--g500);
+  line-height: 1.6;
+}
+
+/* ── RIGHT COLUMN — FORM CARD ── */
+.form-card {
+  background: var(--white);
+  border: 1px solid var(--g200);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(27,58,92,0.08);
+  position: sticky;
+  top: 88px;
+}
+
+.form-card-header {
+  background: var(--navy);
+  padding: 22px 24px 18px;
+  border-bottom: 3px solid var(--orange);
+}
+
+.form-card-header p {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--orange);
+  margin-bottom: 6px;
+}
+
+.form-card-header h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+}
+
+.form-card-body {
+  padding: 24px;
+}
+
+/* ── MAILERLITE EMBED OVERRIDES ── */
+#mlb2-40249639.ml-form-embedContainer {
+  width: 100% !important;
+}
+
+#mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper {
+  background: transparent !important;
+  border: none !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  display: block !important;
+}
+
+#mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper.embedForm {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+
+#mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody,
+#mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody {
+  padding: 0 !important;
+}
+
+#mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent {
+  display: none; /* We're showing our own content */
+}
+
+/* Override the ML form button to BSL orange */
+#mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button,
+#mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button,
+#mlb2-40249639 .ml-mobileButton-horizontal button {
+  background-color: var(--orange) !important;
+  border-color: var(--orange) !important;
+  color: var(--navy) !important;
+  font-family: 'Poppins', sans-serif !important;
+  font-weight: 700 !important;
+  border-radius: 6px !important;
+  padding: 12px 20px !important;
+  font-size: 14px !important;
+}
+
+#mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button:hover,
+#mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover {
+  background-color: #e09520 !important;
+  border-color: #e09520 !important;
+}
+
+#mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input,
+#mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input {
+  font-family: 'Poppins', sans-serif !important;
+  border-radius: 6px !important;
+  border-color: var(--g200) !important;
+  font-size: 14px !important;
+  padding: 12px 14px !important;
+}
+
+#mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ml-form-formContent.horozintalForm .ml-form-horizontalRow .ml-input-horizontal { width: 100%; float: none; }
+.ml-form-formContent.horozintalForm .ml-form-horizontalRow .ml-button-horizontal { width: 100%; float: none; }
+
+#mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsContent p,
+#mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedMailerLite-GDPR p {
+  font-family: 'Poppins', sans-serif !important;
+  color: var(--g500) !important;
+}
+
+#mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsContent h4 {
+  font-family: 'Poppins', sans-serif !important;
+  color: var(--g700) !important;
+}
+
+#mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow .custom-checkbox .custom-control-label,
+#mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox .label-description {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+#mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent h4 {
+  font-family: 'Poppins', sans-serif !important;
+  color: var(--navy) !important;
+  font-size: 20px !important;
+}
+
+#mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p {
+  font-family: 'Poppins', sans-serif !important;
+  color: var(--g700) !important;
+}
+
+/* ── SPOTS REMAINING ── */
+.spots-bar {
+  background: rgba(245,166,35,0.08);
+  border: 1px solid rgba(245,166,35,0.2);
+  border-radius: 6px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.spots-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--orange);
+  flex-shrink: 0;
+  animation: pulse 2s infinite;
+}
+
+.spots-text {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--g700);
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy);
+  border-top: 3px solid var(--orange);
+  padding: 32px;
+  text-align: center;
+}
+
+footer p {
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.7;
+}
+
+footer a {
+  color: rgba(255,255,255,0.6);
+  text-decoration: none;
+}
+
+footer a:hover { color: #fff; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  nav { padding: 0 20px; }
+  .nav-links { display: none; }
+
+  .hero { padding: 40px 20px 36px; }
+
+  .page-wrap {
+    grid-template-columns: 1fr;
+    padding: 36px 20px;
+    gap: 36px;
+  }
+
+  .form-card { position: static; }
+
+  footer { padding: 24px 20px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="/" class="nav-logo">
+    <div class="nav-logo-mark">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 3C7.03 3 3 7.03 3 12s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 16c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7zm-1-11v2h2V8h-2zm0 4v4h2v-4h-2z"/>
+      </svg>
+    </div>
+    <div class="nav-logo-text">
+      Bright Spiral Literacy
+      <span>brightspiralliteracy.com</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="/#method">The Method</a></li>
+    <li><a href="/#packages">Packages</a></li>
+    <li><a href="/#about">About</a></li>
+    <li><a href="https://app.paperbell.com/packages/210796" class="nav-cta">Book a Discovery Call</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-eyebrow">
+    <div class="hero-eyebrow-dot"></div>
+    <span>Free Zoom Workshop</span>
+  </div>
+  <h1>When 20 Minutes of Reading Isn't Working</h1>
+  <p class="hero-subtitle">A complimentary 45-minute workshop for international school parents whose child is bright, capable, and still not reading independently.</p>
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <div class="hero-meta-icon">📅</div>
+      <div class="hero-meta-text">
+        <span class="hero-meta-label">Date</span>
+        <span class="hero-meta-value">Friday, May 1, 2026</span>
+      </div>
+    </div>
+    <div class="hero-meta-item">
+      <div class="hero-meta-icon">🕐</div>
+      <div class="hero-meta-text">
+        <span class="hero-meta-label">Time</span>
+        <span class="hero-meta-value">7am EST &nbsp;·&nbsp; 1pm CEST</span>
+      </div>
+    </div>
+    <div class="hero-meta-item">
+      <div class="hero-meta-icon">💻</div>
+      <div class="hero-meta-text">
+        <span class="hero-meta-label">Format</span>
+        <span class="hero-meta-value">Live on Zoom · Free</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── MAIN ── -->
+<div class="page-wrap">
+
+  <!-- LEFT -->
+  <div class="content-col">
+    <h2>You've been told to just keep reading every night. Here's what that advice is missing.</h2>
+    <p class="intro-text">For many bright, curious children in international schools, those 20 minutes have become a cycle of guessing, frustration, and "I hate reading." If you can see your child is capable and reading is still the one thing that isn't clicking, this workshop is for you.</p>
+
+    <p class="covers-label">What we'll cover</p>
+
+    <div class="cover-item">
+      <div class="cover-badge navy">🌀</div>
+      <div class="cover-body">
+        <h3>The Bright Spiral</h3>
+        <p>Why decoding and comprehension must grow together, and what happens when that spiral breaks. Understanding this changes how you see everything your child is doing at reading time.</p>
+      </div>
+    </div>
+
+    <div class="cover-item">
+      <div class="cover-badge orange">🏡</div>
+      <div class="cover-body">
+        <h3>A New Home Strategy</h3>
+        <p>How to step out of the "mini-teacher" role and support your child's reading confidence in a way that actually helps, rather than creating more pressure at the end of a long school day.</p>
+      </div>
+    </div>
+
+    <div class="cover-item">
+      <div class="cover-badge teal">☀️</div>
+      <div class="cover-body">
+        <h3>Summer Forecasting</h3>
+        <p>Based on your child's profile, should this summer focus on targeted intervention, consistent practice, or is it the right time to simply build a love of stories? We'll give you a framework to decide.</p>
+      </div>
+    </div>
+
+    <div class="who-section">
+      <h3>This workshop is for you if</h3>
+      <ul class="who-list">
+        <li>Your child is in K–Grade 5 at an international or expat school</li>
+        <li>Reading is not clicking and the school has told you to wait</li>
+        <li>You've tried apps or generic tutors and seen limited progress</li>
+        <li>Your family has moved countries and you've noticed a reading gap since</li>
+        <li>Your child is bright in every other way but shuts down at reading time</li>
+      </ul>
+    </div>
+
+    <div class="bio-section">
+      <img src="https://i.imgur.com/RqKlisX.jpeg" alt="Dr. Jenn Overstreet" class="bio-avatar">
+      <div class="bio-text">
+        <h4>Dr. Jenn Overstreet</h4>
+        <p>Founder of Bright Spiral Literacy. Doctorate in literacy education, 15+ years teaching and coaching in international schools across three continents. She built BSL because schools can't move fast enough, and children shouldn't have to wait.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT — FORM -->
+  <div class="form-col">
+    <div class="form-card">
+      <div class="form-card-header">
+        <p>Reserve your place</p>
+        <h3>Free Workshop — May 1, 2026</h3>
+      </div>
+      <div class="form-card-body">
+
+        <div class="spots-bar">
+          <div class="spots-dot"></div>
+          <span class="spots-text">Spaces are limited. Register to secure yours.</span>
+        </div>
+
+        <!-- MailerLite embed styles -->
+        <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1776858");</style>
+        <style type="text/css">
+        .ml-form-embedSubmitLoad { display: inline-block; width: 20px; height: 20px; }
+        .g-recaptcha { transform: scale(1); -webkit-transform: scale(1); transform-origin: 0 0; -webkit-transform-origin: 0 0; height: ; }
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+        .ml-form-embedSubmitLoad:after { content: " "; display: block; width: 11px; height: 11px; margin: 1px; border-radius: 50%; border: 4px solid #fff; border-color: #ffffff #ffffff #ffffff transparent; animation: ml-form-embedSubmitLoad 1.2s linear infinite; }
+        @keyframes ml-form-embedSubmitLoad { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        #mlb2-40249639.ml-form-embedContainer { box-sizing: border-box; display: table; margin: 0 auto; position: static; width: 100% !important; }
+        #mlb2-40249639.ml-form-embedContainer h4, #mlb2-40249639.ml-form-embedContainer p, #mlb2-40249639.ml-form-embedContainer span, #mlb2-40249639.ml-form-embedContainer button { text-transform: none !important; letter-spacing: normal !important; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper { background-color: transparent; border-width: 0px; border-color: transparent; border-radius: 4px; border-style: solid; box-sizing: border-box; display: inline-block !important; margin: 0; padding: 0; position: relative; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper.embedPopup, #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper.embedDefault { width: 100%; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper.embedForm { max-width: 100%; width: 100%; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-align-center { text-align: left; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-align-default { display: block !important; vertical-align: top !important; text-align: left !important; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody, #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody { padding: 0 !important; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody.ml-form-embedBodyHorizontal { padding-bottom: 0; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent, #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent { text-align: left; margin: 0 0 20px 0; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent h4, #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent h4 { color: #1B3A5C; font-family: 'Poppins', sans-serif; font-size: 18px; font-weight: 700; margin: 0 0 10px 0; text-align: left; word-break: break-word; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedContent p, #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-successBody .ml-form-successContent p { color: #374151; font-family: 'Poppins', sans-serif; font-size: 13px; font-weight: 400; line-height: 19px; margin: 0 0 10px 0; text-align: left; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody form { margin: 0; width: 100%; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent, #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow { margin: 0 0 20px 0; width: 100%; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow { float: left; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent.horozintalForm { margin: 0; padding: 0 0 20px 0; width: 100%; height: auto; float: left; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow { margin: 0 0 10px 0; width: 100%; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow.ml-last-item { margin: 0; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-fieldRow input { background-color: #ffffff !important; color: #333333 !important; border-color: #e5e7eb; border-radius: 6px !important; border-style: solid !important; border-width: 1px !important; font-family: 'Poppins', sans-serif; font-size: 14px !important; height: auto; line-height: 21px !important; margin-bottom: 0; margin-top: 0; margin-left: 0; margin-right: 0; padding: 12px 14px !important; width: 100% !important; box-sizing: border-box !important; max-width: 100% !important; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow { height: auto; width: 100%; display: flex; flex-direction: column; gap: 10px; }
+        .ml-form-formContent.horozintalForm .ml-form-horizontalRow .ml-input-horizontal { width: 100%; float: none; }
+        .ml-form-formContent.horozintalForm .ml-form-horizontalRow .ml-button-horizontal { width: 100%; float: none; }
+        .ml-form-formContent.horozintalForm .ml-form-horizontalRow .horizontal-fields { box-sizing: border-box; float: none; padding-right: 0; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow input { background-color: #ffffff; color: #333333; border-color: #e5e7eb; border-radius: 6px; border-style: solid; border-width: 1px; font-family: 'Poppins', sans-serif; font-size: 14px; line-height: 20px; margin-bottom: 0; margin-top: 0; padding: 12px 14px; width: 100%; box-sizing: border-box; overflow-y: initial; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button { background-color: #F5A623 !important; border-color: #F5A623; border-style: solid; border-width: 1px; border-radius: 6px; box-shadow: none; color: #1B3A5C !important; cursor: pointer; font-family: 'Poppins', sans-serif; font-size: 14px !important; font-weight: 700; line-height: 20px; margin: 0 !important; padding: 13px !important; width: 100%; height: auto; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-horizontalRow button:hover { background-color: #e09520 !important; border-color: #e09520 !important; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow input[type="checkbox"] { box-sizing: border-box; padding: 0; position: absolute; z-index: -1; opacity: 0; margin-top: 5px; margin-left: -1.5rem; overflow: visible; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow .label-description { color: #374151; display: block; font-family: 'Poppins', sans-serif; font-size: 12px; text-align: left; margin-bottom: 0; position: relative; vertical-align: top; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-checkboxRow label { font-weight: normal; margin: 0; padding: 0; position: relative; display: block; min-height: 24px; padding-left: 24px; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit { margin: 0 0 20px 0; float: left; width: 100%; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button { background-color: #F5A623 !important; border: none !important; border-radius: 6px !important; box-shadow: none !important; color: #1B3A5C !important; cursor: pointer; font-family: 'Poppins', sans-serif !important; font-size: 14px !important; font-weight: 700 !important; line-height: 21px !important; height: auto; padding: 13px !important; width: 100% !important; box-sizing: border-box !important; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button.loading { display: none; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedSubmit button:hover { background-color: #e09520 !important; }
+        .ml-error input, .ml-error textarea, .ml-error select { border-color: red!important; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions { text-align: left; float: left; width: 100%; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsContent { margin: 0 0 15px 0; text-align: left; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsContent h4 { color: #374151; font-family: 'Poppins', sans-serif; font-size: 12px; font-weight: 700; line-height: 18px; margin: 0 0 10px 0; word-break: break-word; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsContent p { color: #6b7280; font-family: 'Poppins', sans-serif; font-size: 12px; line-height: 18px; margin: 0 0 10px 0; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsContent.privacy-policy p { color: #6b7280; font-family: 'Poppins', sans-serif; font-size: 12px; line-height: 22px; margin: 0 0 10px 0; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedMailerLite-GDPR p { color: #9ca3af; font-family: 'Poppins', sans-serif; font-size: 10px; line-height: 14px; margin: 0; padding: 0; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptions { margin: 0; padding: 0; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox { margin: 0 0 10px 0; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox label { font-weight: normal; margin: 0; padding: 0; position: relative; display: block; min-height: 24px; padding-left: 24px; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox .label-description { color: #374151; font-family: 'Poppins', sans-serif; font-size: 12px; line-height: 18px; text-align: left; margin-bottom: 0; position: relative; vertical-align: top; font-style: normal; font-weight: 700; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox .description { color: #6b7280; font-family: 'Poppins', sans-serif; font-size: 12px; font-style: italic; font-weight: 400; line-height: 18px; margin: 5px 0 0 0; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox input[type="checkbox"] { box-sizing: border-box; padding: 0; position: absolute; z-index: -1; opacity: 0; margin-top: 5px; margin-left: -1.5rem; overflow: visible; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox .label-description::before { position: absolute; top: 4px; left: -1.5rem; display: block; width: 16px; height: 16px; pointer-events: none; content: ""; background-color: #ffffff; border: #adb5bd solid 1px; border-radius: 4px; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox .label-description::after { position: absolute; top: 0px!important; left: -1.5rem; display: block; width: 1rem; height: 1rem; content: ""; background: no-repeat 50%/50% 50%; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox input[type=checkbox]:checked~.label-description::before { border-color: #1B3A5C!important; background-color: #1B3A5C!important; }
+        #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-embedPermissions .ml-form-embedPermissionsOptionsCheckbox input[type=checkbox]:checked~.label-description::after { background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e"); }
+        .ml-mobileButton-horizontal { display: none; }
+        #mlb2-40249639 .ml-mobileButton-horizontal button { background-color: #F5A623 !important; border-color: #F5A623 !important; border-style: solid !important; border-width: 1px !important; border-radius: 6px !important; box-shadow: none !important; color: #1B3A5C !important; cursor: pointer; font-family: 'Poppins', sans-serif !important; font-size: 14px !important; font-weight: 700 !important; line-height: 20px !important; padding: 13px !important; width: 100% !important; }
+        @media only screen and (max-width: 400px) {
+          #mlb2-40249639.ml-form-embedContainer .ml-form-embedWrapper .ml-form-embedBody .ml-form-formContent.horozintalForm { padding: 0 0 10px 0 !important; }
+          .ml-hide-horizontal { display: none !important; }
+          .ml-form-formContent.horozintalForm .ml-button-horizontal { display: none!important; }
+          .ml-mobileButton-horizontal { display: inline-block !important; margin-bottom: 20px; width:100%; }
+        }
+        </style>
+
+        <!-- MailerLite form (content div hidden; we show our own copy above) -->
+        <div id="mlb2-40249639" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-40249639">
+          <div class="ml-form-align-default">
+            <div class="ml-form-embedWrapper embedForm">
+              <div class="ml-form-embedBody ml-form-embedBodyHorizontal row-form">
+                <div class="ml-form-embedContent" style="display:none;"></div>
+                <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/2274307/forms/185428023592355102/subscribe" data-code="" method="post" target="_blank">
+                  <div class="ml-form-formContent horozintalForm">
+                    <div class="ml-form-horizontalRow">
+                      <div class="ml-input-horizontal">
+                        <div style="width:100%;" class="horizontal-fields">
+                          <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                            <input type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Your email address" autocomplete="email">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="ml-button-horizontal primary">
+                        <button type="submit" class="primary">Reserve my place</button>
+                        <button disabled="disabled" style="display:none;" type="button" class="loading">
+                          <div class="ml-form-embedSubmitLoad"></div>
+                          <span class="sr-only">Loading...</span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="ml-form-embedPermissions">
+                    <div class="ml-form-embedPermissionsContent horizontal privacy-policy">
+                      <p>You can unsubscribe anytime. For more details, review our <a href="https://brightspiralliteracy.com/#privacy">Privacy Policy</a>.</p>
+                    </div>
+                  </div>
+
+                  <div class="ml-form-embedPermissions">
+                    <div class="ml-form-embedPermissionsContent horizontal">
+                      <h4>Marketing Permissions</h4>
+                      <p>The information you provide will only be used to send you workshop details and relevant updates.</p>
+                      <div class="ml-form-embedPermissionsOptions">
+                        <div class="ml-form-embedPermissionsOptionsCheckbox">
+                          <label>
+                            <input type="checkbox" name="gdpr[]" value="Email">
+                            <div class="label-description">Email</div>
+                          </label>
+                          <div class="description">Occasional emails about workshops and literacy resources.</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ml-form-embedMailerLite-GDPR">
+                      <p>By submitting this form, you acknowledge that the information you provide will be processed in accordance with our Privacy Policy.</p>
+                    </div>
+                  </div>
+
+                  <input type="hidden" name="ml-submit" value="1">
+                  <div class="ml-mobileButton-horizontal">
+                    <button type="submit" class="primary">Reserve my place</button>
+                    <button disabled="disabled" style="display:none;" type="button" class="loading">
+                      <div class="ml-form-embedSubmitLoad"></div>
+                      <span class="sr-only">Loading...</span>
+                    </button>
+                  </div>
+                  <input type="hidden" name="anticsrf" value="true">
+                </form>
+              </div>
+
+              <div class="ml-form-successBody row-success" style="display:none;">
+                <div class="ml-form-successContent">
+                  <h4>You're registered.</h4>
+                  <p>Check your inbox for confirmation details. We'll see you on May 1.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /form-card-body -->
+    </div><!-- /form-card -->
+  </div><!-- /form-col -->
+
+</div><!-- /page-wrap -->
+
+<!-- ── FOOTER ── -->
+<footer>
+  <p>
+    Bright Spiral Literacy &nbsp;·&nbsp; 
+    <a href="/">brightspiralliteracy.com</a> &nbsp;·&nbsp; 
+    <a href="mailto:hello@brightspiralliteracy.com">hello@brightspiralliteracy.com</a>
+  </p>
+  <p style="margin-top:8px;">Dr. Jennifer Overstreet &nbsp;·&nbsp; Partita IVA 18182311003</p>
+</footer>
+
+<script>
+  function ml_webform_success_40249639() {
+    var $ = ml_jQuery || jQuery;
+    $('.ml-subscribe-form-40249639 .row-success').show();
+    $('.ml-subscribe-form-40249639 .row-form').hide();
+  }
+</script>
+<script src="https://groot.mailerlite.com/js/w/webforms.min.js?vb397d78ebaa8a0f631d35384c46d781b" type="text/javascript"></script>
+<script>fetch("https://assets.mailerlite.com/jsonp/2274307/forms/185428023592355102/takel")</script>
+
+</body>
+</html>
