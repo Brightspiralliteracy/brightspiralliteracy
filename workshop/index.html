@@ -52,42 +52,12 @@ nav {
 .nav-logo {
   display: flex;
   align-items: center;
-  gap: 10px;
   text-decoration: none;
 }
 
-.nav-logo-mark {
-  width: 36px;
-  height: 36px;
-  background: var(--orange);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.nav-logo-mark svg {
-  width: 20px;
-  height: 20px;
-  fill: var(--navy);
-}
-
-.nav-logo-text {
-  font-size: 15px;
-  font-weight: 700;
-  color: #fff;
-  letter-spacing: -0.2px;
-  line-height: 1.2;
-}
-
-.nav-logo-text span {
-  display: block;
-  font-size: 9px;
-  font-weight: 400;
-  color: rgba(255,255,255,0.5);
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
+.nav-logo-img {
+  height: 42px;
+  width: auto;
 }
 
 .nav-links {
@@ -598,15 +568,7 @@ footer a:hover { color: #fff; }
 <!-- ── NAV ── -->
 <nav>
   <a href="/" class="nav-logo">
-    <div class="nav-logo-mark">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 3C7.03 3 3 7.03 3 12s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 16c-3.86 0-7-3.14-7-7s3.14-7 7-7 7 3.14 7 7-3.14 7-7 7zm-1-11v2h2V8h-2zm0 4v4h2v-4h-2z"/>
-      </svg>
-    </div>
-    <div class="nav-logo-text">
-      Bright Spiral Literacy
-      <span>brightspiralliteracy.com</span>
-    </div>
+    <img src="../White_Big_Logo.png" alt="Bright Spiral Literacy" class="nav-logo-img">
   </a>
   <ul class="nav-links">
     <li><a href="/#method">The Method</a></li>
@@ -698,7 +660,7 @@ footer a:hover { color: #fff; }
       <img src="https://i.imgur.com/RqKlisX.jpeg" alt="Dr. Jenn Overstreet" class="bio-avatar">
       <div class="bio-text">
         <h4>Dr. Jenn Overstreet</h4>
-        <p>Founder of Bright Spiral Literacy. Doctorate in literacy education, 15+ years teaching and coaching in international schools across three continents. She built BSL because schools can't move fast enough, and children shouldn't have to wait.</p>
+        <p>Founder of Bright Spiral Literacy. Doctorate in psychology, 15+ years teaching and coaching in international schools across three continents. She built BSL because schools can't move fast enough, and children shouldn't have to wait.</p>
       </div>
     </div>
   </div>
@@ -715,6 +677,11 @@ footer a:hover { color: #fff; }
         <div class="spots-bar">
           <div class="spots-dot"></div>
           <span class="spots-text">Spaces are limited. Register to secure yours.</span>
+        </div>
+
+        <!-- Email opt-in notice -->
+        <div style="background:#fff8ed;border:1px solid #F5A623;border-radius:6px;padding:12px 14px;margin-bottom:16px;">
+          <p style="font-family:'Poppins',sans-serif;font-size:12px;color:#374151;line-height:1.6;margin:0;"><strong>Important:</strong> Check the <strong>Email</strong> box below before submitting, or you will not receive the workshop details.</p>
         </div>
 
         <!-- MailerLite embed styles -->
@@ -795,7 +762,12 @@ footer a:hover { color: #fff; }
                   <div class="ml-form-formContent horozintalForm">
                     <div class="ml-form-horizontalRow">
                       <div class="ml-input-horizontal">
-                        <div style="width:100%;" class="horizontal-fields">
+                        <div style="width:50%;" class="horizontal-fields">
+                          <div class="ml-field-group ml-field-name">
+                            <input type="text" class="form-control" data-inputmask="" name="fields[name]" placeholder="Your name" autocomplete="given-name">
+                          </div>
+                        </div>
+                        <div style="width:50%;" class="horizontal-fields">
                           <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
                             <input type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Your email address" autocomplete="email">
                           </div>
@@ -824,7 +796,7 @@ footer a:hover { color: #fff; }
                       <div class="ml-form-embedPermissionsOptions">
                         <div class="ml-form-embedPermissionsOptionsCheckbox">
                           <label>
-                            <input type="checkbox" name="gdpr[]" value="Email">
+                            <input type="checkbox" name="gdpr[]" value="Email" checked>
                             <div class="label-description">Email</div>
                           </label>
                           <div class="description">Occasional emails about workshops and literacy resources.</div>
@@ -871,7 +843,7 @@ footer a:hover { color: #fff; }
     <a href="/">brightspiralliteracy.com</a> &nbsp;·&nbsp; 
     <a href="mailto:hello@brightspiralliteracy.com">hello@brightspiralliteracy.com</a>
   </p>
-  <p style="margin-top:8px;">Dr. Jennifer Overstreet &nbsp;·&nbsp; Partita IVA 18182311003</p>
+  <p style="margin-top:8px;">Dr. Jennifer Overstreet</p>
 </footer>
 
 <script>
