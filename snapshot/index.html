@@ -490,14 +490,10 @@ A NOTE FOR YOUR GROWN-UP
 
 Tone rules: warm, direct, child-friendly for sections 1-3. Never use deficit language. Never say "struggling." Lead with strengths. Section 4 can be slightly more adult in tone. Use American spelling. No em dashes.`;
 
-  const response = await fetch('https://api.anthropic.com/v1/messages', {
+  const response = await fetch('https://bsl-snapshot.shrill-limit-0c17.workers.dev', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      model: 'claude-sonnet-4-20250514',
-      max_tokens: 1000,
-      messages: [{ role: 'user', content: prompt }]
-    })
+    body: JSON.stringify({ prompt: prompt })
   });
   const data = await response.json();
   return data.content?.find(b => b.type === 'text')?.text || 'Unable to generate profile.';
