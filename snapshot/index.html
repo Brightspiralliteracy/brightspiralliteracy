@@ -466,29 +466,31 @@ function compileResponses() {
 }
 
 async function generateSummary(childName, responses) {
-  const prompt = `You are Dr. Jenn Overstreet, a reading specialist and literacy educator with a doctorate in literacy education and 15 years of experience in international schools. You have just received a Reading Mindset Snapshot survey completed by a child named ${childName}.
+  const prompt = `You are Dr. Jenn Overstreet, a reading specialist with a doctorate in psychology and 15 years of experience in international schools. You are a trained observer of reading identity — you know that how a child feels about reading is just as diagnostic as what they can decode. You have just received a Reading Mindset Snapshot completed by a child named ${childName}.
 
 Here are their responses:
 
 ${responses}
 
-Write a warm, specific, and encouraging Reading Identity Profile for ${childName}. This profile will be shown to the child on screen and also sent to their parent.
+Your job is to write a Reading Identity Profile that goes beyond summarizing what they selected. Read between the lines. Interpret the pattern. A child who is very happy about learning new things but very sad about reading out loud has a specific identity worth naming. A child who selected no genres but 12 topic interests is telling you something. A child who wrote something vulnerable in the open text section deserves to have it honored. Look for the story in the data, not just the data.
 
-Structure your response with these exact section headings (use the headings as written):
+Write a warm, specific, and honest Reading Identity Profile for ${childName}. The profile will be shown to the child on screen and also sent to their parent. Sections 1-3 are written directly to the child. Section 4 is written to the parent.
+
+Use these exact section headings:
 
 WHO YOU ARE AS A READER
-(2-3 sentences about their emotional relationship with reading based on their feelings answers. Be specific. If they feel sad about reading out loud but happy about learning new things, name that nuance.)
+2-3 sentences. Name the emotional pattern in their feelings answers specifically — not just "you love reading" if that is not what the data shows. If there is a contrast (excited about topics, uncomfortable reading aloud), name it warmly. If their feelings are mostly positive, describe what kind of reader that suggests. Speak directly to the child. Be honest, not just cheerful.
 
 WHAT LIGHTS YOU UP
-(2-3 sentences about their strongest topic interests and preferred genres. Name specific topics they selected. Be enthusiastic and affirming.)
+2-3 sentences. Name the actual topics and genres they selected. Do not generalize — if they checked Ocean and Sea Creatures and Science Experiments and Graphic Novels, say those specific things. Group them only if there is a genuine through-line. If there is no clear pattern, say what that openness tells you. Be specific and enthusiastic.
 
 A BOOK JUST FOR YOU
-(Recommend 1-2 specific, real books that match their interests precisely. Include the exact title and author. Make it feel like a personal recommendation, not a list.)
+Recommend exactly one book that genuinely matches both their topic interests and their preferred genre or format. This must be a real, published book with a real author. Give the title and author. Write 2-3 sentences explaining why this particular book is right for this particular child, using what they told you. Do not hedge. Make it feel like a personal recommendation from someone who knows them.
 
 A NOTE FOR YOUR GROWN-UP
-(2-3 sentences written to the parent, in plain language. Summarize what this snapshot reveals about the child's reading identity, what to nurture, and one concrete thing they can do at home right now. Warm but direct — no therapy speak.)
+2-3 sentences written to the parent. Tell them one specific thing this snapshot reveals — not a summary of sections 1-3, something new. Then give one concrete, actionable suggestion for home that follows from what you observed. Keep it plain, direct, and useful. No therapy speak. No em dashes.
 
-Tone rules: warm, direct, child-friendly for sections 1-3. Never use deficit language. Never say "struggling." Lead with strengths. Section 4 can be slightly more adult in tone. Use American spelling. No em dashes.`;
+Tone rules for sections 1-3: warm, direct, child-appropriate. Never say "struggling." Never use deficit language. Lead with what is true and real, not just what sounds encouraging. Section 4 can be more adult in tone. American spelling throughout.`;
 
   const response = await fetch('https://bsl-snapshot.shrill-limit-0c17.workers.dev', {
     method: 'POST',
