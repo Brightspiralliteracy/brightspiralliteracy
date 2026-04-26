@@ -176,6 +176,20 @@ footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
         <input type="email" id="parentEmail" placeholder="email@example.com" autocomplete="email">
       </div>
     </div>
+    <div class="field-row" style="margin-top:16px;">
+      <div class="field-group">
+        <label for="childGrade">Your grade</label>
+        <select id="childGrade" style="width:100%;padding:11px 14px;border:1px solid var(--g200);border-radius:6px;font-family:'Poppins',sans-serif;font-size:14px;color:var(--g800);background:var(--g100);outline:none;">
+          <option value="">Select grade...</option>
+          <option value="Kindergarten">Kindergarten</option>
+          <option value="Grade 1">Grade 1</option>
+          <option value="Grade 2">Grade 2</option>
+          <option value="Grade 3">Grade 3</option>
+          <option value="Grade 4">Grade 4</option>
+          <option value="Grade 5">Grade 5</option>
+        </select>
+      </div>
+    </div>
   </div>
 
   <div class="section-card">
@@ -266,6 +280,9 @@ footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
       <div class="email-sent-note">
         <span>📧</span>
         <span id="emailSentNote">A copy has been sent to your parent's email and to Dr. Jenn.</span>
+      </div>
+      <div style="margin-top:16px;padding:14px 16px;background:var(--g100);border-radius:8px;font-size:12px;color:var(--g500);line-height:1.7;">
+        This profile is AI-generated from your child's answers. It is designed to spark conversation about reading identity, not to replace a specialist assessment. To get a full picture of your child's reading, <a href="https://app.paperbell.com/packages/210796" style="color:var(--teal);font-weight:600;text-decoration:none;">book a Discovery Call with Dr. Jenn and her team</a>.
       </div>
     </div>
   </div>
@@ -438,6 +455,9 @@ document.getElementById('parentEmail').addEventListener('input', updateProgress)
 
 function compileResponses() {
   const lines = [];
+  const grade = document.getElementById('childGrade').value;
+  lines.push(`GRADE: ${grade || 'Not specified'}`);
+  lines.push('');
   lines.push('SECTION I: FEELINGS ABOUT READING');
   FEELINGS_QUESTIONS.forEach((q, i) => {
     const ans = feelingsAnswers[`f${i}`];
@@ -466,7 +486,8 @@ function compileResponses() {
 }
 
 async function generateSummary(childName, responses) {
-  const prompt = `You are Dr. Jenn Overstreet, a reading specialist with a doctorate in psychology and 15 years of experience in international schools. You are a trained observer of reading identity — you know that how a child feels about reading is just as diagnostic as what they can decode. You have just received a Reading Mindset Snapshot completed by a child named ${childName}.
+  const grade = document.getElementById('childGrade').value || 'unspecified grade';
+  const prompt = `You are Dr. Jenn Overstreet, a reading specialist with a doctorate in psychology and 15 years of experience in international schools. You are a trained observer of reading identity — you know that how a child feels about reading is just as diagnostic as what they can decode. You have just received a Reading Mindset Snapshot completed by a child named ${childName} who is in ${grade}.
 
 Here are their responses:
 
@@ -485,7 +506,7 @@ WHAT LIGHTS YOU UP
 2-3 sentences. Name the actual topics and genres they selected. Do not generalize — if they checked Ocean and Sea Creatures and Science Experiments and Graphic Novels, say those specific things. Group them only if there is a genuine through-line. If there is no clear pattern, say what that openness tells you. Be specific and enthusiastic.
 
 A BOOK JUST FOR YOU
-Recommend exactly one book that genuinely matches both their topic interests and their preferred genre or format. This must be a real, published book with a real author. Give the title and author. Write 2-3 sentences explaining why this particular book is right for this particular child, using what they told you. Do not hedge. Make it feel like a personal recommendation from someone who knows them.
+Recommend exactly one book that genuinely matches both their topic interests and their preferred genre or format, and is appropriate for a child in ${grade}. This must be a real, published book with a real author. Give the title and author. Write 2-3 sentences explaining why this particular book is right for this particular child, using what they told you. Do not hedge. Make it feel like a personal recommendation from someone who knows them.
 
 A NOTE FOR YOUR GROWN-UP
 2-3 sentences written to the parent. Tell them one specific thing this snapshot reveals — not a summary of sections 1-3, something new. Then give one concrete, actionable suggestion for home that follows from what you observed. Keep it plain, direct, and useful. No therapy speak. No em dashes.
@@ -539,7 +560,14 @@ async function handleSubmit() {
 
     document.getElementById('generatingState').classList.remove('visible');
     document.getElementById('resultsName').textContent = childName + "'s Reading Identity Profile";
-    document.getElementById('resultsText').textContent = summary;
+    const formatted = summary
+      .replace(/^#{1,3}\s+(.+)$/gm, '<strong style="display:block;margin-top:20px;margin-bottom:6px;font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--orange);">$1</strong>')
+      .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+      .replace(/\*(.+?)\*/g, '<em>$1</em>')
+      .replace(/^---+$/gm, '<hr style="border:none;border-top:1px solid var(--g200);margin:16px 0;">')
+      .replace(/\n\n/g, '</p><p style="margin-bottom:12px;">')
+      .replace(/\n/g, '<br>');
+    document.getElementById('resultsText').innerHTML = '<p style="margin-bottom:12px;">' + formatted + '</p>';
     document.getElementById('emailSentNote').textContent = `A copy has been sent to ${parentEmail} and to Dr. Jenn.`;
     document.getElementById('resultsCard').classList.add('visible');
     document.getElementById('resultsCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
