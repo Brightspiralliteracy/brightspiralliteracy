@@ -6,6 +6,7 @@
 <title>Bright Spiral Literacy — Dr. Jenn Overstreet</title>
 <meta name="description" content="Structured literacy lessons for K–5 students in international school and expat families. Evidence-based. Expert-led. Delivered online worldwide by Dr. Jenn Overstreet. Book a free Discovery Call.">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,600&display=swap" rel="stylesheet">
+<script defer data-domain="brightspiralliteracy.com" src="https://plausible.io/js/script.outbound-links.js"></script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -1297,6 +1298,127 @@ footer {
 
 .cookie-btn:hover { background: #e8971a; }
 
+/* ── SNAPSHOT SECTION ── */
+.snapshot-section {
+  background: var(--navy);
+  padding: 80px 48px;
+  position: relative;
+  overflow: hidden;
+}
+.snapshot-section::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 360px; height: 360px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245,166,35,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.snapshot-section::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; left: -60px;
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(42,138,138,0.09) 0%, transparent 70%);
+  pointer-events: none;
+}
+.snapshot-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.snapshot-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(245,166,35,0.12);
+  border: 1px solid rgba(245,166,35,0.25);
+  border-radius: 20px;
+  padding: 4px 14px;
+  margin-bottom: 18px;
+}
+.snapshot-label span {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  color: var(--orange);
+}
+.snapshot-title {
+  font-size: clamp(22px, 2.6vw, 28px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.25;
+  letter-spacing: -0.3px;
+  margin-bottom: 16px;
+}
+.snapshot-body {
+  font-size: 15px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.75;
+}
+.snapshot-right {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.snapshot-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.snapshot-bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.7);
+  line-height: 1.55;
+}
+.snapshot-bullets li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--orange);
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+.snapshot-cta-btn {
+  display: inline-block;
+  background: var(--orange);
+  color: var(--navy);
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 14px 32px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+  text-align: center;
+}
+.snapshot-cta-btn:hover { background: #e8971a; transform: translateY(-1px); }
+.snapshot-note {
+  font-size: 11px;
+  color: rgba(255,255,255,0.3);
+  font-weight: 300;
+  line-height: 1.5;
+}
+@media (max-width: 768px) {
+  .snapshot-section { padding: 56px 24px; }
+  .snapshot-inner { grid-template-columns: 1fr; gap: 32px; }
+}
+
 /* ── SECTION DIVIDER ── */
 .section-divider {
   height: 6px;
@@ -1487,6 +1609,7 @@ footer {
     <li><a href="#method">Method</a></li>
     <li><a href="#who">Who It's For</a></li>
     <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#snapshot">Free Snapshot</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="/workshop" class="nav-webinar">Monthly Webinar</a></li>
     <li><a href="#summer">Summer Intensive</a></li>
@@ -2382,6 +2505,27 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
 
     <p class="pricing-discovery">Not sure which package is right? <a href="https://app.paperbell.com/checkout/packages/210796">Book a free discovery call first.</a></p>
 
+  </div>
+</section>
+
+<!-- SNAPSHOT SECTION -->
+<section class="snapshot-section" id="snapshot">
+  <div class="snapshot-inner">
+    <div class="snapshot-left">
+      <div class="snapshot-label"><span>Free Tool</span></div>
+      <h2 class="snapshot-title">The Reading Mindset Snapshot.</h2>
+      <p class="snapshot-body">A short quiz your child completes with you. Takes about 10 minutes. You get a plain-English summary of how they feel about reading, what kinds of books interest them, and a personal book recommendation, sent straight to your inbox.</p>
+    </div>
+    <div class="snapshot-right">
+      <ul class="snapshot-bullets">
+        <li>Covers attitude, confidence, independence, enjoyment, and reading identity</li>
+        <li>Designed for K–5 children in international and expat school families</li>
+        <li>Results include what each pattern means and what to watch for</li>
+        <li>Free. No commitment. Takes 10 minutes.</li>
+      </ul>
+      <a href="https://brightspiralliteracy.com/snapshot" class="snapshot-cta-btn">Take the Snapshot &rarr;</a>
+      <p class="snapshot-note">Your results are sent to your inbox at the end of the quiz. No account needed.</p>
+    </div>
   </div>
 </section>
 
