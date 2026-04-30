@@ -560,6 +560,24 @@ async function handleSubmit() {
 
     document.getElementById('generatingState').classList.remove('visible');
     document.getElementById('resultsName').textContent = childName + "'s Reading Identity Profile";
+
+    // Add parent to MailerLite Checklist Subscribers group
+    try {
+      await fetch('https://connect.mailerlite.com/api/subscribers', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI0IiwianRpIjoiMGQ4NTNiN2I0OTQ4Mzk1ZTFlZGFiNTg1Y2E1OWIxZjM0MDU1MmExMWI0Yjk5Y2Y4NzE3ZGQ1ZjExYzBkMDMxNzM4ZDdlN2UxNmZiYzRhZTQiLCJpYXQiOjE3Nzc1NDUxMzUuNjc3MTA5LCJuYmYiOjE3Nzc1NDUxMzUuNjc3MTEyLCJleHAiOjQ5MzMyMTg3MzUuNjY5ODA0LCJzdWIiOiIyMjkzNjQxIiwic2NvcGVzIjpbXX0.vxEBmloQ5q-UTJPxGZ5n7I3yBAWmF3mPcRdR8vqXmyhcUCuDOkH5F6fLMJt7A8QgRvC2c8gzQGZnIJYpGX79i0lqctSIl5rl7NxzPaW-H-uxksk8vKdwCQhi3wag5VlK6ezZB_H9MO28OHoWnfBCnGfxsnLoZh6vkcFYPa_bnTM0cbXxyd3EU1aeQq1CtlZ1iaEquihnoHgnhYQhpsY8_wWPAIrN-D5Uh7zzXy_zAdgkj52AMRnIs-AMflQtmp-4GxCIdy958yVy7YGeu65W1mPdUtd-iSXCOi6e4acOVvA6HK3grhXsEUJ60KH0hFGR5ITEJ0Kl51M4-bBOe34nQiuNfl2bJtKtde6NQnFpeEnTF485idbVupF2kkSWoQGmZHg3RHmTb_mJ8nz-rOCvpG5KvDdQIG05AqC_wGwbMrtuuAPFuRYVErr4Gph6DU-2EMWCoNln4K4sDonqLXcph7Ek7t2XP769TdE-GuKWUOnksfQacAvGRr6VuyZArV2vTJ9JQEww4iIUK3zrrzc0UR4rX0vFOjfPf8EbTiW2Jxnz2eEVM5PZRCbTTTkh7rdFzlNysmImf1UD8C9wwzbdEYxictOKKa8U2BclwXVFWiAKACiIwVZjAqd7o6dtTOJZg3WBac9n8yFGsPjh1m0XU-DMihBqe5ULfXE57_W21gk'
+        },
+        body: JSON.stringify({
+          email: parentEmail,
+          groups: ['186169803014145624']
+        })
+      });
+    } catch (mlErr) {
+      // Silent fail — email was already sent, don't block the result display
+      console.warn('MailerLite subscriber add failed:', mlErr.message);
+    }
     const formatted = summary
       .replace(/^#{1,3}\s+(.+)$/gm, '<strong style="display:block;margin-top:20px;margin-bottom:6px;font-size:13px;text-transform:uppercase;letter-spacing:1px;color:var(--orange);">$1</strong>')
       .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
