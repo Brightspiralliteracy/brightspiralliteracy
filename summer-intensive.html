@@ -1,0 +1,1505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Summer Intensive 2026 — Bright Spiral Literacy</title>
+<meta name="description" content="Expert literacy instruction that changes your child's September. Science of reading-based instruction for children ages 5 to 11 in international school families. Bright Spiral Literacy Summer Intensive 2026.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy: #1B3A5C;
+  --navy-mid: #243f63;
+  --navy-light: #2d5080;
+  --orange: #F5A623;
+  --teal: #2A8A8A;
+  --red: #C0392B;
+  --cream: #F9F7F4;
+  --cream-dark: #f0ede8;
+  --white: #ffffff;
+  --g100: #f3f4f6;
+  --g200: #e5e7eb;
+  --g300: #d1d5db;
+  --g400: #9ca3af;
+  --g500: #6b7280;
+  --g600: #4b5563;
+  --g700: #374151;
+  --g800: #1f2937;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--cream);
+  color: var(--g800);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── ANNOUNCEMENT BAR ── */
+.announcement {
+  background: var(--orange);
+  text-align: center;
+  padding: 10px 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--navy);
+  letter-spacing: 0.3px;
+}
+.announcement span {
+  opacity: 0.7;
+  font-weight: 400;
+  margin: 0 8px;
+}
+
+/* ── HERO ── */
+.hero {
+  background: var(--navy);
+  position: relative;
+  overflow: hidden;
+  padding: 80px 40px 72px;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -80px;
+  width: 520px;
+  height: 520px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245,166,35,0.10) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -100px;
+  left: -60px;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(42,138,138,0.10) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(245,166,35,0.15);
+  border: 1px solid rgba(245,166,35,0.3);
+  border-radius: 20px;
+  padding: 5px 14px;
+  margin-bottom: 24px;
+}
+.hero-eyebrow span {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--orange);
+}
+.hero-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--orange);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.8); }
+}
+
+.hero h1 {
+  font-size: clamp(28px, 5vw, 48px);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.18;
+  letter-spacing: -0.8px;
+  margin-bottom: 22px;
+  max-width: 720px;
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: var(--orange);
+}
+
+.hero-sub {
+  font-size: 17px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.72);
+  line-height: 1.65;
+  max-width: 560px;
+  margin-bottom: 36px;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  padding-bottom: 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.hero-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.hero-stat-value {
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--orange);
+  letter-spacing: -0.5px;
+  line-height: 1;
+}
+.hero-stat-label {
+  font-size: 11px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--orange);
+  color: var(--navy);
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 15px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.2px;
+}
+.btn-primary:hover {
+  background: #e8961a;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(245,166,35,0.3);
+}
+
+.btn-secondary {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.65);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+  padding-bottom: 2px;
+  transition: all 0.2s;
+}
+.btn-secondary:hover {
+  color: rgba(255,255,255,0.9);
+  border-bottom-color: rgba(255,255,255,0.6);
+}
+
+.slots-note {
+  margin-top: 16px;
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+  font-weight: 300;
+}
+.slots-note strong {
+  color: rgba(255,255,255,0.65);
+  font-weight: 600;
+}
+
+/* ── SECTION WRAPPERS ── */
+.section {
+  padding: 72px 40px;
+}
+.section-inner {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.section-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--teal);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: clamp(22px, 3.5vw, 32px);
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.25;
+  letter-spacing: -0.4px;
+  margin-bottom: 16px;
+}
+
+.section-body {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--g600);
+  line-height: 1.75;
+  max-width: 620px;
+}
+
+/* ── FOR SECTION ── */
+.for-section {
+  background: var(--white);
+  border-top: 1px solid var(--g200);
+  border-bottom: 1px solid var(--g200);
+}
+
+.for-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.for-card {
+  background: var(--cream);
+  border-radius: 8px;
+  padding: 24px;
+  border-left: 3px solid var(--teal);
+}
+
+.for-card-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--teal);
+  margin-bottom: 10px;
+}
+
+.for-card-quote {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--navy);
+  line-height: 1.6;
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.for-card-body {
+  font-size: 13px;
+  color: var(--g500);
+  line-height: 1.6;
+}
+
+.not-for {
+  margin-top: 32px;
+  padding: 20px 24px;
+  background: var(--g100);
+  border-radius: 6px;
+  border: 1px solid var(--g200);
+}
+.not-for p {
+  font-size: 13px;
+  color: var(--g500);
+  line-height: 1.65;
+}
+.not-for strong {
+  color: var(--g700);
+  font-weight: 600;
+}
+
+/* ── HOW IT WORKS ── */
+.how-section {
+  background: var(--navy);
+}
+.how-section .section-eyebrow { color: var(--orange); }
+.how-section .section-title { color: var(--white); }
+.how-section .section-body { color: rgba(255,255,255,0.6); }
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  margin-top: 48px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.step {
+  padding: 28px 24px;
+  background: rgba(255,255,255,0.04);
+  position: relative;
+}
+
+.step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -1px;
+  top: 28px;
+  bottom: 28px;
+  width: 1px;
+  background: rgba(255,255,255,0.08);
+}
+
+.step-badge {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  padding: 3px 9px;
+  border-radius: 3px;
+  margin-bottom: 14px;
+}
+
+.step-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.step-body {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  line-height: 1.65;
+}
+
+.lesson-breakdown {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+
+.lesson-block {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.lesson-block-num {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--orange);
+  letter-spacing: -1px;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+
+.lesson-block-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.lesson-block-body {
+  font-size: 11px;
+  color: rgba(255,255,255,0.45);
+  line-height: 1.6;
+}
+
+/* ── ROUNDS ── */
+.rounds-section {
+  background: var(--cream);
+}
+
+.rounds-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.round-card {
+  background: var(--white);
+  border: 1px solid var(--g200);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.round-card-header {
+  background: var(--navy);
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.round-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--orange);
+  margin-bottom: 4px;
+}
+
+.round-dates {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.3;
+}
+
+.round-badge {
+  background: rgba(245,166,35,0.2);
+  border: 1px solid rgba(245,166,35,0.3);
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--orange);
+  white-space: nowrap;
+}
+
+.round-card-body {
+  padding: 24px;
+}
+
+.round-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--g100);
+  gap: 12px;
+}
+.round-detail:last-child { border-bottom: none; }
+
+.round-detail-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: var(--g400);
+  white-space: nowrap;
+  padding-top: 1px;
+}
+
+.round-detail-value {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--navy);
+  text-align: right;
+  line-height: 1.5;
+}
+
+.slots-grid {
+  margin-top: 32px;
+}
+
+.slots-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--g400);
+  margin-bottom: 16px;
+}
+
+.slots-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.slots-column-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--teal);
+  margin-bottom: 8px;
+}
+
+.slot-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  background: var(--cream);
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+
+.slot-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--teal);
+  flex-shrink: 0;
+}
+
+.timezone-note {
+  margin-top: 16px;
+  font-size: 11px;
+  color: var(--g400);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.price-callout {
+  margin-top: 40px;
+  background: var(--navy);
+  border-radius: 8px;
+  padding: 28px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.price-left {}
+.price-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 6px;
+}
+.price-value {
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--orange);
+  letter-spacing: -1px;
+  line-height: 1;
+}
+.price-sub {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 6px;
+}
+
+.price-includes {
+  flex: 1;
+  min-width: 200px;
+}
+.price-includes-title {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 10px;
+}
+.price-includes ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.price-includes li {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.price-includes li::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--teal);
+  flex-shrink: 0;
+}
+
+/* ── ABOUT JENN ── */
+.about-section {
+  background: var(--white);
+  border-top: 1px solid var(--g200);
+  border-bottom: 1px solid var(--g200);
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 40px;
+  align-items: start;
+  margin-top: 40px;
+}
+
+.about-photo-wrap {
+  width: 180px;
+  flex-shrink: 0;
+}
+
+.about-photo {
+  width: 180px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+
+.about-credentials {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 12px;
+}
+
+.credential-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--g500);
+}
+.credential-badge::before {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--orange);
+  flex-shrink: 0;
+}
+
+.about-content {}
+
+.about-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: -0.3px;
+  margin-bottom: 4px;
+}
+
+.about-title {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--teal);
+  margin-bottom: 20px;
+}
+
+.about-body {
+  font-size: 14px;
+  color: var(--g600);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.about-belief {
+  background: var(--cream);
+  border-left: 3px solid var(--orange);
+  padding: 16px 20px;
+  border-radius: 0 6px 6px 0;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--navy);
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* ── FAQ ── */
+.faq-section {
+  background: var(--cream);
+}
+
+.faq-list {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.faq-item {
+  background: var(--white);
+  border: 1px solid var(--g200);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  padding: 20px 24px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--navy);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  transition: background 0.15s;
+}
+.faq-question:hover { background: var(--cream); }
+.faq-question.open { background: var(--cream); }
+
+.faq-chevron {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--g100);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s, background 0.15s;
+  font-size: 10px;
+  color: var(--g500);
+}
+.faq-question.open .faq-chevron {
+  transform: rotate(180deg);
+  background: var(--orange);
+  color: var(--navy);
+}
+
+.faq-answer {
+  display: none;
+  padding: 0 24px 20px;
+  font-size: 14px;
+  color: var(--g600);
+  line-height: 1.75;
+  border-top: 1px solid var(--g100);
+  padding-top: 16px;
+}
+.faq-answer.open { display: block; }
+
+/* ── FINAL CTA ── */
+.cta-section {
+  background: var(--navy);
+  text-align: center;
+  padding: 80px 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245,166,35,0.08) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.cta-inner {
+  max-width: 580px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.cta-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--orange);
+  margin-bottom: 16px;
+}
+
+.cta-title {
+  font-size: clamp(24px, 4vw, 38px);
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+  margin-bottom: 18px;
+}
+
+.cta-body {
+  font-size: 15px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.cta-secondary-link {
+  font-size: 13px;
+  color: rgba(255,255,255,0.45);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 1px;
+  transition: all 0.2s;
+}
+.cta-secondary-link:hover {
+  color: rgba(255,255,255,0.7);
+  border-bottom-color: rgba(255,255,255,0.45);
+}
+
+.cta-slots {
+  font-size: 11px;
+  color: rgba(255,255,255,0.3);
+  margin-top: 6px;
+}
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--navy);
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding: 24px 40px;
+  text-align: center;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.footer-link {
+  font-size: 12px;
+  color: rgba(255,255,255,0.3);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+.footer-link:hover { color: rgba(255,255,255,0.6); }
+
+.footer-copy {
+  font-size: 11px;
+  color: rgba(255,255,255,0.2);
+}
+
+/* ── STICKY MOBILE CTA ── */
+.sticky-cta {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--navy);
+  border-top: 2px solid var(--orange);
+  padding: 14px 20px;
+  z-index: 200;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.sticky-cta-text {
+  font-size: 12px;
+  color: rgba(255,255,255,0.65);
+}
+.sticky-cta-text strong {
+  color: var(--white);
+  font-weight: 600;
+  display: block;
+  font-size: 13px;
+}
+
+.sticky-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--orange);
+  color: var(--navy);
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 11px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── DIVIDER ── */
+.divider {
+  height: 1px;
+  background: var(--g200);
+  margin: 0 40px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 700px) {
+  .hero { padding: 60px 24px 56px; }
+  .hero-stats { gap: 20px; }
+  .section { padding: 56px 24px; }
+  .for-grid { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: 1fr 1fr; }
+  .lesson-breakdown { grid-template-columns: 1fr; }
+  .rounds-grid { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; }
+  .about-photo-wrap { width: 100%; }
+  .about-photo { width: 100%; height: 240px; }
+  .price-callout { flex-direction: column; gap: 20px; }
+  .sticky-cta { display: flex; }
+  body { padding-bottom: 74px; }
+  .slots-columns { grid-template-columns: 1fr; }
+  .testimonial-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 480px) {
+  .steps-grid { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 26px; }
+  .hero-stats { gap: 16px; }
+  .hero-stat-value { font-size: 22px; }
+  .rounds-grid { grid-template-columns: 1fr; }
+}
+
+/* ── FADE IN ── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+
+<!-- Announcement Bar -->
+<div class="announcement">
+  Summer 2026 — 8 limited spots per round<span>·</span>July 14 to August 20<span>·</span>€675 per round
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-dot"></div>
+      <span>Bright Spiral Literacy Summer Intensive 2026</span>
+    </div>
+
+    <h1>Expert literacy instruction<br>that changes your child's <em>September.</em></h1>
+
+    <p class="hero-sub">Whether reading time is the hardest part of your day, your child is coasting below their potential, or you want to protect what the school year built, summer is the window. Science of reading-based instruction for children ages 5 to 11 in international school families, delivered online by Dr. Jenn Overstreet and her team.</p>
+
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <span class="hero-stat-value">9</span>
+        <span class="hero-stat-label">Lessons</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-value">30</span>
+        <span class="hero-stat-label">Min each</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-value">3</span>
+        <span class="hero-stat-label">Weeks</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-value">8</span>
+        <span class="hero-stat-label">Limited spots per round</span>
+      </div>
+      <div class="hero-stat">
+        <span class="hero-stat-value">€675</span>
+        <span class="hero-stat-label">Per round</span>
+      </div>
+    </div>
+
+    <div class="hero-ctas">
+      <a href="https://app.paperbell.com/packages/210796" class="btn-primary" target="_blank" rel="noopener">
+        Book a slot
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="https://app.paperbell.com/checkout/packages/210796" class="btn-secondary" target="_blank" rel="noopener">Not sure? Book a free Discovery Call first</a>
+    </div>
+    <p class="slots-note"><strong>Fixed time slot for all 9 lessons.</strong> You choose once. No rescheduling each week.</p>
+  </div>
+</section>
+
+<!-- Who It's For -->
+<section class="section for-section fade-up">
+  <div class="section-inner">
+    <p class="section-eyebrow">Is this right for your child?</p>
+    <h2 class="section-title">You already know something is off. Summer is when you do something about it.</h2>
+    <p class="section-body">The Summer Intensive is for children ages 5 to 11 whose reading is not where it should be, for children who are capable of more than their current school is giving them, and for families who simply want to protect what the school year built. If you have been waiting for the right moment, this is it.</p>
+
+    <div class="for-grid">
+      <div class="for-card">
+        <div class="for-card-label">Reading time breaks the whole household</div>
+        <div class="for-card-quote">"She read an entire page out loud and couldn't tell me a single thing that happened. Then she said she was stupid."</div>
+        <div class="for-card-body">That moment, when your child shuts down and turns it inward, is the moment most parents book the call. The decoding foundation is not solid. Everything else is built on top of it. Three weeks of targeted instruction changes what homework time looks like.</div>
+      </div>
+      <div class="for-card">
+        <div class="for-card-label">You're moving schools again</div>
+        <div class="for-card-quote">"We've moved twice. Every time there's a gap. I don't know how much he's actually lost."</div>
+        <div class="for-card-body">Curriculum switches between IB, Cambridge, and American programs leave holes that nobody maps for you. The intensive pinpoints exactly where the gap is before the next school year begins, so you are not starting from scratch again in September.</div>
+      </div>
+      <div class="for-card">
+        <div class="for-card-label">The school says she's fine. You don't believe it.</div>
+        <div class="for-card-quote">"The teacher says she's within the normal range. But I can see something is wrong and I've been seeing it for months."</div>
+        <div class="for-card-body">You are not overreacting. A reading specialist in a one-on-one lesson sees things a busy classroom teacher does not have the time or the training to catch. Three weeks gives you a clear answer and a specific plan, not another wait-and-see.</div>
+      </div>
+      <div class="for-card">
+        <div class="for-card-label">She's capable of more than she's showing</div>
+        <div class="for-card-quote">"She's so bright but reading is killing her confidence. She didn't used to hate it."</div>
+        <div class="for-card-body">Confidence is not a personality trait in this context. It is a reading skill problem. When a child understands how words work, the dread lifts. The intensive builds the foundation that makes reading feel possible again instead of impossible.</div>
+      </div>
+      <div class="for-card">
+        <div class="for-card-label">Stuck in a reading level and not moving</div>
+        <div class="for-card-quote">"She's been on the same reading level at school for months. The teacher says she's fine but she's not growing."</div>
+        <div class="for-card-body">School reading levels are a management tool, not a ceiling. When a child is stuck, it usually means there is a specific skill gap preventing them from moving forward. Three weeks of targeted instruction identifies exactly what that gap is and builds past it.</div>
+      </div>
+    </div>
+
+    <div class="not-for">
+      <p><strong>The Summer Intensive is not tutoring homework support, catch-up cramming, or reading practice for its own sake.</strong> It is structured literacy instruction led by a qualified specialist. Every lesson is built on what your child specifically needs, not a generic program. If you are looking for someone to sit with your child while they read, this is not that.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Social Proof -->
+<section class="section fade-up" style="background:var(--navy); padding:64px 40px;">
+  <div class="section-inner">
+    <p style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:var(--orange); margin-bottom:40px;">What parents, students, and educators say</p>
+
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px;">
+
+      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:28px 24px; display:flex; flex-direction:column; justify-content:space-between; gap:20px;">
+        <p style="font-size:14px; color:rgba(255,255,255,0.85); line-height:1.75; font-style:italic; flex:1; margin:0;">"Dr. Overstreet demonstrates a powerful sense of what learning is supposed to feel, look, and sound like at any given time, with strong instincts for guiding students and keeping things on track. She holds high standards with a variety of scaffolds to help children reach them, creating an environment where a child thinks: This is a safe place and my teacher cares about me. I really need to learn this and she's going to help me."</p>
+        <div style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:rgba(255,255,255,0.4); border-top:1px solid rgba(255,255,255,0.08); padding-top:16px;">Elementary Principal</div>
+      </div>
+
+      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:28px 24px; display:flex; flex-direction:column; justify-content:space-between; gap:20px;">
+        <p style="font-size:14px; color:rgba(255,255,255,0.85); line-height:1.75; font-style:italic; flex:1; margin:0;">"I am sending this email for my reading. My reading is going very well. At home I am reading Wonder and at school I am reading a book about Egypt. I like reading, it takes me to a new world."</p>
+        <div style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:rgba(255,255,255,0.4); border-top:1px solid rgba(255,255,255,0.08); padding-top:16px;">Grade 5 Student</div>
+      </div>
+
+      <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:8px; padding:28px 24px; display:flex; flex-direction:column; justify-content:space-between; gap:20px;">
+        <p style="font-size:14px; color:rgba(255,255,255,0.85); line-height:1.75; font-style:italic; flex:1; margin:0;">"He has had so much fun during his lessons and said that he cannot wait for his lesson tomorrow."</p>
+        <div style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:rgba(255,255,255,0.4); border-top:1px solid rgba(255,255,255,0.08); padding-top:16px;">Parent of Elementary Student</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- How It Works -->
+<section class="section how-section fade-up">
+  <div class="section-inner">
+    <p class="section-eyebrow">The Bright Spiral Literacy Method</p>
+    <h2 class="section-title" style="color:var(--white)">What actually happens across nine lessons</h2>
+    <p class="section-body">Every lesson is built on the Bright Spiral Literacy Method and grounded in the science of reading. The sequence is deliberate. The instruction is evidence-based. The outcomes are measurable.</p>
+
+    <div class="steps-grid">
+      <div class="step">
+        <div class="step-badge" style="background:rgba(27,58,92,0.8); color:rgba(255,255,255,0.9);">Ground</div>
+        <div class="step-title">Know the child before teaching them</div>
+        <div class="step-body">Lesson one is devoted to getting to know your child as a person and completing the BSL Literacy Assessment. What they love, what makes them shut down, and where the exact gap is. Every lesson that follows is built on what we find here.</div>
+      </div>
+      <div class="step">
+        <div class="step-badge" style="background:rgba(245,166,35,0.25); color:var(--orange);">Build</div>
+        <div class="step-title">Science of reading instruction, lesson by lesson</div>
+        <div class="step-body">Lessons 2 through 8 are targeted structured literacy instruction built on the assessment findings. Phonemic awareness, phonics patterns, fluency, spelling. Adjusted each lesson based on what your child shows us. No generic program. No repeated worksheets.</div>
+      </div>
+      <div class="step">
+        <div class="step-badge" style="background:rgba(42,138,138,0.25); color:#5bc4c4;">Rise</div>
+        <div class="step-title">Progress you can see and name</div>
+        <div class="step-body">Progress in structured literacy is concrete and measurable, not a feeling. You will see it in the words your child stops guessing at, the sentences they read without stalling, the moment they stop dreading the page.</div>
+      </div>
+      <div class="step">
+        <div class="step-badge" style="background:rgba(192,57,43,0.25); color:#e87060;">Shine</div>
+        <div class="step-title">The BSL Reader Report</div>
+        <div class="step-body">The BSL Literacy Assessment is repeated in lesson nine so progress is concrete, not just felt. Every family receives the BSL Reader Report at the close of the intensive, a specific document about your child that their new teacher can use from day one.</div>
+      </div>
+    </div>
+
+    <div class="lesson-breakdown">
+      <div class="lesson-block">
+        <div class="lesson-block-num">9</div>
+        <div class="lesson-block-title">Lessons total</div>
+        <div class="lesson-block-body">Tue, Wed, Thu across three weeks. <strong style="color:var(--orange);">Same time slot every week.</strong> You choose once at booking and that slot is yours for all nine lessons.</div>
+      </div>
+      <div class="lesson-block">
+        <div class="lesson-block-num">30</div>
+        <div class="lesson-block-title">Minutes each</div>
+        <div class="lesson-block-body">The research on one-on-one tutoring is clear: 30 focused minutes with a qualified specialist outperforms an hour with a generalist.</div>
+      </div>
+      <div class="lesson-block">
+        <div class="lesson-block-num">1:1</div>
+        <div class="lesson-block-title">Human-led. Expert-planned.</div>
+        <div class="lesson-block-body">In most international school classrooms, 60 minutes of literacy instruction is divided among roughly 20 children. That is about 3 minutes of direct instruction per child per day. Every minute of the Summer Intensive is yours.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Rounds & Pricing -->
+<section class="section rounds-section fade-up">
+  <div class="section-inner">
+    <p class="section-eyebrow">Dates, Times & Booking</p>
+    <h2 class="section-title">Two rounds. Choose the one that fits your summer.</h2>
+    <p class="section-body">Both rounds follow the same format: Tue, Wed, Thu, three weeks, nine lessons of 30 minutes each. <strong>When you book, you choose one time slot and that slot is yours for all nine lessons. You choose once. No rescheduling each week.</strong> Families who want more intensive progress can book both rounds.</p>
+
+    <div class="rounds-grid">
+      <div class="round-card">
+        <div class="round-card-header">
+          <div>
+            <div class="round-label">Round 1</div>
+            <div class="round-dates">July 14 to July 30</div>
+          </div>
+          <div class="round-badge">8 limited spots</div>
+        </div>
+        <div class="round-card-body">
+          <div class="round-detail">
+            <span class="round-detail-label">Days</span>
+            <span class="round-detail-value">Tuesday, Wednesday, Thursday</span>
+          </div>
+          <div class="round-detail">
+            <span class="round-detail-label">Duration</span>
+            <span class="round-detail-value">3 weeks · 9 lessons</span>
+          </div>
+          <div class="round-detail">
+            <span class="round-detail-label">Lesson length</span>
+            <span class="round-detail-value">30 minutes</span>
+          </div>
+          <div class="round-detail">
+            <span class="round-detail-label">Format</span>
+            <span class="round-detail-value">Online · one-on-one</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="round-card">
+        <div class="round-card-header">
+          <div>
+            <div class="round-label">Round 2</div>
+            <div class="round-dates">August 4 to August 20</div>
+          </div>
+          <div class="round-badge">8 limited spots</div>
+        </div>
+        <div class="round-card-body">
+          <div class="round-detail">
+            <span class="round-detail-label">Days</span>
+            <span class="round-detail-value">Tuesday, Wednesday, Thursday</span>
+          </div>
+          <div class="round-detail">
+            <span class="round-detail-label">Duration</span>
+            <span class="round-detail-value">3 weeks · 9 lessons</span>
+          </div>
+          <div class="round-detail">
+            <span class="round-detail-label">Lesson length</span>
+            <span class="round-detail-value">30 minutes</span>
+          </div>
+          <div class="round-detail">
+            <span class="round-detail-label">Format</span>
+            <span class="round-detail-value">Online · one-on-one</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="slots-grid" style="margin-top:32px; background:var(--white); border:1px solid var(--g200); border-radius:8px; padding:24px;">
+      <div class="slots-title">Available Time Slots (Rome Time) — your slot is fixed for all 9 lessons</div>
+      <div class="slots-columns">
+        <div>
+          <div class="slots-column-label">Morning</div>
+          <div class="slot-item"><div class="slot-dot"></div>9:00 am</div>
+          <div class="slot-item"><div class="slot-dot"></div>9:30 am</div>
+          <div class="slot-item"><div class="slot-dot"></div>10:00 am</div>
+          <div class="slot-item"><div class="slot-dot"></div>10:30 am</div>
+        </div>
+        <div>
+          <div class="slots-column-label">Afternoon</div>
+          <div class="slot-item"><div class="slot-dot"></div>4:00 pm</div>
+          <div class="slot-item"><div class="slot-dot"></div>4:30 pm</div>
+          <div class="slot-item"><div class="slot-dot"></div>5:00 pm</div>
+          <div class="slot-item"><div class="slot-dot"></div>5:30 pm</div>
+        </div>
+      </div>
+      <div style="margin-top:16px; background:var(--navy); border-radius:6px; padding:14px 18px; display:flex; align-items:flex-start; gap:10px;">
+        <svg width="16" height="16" viewBox="0 0 12 12" fill="none" style="flex-shrink:0; margin-top:1px;"><circle cx="6" cy="6" r="5" stroke="#F5A623" stroke-width="1.2"/><path d="M6 3.5V6l1.5 1.5" stroke="#F5A623" stroke-width="1.2" stroke-linecap="round"/></svg>
+        <div>
+          <div style="font-size:11px; font-weight:700; color:var(--orange); text-transform:uppercase; letter-spacing:1px; margin-bottom:4px;">Time Zone Guide</div>
+          <div style="font-size:12px; color:rgba(255,255,255,0.65); line-height:1.65;">All times Rome (CEST, UTC+2). <strong style="color:rgba(255,255,255,0.85);">Morning slots</strong> suit families in Asia (Singapore UTC+8, Hong Kong UTC+8), Gulf (Dubai UTC+4), and across Western Europe. <strong style="color:rgba(255,255,255,0.85);">Afternoon slots</strong> suit families on flexible schedules and those in the Americas. That said, the best slot is simply the one that works for your family. If you are unsure, book a Discovery Call and we will figure it out together.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="price-callout">
+      <div class="price-left">
+        <div class="price-label">Price per round</div>
+        <div class="price-value">€675</div>
+        <div class="price-sub">One payment. No hidden fees.</div>
+      </div>
+      <div class="price-includes">
+        <div class="price-includes-title">What's included</div>
+        <ul>
+          <li>9 one-on-one lessons of 30 minutes each</li>
+          <li>BSL Literacy Assessment in lesson one and lesson nine</li>
+          <li>Science of reading instruction targeted to your child specifically</li>
+          <li>BSL Reader Report delivered within 7 days of the final lesson</li>
+          <li>A named document your child's new teacher can use from day one</li>
+          <li>Priority access to a fall one-on-one tutoring spot if you wish to continue</li>
+        </ul>
+      </div>
+      <div>
+        <a href="https://app.paperbell.com/packages/210796" class="btn-primary" target="_blank" rel="noopener" style="white-space:nowrap;">
+          Book a slot
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BSL Reader Report Callout -->
+<section class="section fade-up" style="background:var(--teal); padding: 56px 40px;">
+  <div class="section-inner">
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center;">
+      <div>
+        <p style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:2px; color:rgba(255,255,255,0.6); margin-bottom:12px;">Included with every round</p>
+        <h2 style="font-size:clamp(22px,3.5vw,32px); font-weight:800; color:var(--white); line-height:1.2; letter-spacing:-0.4px; margin-bottom:16px;">The BSL Reader Report</h2>
+        <p style="font-size:15px; color:rgba(255,255,255,0.8); line-height:1.75; margin-bottom:16px;">Every family receives the BSL Reader Report at the close of the intensive. It is a specific written document about your child, not a generic summary, that their new teacher can read on the first day of school and immediately understand where your child is, what was worked on over the summer, and what to focus on next.</p>
+        <p style="font-size:15px; color:rgba(255,255,255,0.8); line-height:1.75;">You will not be starting from scratch in September.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <div style="background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.18); border-radius:8px; padding:20px 24px;">
+          <div style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:rgba(255,255,255,0.55); margin-bottom:8px;">Lesson 1</div>
+          <div style="font-size:14px; font-weight:600; color:var(--white); margin-bottom:6px;">BSL Literacy Assessment + getting to know your child</div>
+          <div style="font-size:13px; color:rgba(255,255,255,0.65); line-height:1.6;">Lesson one is spent understanding your child as a person and completing the BSL Literacy Assessment. Every science of reading-based lesson that follows is built on what we find here.</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.18); border-radius:8px; padding:20px 24px;">
+          <div style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:rgba(255,255,255,0.55); margin-bottom:8px;">Lessons 2 to 8</div>
+          <div style="font-size:14px; font-weight:600; color:var(--white); margin-bottom:6px;">Targeted structured literacy instruction</div>
+          <div style="font-size:13px; color:rgba(255,255,255,0.65); line-height:1.6;">Human-led, expert-planned lessons grounded in the science of reading. Adjusted each lesson based on what your child shows us. Not a program. A specialist making real-time decisions.</div>
+        </div>
+        <div style="background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.25); border-radius:8px; padding:20px 24px;">
+          <div style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:rgba(255,255,255,0.55); margin-bottom:8px;">Lesson 9 + within 7 days</div>
+          <div style="font-size:14px; font-weight:600; color:var(--white); margin-bottom:6px;">Assessment repeated. BSL Reader Report delivered.</div>
+          <div style="font-size:13px; color:rgba(255,255,255,0.65); line-height:1.6;">Progress is measured concretely against lesson one. The BSL Reader Report is delivered within 7 days of the final lesson. You arrive at September with a document, not just a feeling.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Jenn -->
+<section class="section about-section fade-up">
+  <div class="section-inner">
+    <p class="section-eyebrow">Who you're working with</p>
+    <h2 class="section-title">Not just a teacher. A reading specialist who knows your world.</h2>
+
+    <div class="about-grid">
+      <div class="about-photo-wrap">
+        <img src="https://i.imgur.com/RqKlisX.jpeg" alt="Dr. Jenn Overstreet" class="about-photo" loading="lazy">
+        <div class="about-credentials">
+          <div class="credential-badge">Doctorate in psychology</div>
+          <div class="credential-badge">15 years in international schools</div>
+          <div class="credential-badge">Structured literacy specialist</div>
+        </div>
+      </div>
+      <div class="about-content">
+        <div class="about-name">Dr. Jenn Overstreet</div>
+        <div class="about-title">Founder, Bright Spiral Literacy</div>
+        <p class="about-body">I have a doctorate in psychology and have spent 15 years inside international schools, teaching children to read and training the teachers who teach them. I have worked across three continents with globally mobile families. I know what the gaps look like when a child has moved schools mid-year. I know what happens to a child's reading when the scope and sequence changes and nobody maps what got missed.</p>
+        <p class="about-body">I built Bright Spiral Literacy because schools cannot move fast enough, and the right instruction was not finding the children who needed it. Every intensive begins by getting to know your child before teaching them anything. Their confidence, their relationship to reading, their story matters as much as their phonics gap. Summer Intensive lessons are delivered by me and my trained specialist team.</p>
+        <div class="about-belief">"Your child can learn to read. The right instruction just hasn't found them yet."</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq-section fade-up">
+  <div class="section-inner">
+    <p class="section-eyebrow">Questions</p>
+    <h2 class="section-title">What parents ask before they book</h2>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          My child's reading is adequate. Is the Summer Intensive still worth it?
+          <div class="faq-chevron">▾</div>
+        </button>
+        <div class="faq-answer">The intensive is not only for children who are significantly behind. Some of the children who benefit most are bright kids who are managing but not building the solid foundation they need. They are guessing at unfamiliar words instead of decoding them. They are reading fluently in familiar texts but stalling on anything new. Some have been assigned a reading level at school and have not moved from it in months. School reading levels are a management tool, not a ceiling. When a child is stuck, there is usually a specific skill gap the school has not identified. Nine targeted lessons will find it and build past it before the next school year starts.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          We travel in July and August. What if we miss a lesson?
+          <div class="faq-chevron">▾</div>
+        </button>
+        <div class="faq-answer">The intensive is designed as a fixed block for a reason. The lessons build on each other, and the momentum across three weeks is part of what makes it effective. If your family has a trip planned that overlaps with one of the rounds, the other round may work better. If you have a single unavoidable conflict mid-intensive, contact me directly and we will see what is possible. What I do not do is reschedule casually, because it disrupts the sequence and is unfair to other families in that round.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          We're switching schools in September. Will this help with the transition?
+          <div class="faq-chevron">▾</div>
+        </button>
+        <div class="faq-answer">This is exactly what the intensive is built for. Every time a child moves schools, there is a risk of reading gaps that nobody maps for you. The BSL Reader Report you receive at the end of the intensive gives you a clear, specific picture of where your child is and what the new school needs to know. That document is something you can share with a new teacher, a school learning support coordinator, or a new tutor. It is the thing you wish you had had at every previous transition.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          My child is bilingual. Will that affect the lessons?
+          <div class="faq-chevron">▾</div>
+        </button>
+        <div class="faq-answer">Bilingualism is not a reading problem, and I do not treat it as one. For some children, oral language in the home language is well ahead of reading in English, and that mismatch can look like a reading issue when it is not. For others, there are genuine gaps in the phonics foundation that the school has not addressed. The BSL Literacy Assessment in lesson one separates these things out clearly. The instruction is built on what we actually find, not on assumptions about bilingual learners.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How is this different from the apps and tutors we've already tried?
+          <div class="faq-chevron">▾</div>
+        </button>
+        <div class="faq-answer">Consider what your child is getting at school. In most international school classrooms, literacy instruction runs around 60 minutes per day, split across a teacher and possibly one assistant, among typically 20 children. That works out to roughly 3 minutes of direct instruction per child per day. Apps extend practice time but they cannot pinpoint the specific issue. They cannot tell you whether your child is guessing at words because of a phonemic awareness gap, a phonics pattern they missed, a fluency problem, or a confidence collapse that is masking everything else. A trained specialist can. The difference between an app and a qualified human in a one-on-one lesson is the difference between repeated exposure and precise instruction. Precise instruction is what moves a child forward. Generic tutors, even good ones, usually do not have the structured literacy training to do this. What makes the difference is a qualified person who knows the science, knows your child, and is building each lesson on what they found in the last one. That is what this is.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What time zone are the slots in?
+          <div class="faq-chevron">▾</div>
+        </button>
+        <div class="faq-answer">All slots are listed in Rome time, which is CEST (UTC+2) in July and August. When you book, you choose one time slot and that slot is yours for all nine lessons. You do not reschedule each week. Morning slots at 9:00, 9:30, 10:00, and 10:30 Rome time work well for families in Dubai (UTC+4, so 11:00am to 12:30pm local), Singapore (UTC+8, so 3:00 to 4:30pm local), and across Western Europe. Afternoon slots at 4:00, 4:30, 5:00, and 5:30 Rome time suit families on flexible schedules or those in the Americas. If you are unsure whether a slot works for your location, book a Discovery Call and we will figure it out together.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What do I get at the end of the intensive?
+          <div class="faq-chevron">▾</div>
+        </button>
+        <div class="faq-answer">Every family receives the BSL Reader Report at the close of the intensive. It is a specific written document about your child covering what the BSL Literacy Assessment found in lesson one, what was worked on across the nine lessons, and the concrete progress measured when the assessment was repeated in lesson nine. It is not a generic summary. It is a document your child's new teacher can read on the first day of school and immediately understand where your child is, what has been worked on, and what to focus on next. You will not be starting from scratch in September.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Can you guarantee my child will make progress?
+          <div class="faq-chevron">▾</div>
+        </button>
+        <div class="faq-answer">No guarantees. Reading progress depends on where a child is starting, how consistent attendance is, and factors that nine lessons cannot fully control. What I can tell you is that nine focused lessons of science of reading-based instruction, delivered one-on-one by a qualified specialist and built specifically around your child's gaps, produce measurable progress in the vast majority of cases. And regardless of the pace of progress, you will leave the intensive with the BSL Reader Report: a specific, honest picture of exactly where your child is, what moved, and what the next step should be. You will not finish three weeks of instruction without knowing what happened. That clarity alone is worth something, and in most cases it comes alongside real, visible progress.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          I'm not sure if this is right for my child. What should I do?
+          <div class="faq-chevron">▾</div>
+        </button>
+        <div class="faq-answer">Book a free Discovery Call. It is a 20-minute conversation where I ask you about your child, you tell me what you are seeing, and I tell you honestly whether the intensive is the right fit and which round makes sense. There is no pitch, no pressure, and no obligation. If the intensive is not what your child needs right now, I will tell you that and point you toward what is. The call link is below.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Fall Priority Callout -->
+<section class="section fade-up" style="background:var(--cream-dark); padding:40px; border-top:1px solid var(--g200); border-bottom:1px solid var(--g200);">
+  <div class="section-inner">
+    <div style="background:var(--white); border:1px solid var(--g200); border-radius:8px; padding:28px 32px; display:flex; align-items:center; gap:28px; flex-wrap:wrap;">
+      <div style="width:48px; height:48px; background:var(--navy); border-radius:8px; display:flex; align-items:center; justify-content:center; flex-shrink:0;">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#F5A623"/></svg>
+      </div>
+      <div style="flex:1; min-width:200px;">
+        <div style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:var(--teal); margin-bottom:6px;">Included with every round</div>
+        <div style="font-size:17px; font-weight:700; color:var(--navy); margin-bottom:6px; letter-spacing:-0.2px;">Priority access to a fall tutoring spot</div>
+        <div style="font-size:14px; color:var(--g600); line-height:1.65;">Every family who completes the Summer Intensive holds priority access to a fall one-on-one tutoring spot should they wish to continue. You will not need to join a waitlist or start the process over. Your child's momentum carries straight into the school year.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="cta-section fade-up">
+  <div class="cta-inner">
+    <p class="cta-eyebrow">Summer 2026 · 8 limited spots per round</p>
+    <h2 class="cta-title">Summer is the window. Nine lessons is enough to change what September looks like.</h2>
+    <p class="cta-body">Reading time does not have to be the hardest part of your day. It does not have to be the thing your child dreads, and it does not have to be the thing you dread watching. Book a slot and let's get started.</p>
+    <div class="cta-buttons">
+      <a href="https://app.paperbell.com/packages/210796" class="btn-primary" target="_blank" rel="noopener" style="font-size:15px; padding:17px 32px;">
+        Book a slot — €675
+        <svg width="16" height="16" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="https://app.paperbell.com/checkout/packages/210796" class="cta-secondary-link" target="_blank" rel="noopener">Not sure yet? Book a free Discovery Call first</a>
+      <p class="cta-slots">Fixed time slot for all 9 lessons. No rescheduling each week.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-links">
+    <a href="mailto:hello@brightspiralliteracy.com" class="footer-link">hello@brightspiralliteracy.com</a>
+    <a href="https://brightspiralliteracy.com" class="footer-link">Learn more about Bright Spiral Literacy</a>
+  </div>
+  <p class="footer-copy">© 2026 Bright Spiral Literacy · Dr. Jenn Overstreet · brightspiralliteracy.com</p>
+</footer>
+
+<!-- Sticky Mobile CTA -->
+<div class="sticky-cta">
+  <div class="sticky-cta-text">
+    <strong>Summer Intensive 2026</strong>
+    €675 · 9 lessons · Two rounds
+  </div>
+  <a href="https://app.paperbell.com/packages/210796" class="sticky-cta-btn" target="_blank" rel="noopener">Book a slot</a>
+</div>
+
+<script>
+// FAQ toggle
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const isOpen = btn.classList.contains('open');
+  // Close all
+  document.querySelectorAll('.faq-question').forEach(q => {
+    q.classList.remove('open');
+    q.nextElementSibling.classList.remove('open');
+  });
+  // Open clicked if it was closed
+  if (!isOpen) {
+    btn.classList.add('open');
+    answer.classList.add('open');
+  }
+}
+
+// Fade-up on scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
