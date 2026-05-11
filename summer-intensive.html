@@ -1012,6 +1012,17 @@ body {
 </head>
 <body>
 
+<!-- COOKIE CONSENT BANNER -->
+<div id="bslConsentBanner" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:9999; background:#1B3A5C; border-top:1px solid rgba(245,166,35,0.25); padding:16px 48px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; box-shadow:0 -2px 12px rgba(0,0,0,0.15);">
+  <p style="margin:0; font-family:'Poppins',sans-serif; font-size:12px; font-weight:300; color:rgba(255,255,255,0.75); line-height:1.7; max-width:720px;">
+    This site uses analytics cookies (Google Analytics) and advertising cookies (Meta Pixel) to understand how parents find us and to measure what works. Plausible Analytics is always active and is cookieless. GA4 and Meta Pixel only load with your consent. <a href="https://brightspiralliteracy.com/#privacy" style="color:#F5A623; text-decoration:underline; text-underline-offset:2px;">Privacy Policy</a>
+  </p>
+  <div style="display:flex; gap:10px; flex-shrink:0;">
+    <button onclick="bslDeclineConsent()" style="font-family:'Poppins',sans-serif; font-size:12px; font-weight:500; color:rgba(255,255,255,0.6); background:transparent; border:1px solid rgba(255,255,255,0.25); border-radius:6px; padding:8px 18px; cursor:pointer; white-space:nowrap;">Decline</button>
+    <button onclick="bslGrantConsent()" style="font-family:'Poppins',sans-serif; font-size:12px; font-weight:700; color:#1B3A5C; background:#F5A623; border:1px solid #F5A623; border-radius:6px; padding:8px 20px; cursor:pointer; white-space:nowrap;">Accept</button>
+  </div>
+</div>
+
 <!-- Announcement Bar -->
 <div class="announcement">
   Summer 2026 — 8 limited spots per round<span>·</span>July 14 to August 20<span>·</span>€675 per round
@@ -1529,19 +1540,19 @@ body {
 </div>
 
 <script>
-// FAQ toggle
+// FAQ toggle with GA4 tracking
 function toggleFaq(btn) {
   const answer = btn.nextElementSibling;
   const isOpen = btn.classList.contains('open');
-  // Close all
   document.querySelectorAll('.faq-question').forEach(q => {
     q.classList.remove('open');
     q.nextElementSibling.classList.remove('open');
   });
-  // Open clicked if it was closed
   if (!isOpen) {
     btn.classList.add('open');
     answer.classList.add('open');
+    var questionText = btn.textContent.trim().substring(0, 60);
+    if (typeof gtag !== 'undefined') gtag('event', 'faq_open', { question_text: questionText });
   }
 }
 
@@ -1554,8 +1565,105 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 }, { threshold: 0.08 });
-
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+// ── BSL CONSENT GATE ──
+// Plausible is always active (cookieless, no consent needed).
+// GA4 and Meta Pixel only load after the user clicks Accept.
+
+function bslLoadGA4() {
+  var GA4_ID = 'G-1E3MN9BJW9';
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_ID;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', GA4_ID, { anonymize_ip: true });
+}
+
+function bslLoadPixel() {
+  var PIXEL_ID = '1486617149920296';
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+  (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', PIXEL_ID);
+  fbq('track', 'PageView');
+  fbq('track', 'ViewContent', { content_name: 'Summer Reading Intensive 2026' });
+}
+
+function bslTrackScrollDepth() {
+  var milestones = [25, 50, 75, 90];
+  var fired = {};
+  window.addEventListener('scroll', function() {
+    var scrollPct = Math.round(
+      (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+    );
+    milestones.forEach(function(m) {
+      if (scrollPct >= m && !fired[m]) {
+        fired[m] = true;
+        if (typeof gtag !== 'undefined') gtag('event', 'scroll_depth', { depth: String(m) });
+      }
+    });
+  }, { passive: true });
+}
+
+function bslInitConversionTracking() {
+  var PACKAGE_MAP = {
+    '210796': { type: 'discovery', name: 'Discovery Call', price: 'Free' },
+    '211534': { type: 'summer', name: 'Summer Round 1', price: '€675' },
+    '211537': { type: 'summer', name: 'Summer Round 2', price: '€675' },
+  };
+
+  document.querySelectorAll('a[href*="paperbell.com"]').forEach(function(link) {
+    link.addEventListener('click', function() {
+      var match = link.href.match(/packages\/(\d+)/);
+      if (!match) return;
+      var id = match[1];
+      var pkg = PACKAGE_MAP[id] || { type: 'unknown', name: 'Unknown', price: '' };
+      var section = link.closest('section');
+      var sectionId = section ? (section.id || 'page') : 'nav';
+
+      if (pkg.type === 'discovery') {
+        if (typeof gtag !== 'undefined') gtag('event', 'discovery_call_click', { link_location: sectionId });
+      } else {
+        if (typeof gtag !== 'undefined') gtag('event', 'summer_intensive_click', { round: pkg.name });
+      }
+
+      if (typeof fbq !== 'undefined') fbq('track', 'InitiateCheckout', { content_name: pkg.name });
+    });
+  });
+
+  bslTrackScrollDepth();
+}
+
+function bslGrantConsent() {
+  localStorage.setItem('bsl_consent', 'granted');
+  document.getElementById('bslConsentBanner').style.display = 'none';
+  bslLoadGA4();
+  bslLoadPixel();
+  bslInitConversionTracking();
+}
+
+function bslDeclineConsent() {
+  localStorage.setItem('bsl_consent', 'declined');
+  document.getElementById('bslConsentBanner').style.display = 'none';
+}
+
+(function() {
+  var consent = localStorage.getItem('bsl_consent');
+  if (consent === 'granted') {
+    bslLoadGA4();
+    bslLoadPixel();
+    bslInitConversionTracking();
+  } else if (!consent) {
+    document.getElementById('bslConsentBanner').style.display = 'flex';
+  }
+})();
 </script>
 
 </body>
