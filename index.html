@@ -1802,12 +1802,15 @@ footer {
 <body>
 
 
-<!-- COOKIE BANNER -->
-<div class="cookie-banner" id="cookieBanner">
-  <p class="cookie-text">
-    This site uses Google Fonts, which may transfer data to Google servers. No tracking cookies are set by this website. By continuing to use this site you acknowledge this. <a href="#privacy">Privacy Policy</a>
+<!-- COOKIE CONSENT BANNER -->
+<div id="bslConsentBanner" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:9999; background:#1B3A5C; border-top:1px solid rgba(245,166,35,0.25); padding:16px 48px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; box-shadow:0 -2px 12px rgba(0,0,0,0.15);">
+  <p style="margin:0; font-family:'Poppins',sans-serif; font-size:12px; font-weight:300; color:rgba(255,255,255,0.75); line-height:1.7; max-width:720px;">
+    This site uses analytics cookies (Google Analytics) and advertising cookies (Meta Pixel) to understand how parents find us and to measure what works. Plausible Analytics is always active and is cookieless. GA4 and Meta Pixel only load with your consent. <a href="#privacy" style="color:#F5A623; text-decoration:underline; text-underline-offset:2px;">Privacy Policy</a>
   </p>
-  <button class="cookie-btn" onclick="dismissCookie()">Got it</button>
+  <div style="display:flex; gap:10px; flex-shrink:0;">
+    <button onclick="bslDeclineConsent()" style="font-family:'Poppins',sans-serif; font-size:12px; font-weight:500; color:rgba(255,255,255,0.6); background:transparent; border:1px solid rgba(255,255,255,0.25); border-radius:6px; padding:8px 18px; cursor:pointer; white-space:nowrap;">Decline</button>
+    <button onclick="bslGrantConsent()" style="font-family:'Poppins',sans-serif; font-size:12px; font-weight:700; color:#1B3A5C; background:#F5A623; border:1px solid #F5A623; border-radius:6px; padding:8px 20px; cursor:pointer; white-space:nowrap;">Accept</button>
+  </div>
 </div>
 
 <!-- NAV -->
@@ -2481,6 +2484,10 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
     if (!isOpen) {
       item.classList.add('open');
       btn.setAttribute('aria-expanded', 'true');
+      var questionText = btn.querySelector('.faq-question-text')
+        ? btn.querySelector('.faq-question-text').textContent.trim().substring(0, 60)
+        : btn.textContent.trim().substring(0, 60);
+      if (typeof gtag !== 'undefined') gtag('event', 'faq_open', { question_text: questionText });
     }
   });
 });
@@ -2943,7 +2950,13 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
 
       <div>
         <h3 style="font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 8px;">What data we collect and why</h3>
-        <p style="font-size: 14px; font-weight: 300; color: var(--text-secondary); line-height: 1.8;">This website does not collect personal data through forms or cookies set by us. When you contact us via email, we receive your name and email address. This information is used solely to respond to your inquiry and, if you become a client, to deliver our services. The lawful basis for this processing is contract performance and legitimate interest.</p>
+        <p style="font-size: 14px; font-weight: 300; color: var(--text-secondary); line-height: 1.8;">When you contact us via email, we receive your name and email address. This information is used solely to respond to your inquiry and, if you become a client, to deliver our services. The lawful basis for this processing is contract performance and legitimate interest.</p>
+      </div>
+
+      <div>
+        <h3 style="font-size: 14px; font-weight: 700; color: var(--navy); margin-bottom: 8px;">Analytics and cookies</h3>
+        <p style="font-size: 14px; font-weight: 300; color: var(--text-secondary); line-height: 1.8;">This site uses three analytics tools. Plausible Analytics is active on all visits — it is cookieless, collects no personal data, and requires no consent. Google Analytics 4 and Meta Pixel are loaded only after you give explicit consent via the cookie notice at the bottom of this page. Both tools collect information about your visit (pages viewed, approximate location, referral source) to help us understand how parents find us and which content is useful. The lawful basis for GA4 and Meta Pixel processing is consent. You can withdraw consent at any time by clearing your browser's local storage for this site, which will cause the cookie banner to reappear on your next visit.</p>
+        <p style="font-size: 14px; font-weight: 300; color: var(--text-secondary); line-height: 1.8; margin-top: 12px;">Cookie summary: Plausible — no cookies, no consent required. Google Analytics 4 — analytics cookies, consent required. Meta Pixel — advertising cookies, consent required.</p>
       </div>
 
       <div>
@@ -2977,7 +2990,7 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
       </div>
 
       <div>
-        <p style="font-size: 12px; font-weight: 300; color: var(--text-muted); line-height: 1.7;">Last updated: April 2026</p>
+        <p style="font-size: 12px; font-weight: 300; color: var(--text-muted); line-height: 1.7;">Last updated: May 2026</p>
       </div>
 
     </div>
@@ -2996,13 +3009,110 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
 </footer>
 
 <script>
-function dismissCookie() {
-  document.getElementById('cookieBanner').style.display = 'none';
-  localStorage.setItem('cookieAccepted', '1');
+// ── BSL CONSENT GATE ──
+// Plausible is always active (cookieless, no consent needed).
+// GA4 and Meta Pixel only load after the user clicks Accept.
+
+function bslLoadGA4() {
+  var GA4_ID = 'G-1E3MN9BJW9';
+  var s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA4_ID;
+  document.head.appendChild(s);
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  window.gtag = gtag;
+  gtag('js', new Date());
+  gtag('config', GA4_ID, { anonymize_ip: true });
 }
-if (localStorage.getItem('cookieAccepted')) {
-  document.getElementById('cookieBanner').style.display = 'none';
+
+function bslLoadPixel() {
+  var PIXEL_ID = '1486617149920296';
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}
+  (window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', PIXEL_ID);
+  fbq('track', 'PageView');
 }
+
+function bslTrackScrollDepth() {
+  var milestones = [25, 50, 75, 90];
+  var fired = {};
+  window.addEventListener('scroll', function() {
+    var scrollPct = Math.round(
+      (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100
+    );
+    milestones.forEach(function(m) {
+      if (scrollPct >= m && !fired[m]) {
+        fired[m] = true;
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'scroll_depth', { depth: String(m) });
+        }
+      }
+    });
+  }, { passive: true });
+}
+
+function bslInitConversionTracking() {
+  var PACKAGE_MAP = {
+    '210796': { type: 'discovery', name: 'Discovery Call', price: 'Free' },
+    '210780': { type: 'package', name: 'Starter', price: '€100' },
+    '210781': { type: 'package', name: 'Foundation', price: '€480' },
+    '211525': { type: 'package', name: 'Complete', price: '€900' },
+    '210798': { type: 'package', name: 'Signature', price: '€1200' },
+    '211534': { type: 'summer', name: 'Summer Round 1', price: '€675' },
+    '211537': { type: 'summer', name: 'Summer Round 2', price: '€675' },
+  };
+
+  document.querySelectorAll('a[href*="paperbell.com"]').forEach(function(link) {
+    link.addEventListener('click', function() {
+      var match = link.href.match(/packages\/(\d+)/);
+      if (!match) return;
+      var id = match[1];
+      var pkg = PACKAGE_MAP[id] || { type: 'unknown', name: 'Unknown', price: '' };
+      var section = link.closest('section');
+      var sectionId = section ? (section.id || 'page') : 'nav';
+
+      if (pkg.type === 'discovery') {
+        if (typeof gtag !== 'undefined') gtag('event', 'discovery_call_click', { link_location: sectionId });
+      } else if (pkg.type === 'summer') {
+        if (typeof gtag !== 'undefined') gtag('event', 'summer_intensive_click', { round: pkg.name });
+      } else {
+        if (typeof gtag !== 'undefined') gtag('event', 'package_click', { package_name: pkg.name, package_price: pkg.price });
+      }
+
+      if (typeof fbq !== 'undefined') fbq('track', 'InitiateCheckout', { content_name: pkg.name });
+    });
+  });
+
+  bslTrackScrollDepth();
+}
+
+function bslGrantConsent() {
+  localStorage.setItem('bsl_consent', 'granted');
+  document.getElementById('bslConsentBanner').style.display = 'none';
+  bslLoadGA4();
+  bslLoadPixel();
+  bslInitConversionTracking();
+}
+
+function bslDeclineConsent() {
+  localStorage.setItem('bsl_consent', 'declined');
+  document.getElementById('bslConsentBanner').style.display = 'none';
+}
+
+(function() {
+  var consent = localStorage.getItem('bsl_consent');
+  if (consent === 'granted') {
+    bslLoadGA4();
+    bslLoadPixel();
+    bslInitConversionTracking();
+  } else if (!consent) {
+    document.getElementById('bslConsentBanner').style.display = 'flex';
+  }
+})();
 
 // ── NAV DROPDOWN ──
 function toggleNavDropdown() {
