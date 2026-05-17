@@ -1802,14 +1802,17 @@ footer {
 <body>
 
 
-<!-- COOKIE CONSENT BANNER -->
-<div id="bslConsentBanner" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:9999; background:#1B3A5C; border-top:1px solid rgba(245,166,35,0.25); padding:16px 48px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; box-shadow:0 -2px 12px rgba(0,0,0,0.15);">
-  <p style="margin:0; font-family:'Poppins',sans-serif; font-size:12px; font-weight:300; color:rgba(255,255,255,0.75); line-height:1.7; max-width:720px;">
-    This site uses analytics cookies (Google Analytics) and advertising cookies (Meta Pixel) to understand how parents find us and to measure what works. Plausible Analytics is always active and is cookieless. GA4 and Meta Pixel only load with your consent. <a href="#privacy" style="color:#F5A623; text-decoration:underline; text-underline-offset:2px;">Privacy Policy</a>
-  </p>
-  <div style="display:flex; gap:10px; flex-shrink:0;">
-    <button onclick="bslDeclineConsent()" style="font-family:'Poppins',sans-serif; font-size:12px; font-weight:500; color:rgba(255,255,255,0.6); background:transparent; border:1px solid rgba(255,255,255,0.25); border-radius:6px; padding:8px 18px; cursor:pointer; white-space:nowrap;">Decline</button>
-    <button onclick="bslGrantConsent()" style="font-family:'Poppins',sans-serif; font-size:12px; font-weight:700; color:#1B3A5C; background:#F5A623; border:1px solid #F5A623; border-radius:6px; padding:8px 20px; cursor:pointer; white-space:nowrap;">Accept</button>
+<!-- COOKIE CONSENT MODAL -->
+<div id="bslConsentOverlay" style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(18,39,65,0.75); backdrop-filter:blur(4px); align-items:center; justify-content:center; padding:24px;">
+  <div style="background:#1B3A5C; border-radius:16px; max-width:480px; width:100%; padding:36px 32px; box-shadow:0 24px 64px rgba(0,0,0,0.4); border:1px solid rgba(245,166,35,0.2); position:relative;">
+    <div style="font-family:'Poppins',sans-serif; font-size:11px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:#F5A623; margin-bottom:12px;">Cookie Preferences</div>
+    <h2 style="font-family:'Poppins',sans-serif; font-size:20px; font-weight:700; color:#fff; margin-bottom:16px; line-height:1.3;">We use cookies to understand how parents find us.</h2>
+    <p style="font-family:'Poppins',sans-serif; font-size:13px; font-weight:300; color:rgba(255,255,255,0.7); line-height:1.75; margin-bottom:12px;">This site uses Google Analytics and Meta Pixel to measure what content is helpful and how parents arrive here. These only load with your consent.</p>
+    <p style="font-family:'Poppins',sans-serif; font-size:13px; font-weight:300; color:rgba(255,255,255,0.7); line-height:1.75; margin-bottom:24px;">Plausible Analytics is always active. It is cookieless and collects no personal data. <a href="#privacy" onclick="bslDeclineConsent()" style="color:#F5A623; text-decoration:underline; text-underline-offset:2px;">Privacy Policy</a></p>
+    <div style="display:flex; gap:12px; flex-direction:column;">
+      <button onclick="bslGrantConsent()" style="font-family:'Poppins',sans-serif; font-size:14px; font-weight:700; color:#1B3A5C; background:#F5A623; border:none; border-radius:8px; padding:14px 24px; cursor:pointer; width:100%; transition:background 0.2s;" onmouseover="this.style.background='#e8971a'" onmouseout="this.style.background='#F5A623'">Accept all cookies</button>
+      <button onclick="bslDeclineConsent()" style="font-family:'Poppins',sans-serif; font-size:13px; font-weight:500; color:rgba(255,255,255,0.6); background:transparent; border:1px solid rgba(255,255,255,0.2); border-radius:8px; padding:12px 24px; cursor:pointer; width:100%; transition:border-color 0.2s, color 0.2s;" onmouseover="this.style.borderColor='rgba(255,255,255,0.5)';this.style.color='rgba(255,255,255,0.9)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.2)';this.style.color='rgba(255,255,255,0.6)'">Decline optional cookies</button>
+    </div>
   </div>
 </div>
 
@@ -3153,7 +3156,7 @@ function bslInitConversionTracking() {
 
 function bslGrantConsent() {
   localStorage.setItem('bsl_consent', 'granted');
-  document.getElementById('bslConsentBanner').style.display = 'none';
+  document.getElementById('bslConsentOverlay').style.display = 'none';
   bslLoadGA4();
   bslLoadPixel();
   bslInitConversionTracking();
@@ -3161,7 +3164,7 @@ function bslGrantConsent() {
 
 function bslDeclineConsent() {
   localStorage.setItem('bsl_consent', 'declined');
-  document.getElementById('bslConsentBanner').style.display = 'none';
+  document.getElementById('bslConsentOverlay').style.display = 'none';
 }
 
 (function() {
@@ -3171,7 +3174,7 @@ function bslDeclineConsent() {
     bslLoadPixel();
     bslInitConversionTracking();
   } else if (!consent) {
-    document.getElementById('bslConsentBanner').style.display = 'flex';
+    document.getElementById('bslConsentOverlay').style.display = 'flex';
   }
 })();
 
