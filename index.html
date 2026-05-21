@@ -1802,17 +1802,14 @@ footer {
 <body>
 
 
-<!-- COOKIE CONSENT MODAL -->
-<div id="bslConsentOverlay" style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(18,39,65,0.75); backdrop-filter:blur(4px); align-items:center; justify-content:center; padding:24px;">
-  <div style="background:#1B3A5C; border-radius:16px; max-width:480px; width:100%; padding:36px 32px; box-shadow:0 24px 64px rgba(0,0,0,0.4); border:1px solid rgba(245,166,35,0.2); position:relative;">
-    <div style="font-family:'Poppins',sans-serif; font-size:11px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:#F5A623; margin-bottom:12px;">Cookie Preferences</div>
-    <h2 style="font-family:'Poppins',sans-serif; font-size:20px; font-weight:700; color:#fff; margin-bottom:16px; line-height:1.3;">We use cookies to understand how parents find us.</h2>
-    <p style="font-family:'Poppins',sans-serif; font-size:13px; font-weight:300; color:rgba(255,255,255,0.7); line-height:1.75; margin-bottom:12px;">This site uses Google Analytics and Meta Pixel to measure what content is helpful and how parents arrive here. These only load with your consent.</p>
-    <p style="font-family:'Poppins',sans-serif; font-size:13px; font-weight:300; color:rgba(255,255,255,0.7); line-height:1.75; margin-bottom:24px;">Plausible Analytics is always active. It is cookieless and collects no personal data. <a href="#privacy" onclick="bslDeclineConsent()" style="color:#F5A623; text-decoration:underline; text-underline-offset:2px;">Privacy Policy</a></p>
-    <div style="display:flex; gap:12px; flex-direction:column;">
-      <button onclick="bslGrantConsent()" style="font-family:'Poppins',sans-serif; font-size:14px; font-weight:700; color:#1B3A5C; background:#F5A623; border:none; border-radius:8px; padding:14px 24px; cursor:pointer; width:100%; transition:background 0.2s;" onmouseover="this.style.background='#e8971a'" onmouseout="this.style.background='#F5A623'">Accept all cookies</button>
-      <button onclick="bslDeclineConsent()" style="font-family:'Poppins',sans-serif; font-size:13px; font-weight:500; color:rgba(255,255,255,0.6); background:transparent; border:1px solid rgba(255,255,255,0.2); border-radius:8px; padding:12px 24px; cursor:pointer; width:100%; transition:border-color 0.2s, color 0.2s;" onmouseover="this.style.borderColor='rgba(255,255,255,0.5)';this.style.color='rgba(255,255,255,0.9)'" onmouseout="this.style.borderColor='rgba(255,255,255,0.2)';this.style.color='rgba(255,255,255,0.6)'">Decline optional cookies</button>
-    </div>
+<!-- COOKIE CONSENT BANNER -->
+<div id="bslConsentBanner" style="display:none; position:fixed; bottom:0; left:0; right:0; z-index:9999; background:#1B3A5C; border-top:1px solid rgba(245,166,35,0.25); padding:16px 48px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; box-shadow:0 -2px 12px rgba(0,0,0,0.15);">
+  <p style="margin:0; font-family:'Poppins',sans-serif; font-size:12px; font-weight:300; color:rgba(255,255,255,0.75); line-height:1.7; max-width:720px;">
+    This site uses analytics cookies (Google Analytics) and advertising cookies (Meta Pixel) to understand how parents find us and to measure what works. Plausible Analytics is always active and is cookieless. GA4 and Meta Pixel only load with your consent. <a href="#privacy" style="color:#F5A623; text-decoration:underline; text-underline-offset:2px;">Privacy Policy</a>
+  </p>
+  <div style="display:flex; gap:10px; flex-shrink:0;">
+    <button onclick="bslDeclineConsent()" style="font-family:'Poppins',sans-serif; font-size:12px; font-weight:500; color:rgba(255,255,255,0.6); background:transparent; border:1px solid rgba(255,255,255,0.25); border-radius:6px; padding:8px 18px; cursor:pointer; white-space:nowrap;">Decline</button>
+    <button onclick="bslGrantConsent()" style="font-family:'Poppins',sans-serif; font-size:12px; font-weight:700; color:#1B3A5C; background:#F5A623; border:1px solid #F5A623; border-radius:6px; padding:8px 20px; cursor:pointer; white-space:nowrap;">Accept</button>
   </div>
 </div>
 
@@ -1836,7 +1833,6 @@ footer {
       </div>
     </li>
     <li><a href="#pricing">Pricing</a></li>
-    <li><a href="#plss">Strategy Session</a></li>
     <li><a href="#snapshot">Free Snapshot</a></li>
     <li><a href="#summer">Summer Reading Intensive</a></li>
     <li><a href="https://app.paperbell.com/checkout/packages/210796" class="nav-cta">Book a Call</a></li>
@@ -1851,7 +1847,6 @@ footer {
   <a href="#method" onclick="closeMobile()">Method</a>
   <a href="#who" onclick="closeMobile()">Who It's For</a>
   <a href="#pricing" onclick="closeMobile()">Pricing</a>
-  <a href="#plss" onclick="closeMobile()">Strategy Session</a>
   <a href="#faq" onclick="closeMobile()">FAQ</a>
   <a href="/workshop" onclick="closeMobile()">Monthly Webinar</a>
   <a href="#summer" onclick="closeMobile()">Summer Reading Intensive</a>
@@ -2469,7 +2464,7 @@ footer {
       </button>
       <div class="faq-answer">
         <div class="faq-answer-inner">
-          Yes. Each child requires their own package, since every BSL lesson is built around an individual assessment and a plan specific to that child. Families with more than one child are welcome to book a Parent Literacy Strategy Session to look at both children's data together before committing to packages. That session gives you a clear picture of where each child is, what the priorities are, and whether tutoring is the right next step for one or both.
+          Yes. Families with more than one child enrolled in BSL packages receive a complimentary 30-minute Parent Strategy Session with Dr. Overstreet. We use that time to look at both children's literacy development together, give you a clear picture of what is happening for each child, and walk you through specific things you can do at home to support their progress between lessons. Understanding what your child is working on and why makes you a more effective partner in their reading development, not just a bystander waiting for results. Most parents leave that session feeling like they finally understand what they are looking at.
         </div>
       </div>
     </div>
@@ -2502,7 +2497,7 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
 <section class="section" id="pricing">
   <div class="section-inner">
     <div class="section-label">Pricing</div>
-    <h2 class="section-title">One-on-one lesson packages</h2>
+    <h2 class="section-title">One-on-one lesson packages.</h2>
     <div class="pricing-intro">
       <p class="section-body" style="font-size:18px; font-weight:600; color:var(--navy); margin-bottom:8px;">Transparent pricing. No surprises.</p>
       <p class="section-body">All lessons are 45 minutes, one-on-one, and built around your child. You will hear from Dr. Overstreet or her team after lessons when there is something worth flagging. You can email <a href="mailto:hello@brightspiralliteracy.com" style="color: var(--teal);">hello@brightspiralliteracy.com</a> any time about a specific lesson and will hear back within 48 hours on weekdays. Payment via Stripe, in full before the first lesson.</p>
@@ -2760,68 +2755,12 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
   </div>
 </section>
 
-<!-- PARENT LITERACY STRATEGY SESSION -->
-<section class="section section-alt" id="plss">
-  <div class="section-inner">
-    <div class="section-label">For Parents</div>
-    <h2 class="section-title">Parent Literacy Strategy Session</h2>
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; margin-top: 40px;">
-      <div>
-        <p class="belief-text">You have the report card. You have the MAP scores. You may even have a stack of teacher comments that seem to contradict each other. What you don't have is a clear picture of what any of it means for your child's reading, or what to do next.</p>
-        <p class="belief-text">A Parent Literacy Strategy Session is a 60-minute Zoom call with Dr. Overstreet. You bring your child's data. She helps you understand what it's telling you, where the strengths are, where the gaps are, and what to prioritize. Within 48 hours of your call, you receive a written plan with specific next steps tailored to your child.</p>
-        <p class="belief-text">This session is for parents who want expert eyes on their child's literacy picture before committing to tutoring, or who want a clear strategy to support their child's reading themselves.</p>
-        <div style="margin-top: 32px; padding: 20px 24px; background: #fff; border: 1px solid var(--border); border-left: 4px solid var(--teal); border-radius: 8px;">
-          <p style="font-size: 13px; font-weight: 500; color: var(--teal); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px;">Your session fee counts toward tutoring</p>
-          <p style="font-size: 14px; font-weight: 300; color: var(--text-secondary); line-height: 1.7;">If you enroll in a Complete or Signature tutoring package within 14 days of your session, your session fee is applied in full toward your package price.</p>
-        </div>
-      </div>
-      <div style="display: flex; flex-direction: column; gap: 20px;">
-        <div style="background: var(--navy); border-radius: 12px; padding: 32px; color: #fff;">
-          <div style="font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--orange); margin-bottom: 16px;">What's included</div>
-          <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px;">
-            <li style="display: flex; align-items: flex-start; gap: 12px; font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.85); line-height: 1.5;">
-              <span style="width: 18px; height: 18px; background: var(--teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;"><svg viewBox="0 0 8 8" fill="none" width="8" height="8"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-              60-minute Zoom call with Dr. Overstreet
-            </li>
-            <li style="display: flex; align-items: flex-start; gap: 12px; font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.85); line-height: 1.5;">
-              <span style="width: 18px; height: 18px; background: var(--teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;"><svg viewBox="0 0 8 8" fill="none" width="8" height="8"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-              Review of your child's literacy data: MAP scores, report card comments, teacher feedback
-            </li>
-            <li style="display: flex; align-items: flex-start; gap: 12px; font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.85); line-height: 1.5;">
-              <span style="width: 18px; height: 18px; background: var(--teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;"><svg viewBox="0 0 8 8" fill="none" width="8" height="8"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-              Written plan with specific next steps delivered within 48 hours
-            </li>
-            <li style="display: flex; align-items: flex-start; gap: 12px; font-size: 14px; font-weight: 300; color: rgba(255,255,255,0.85); line-height: 1.5;">
-              <span style="width: 18px; height: 18px; background: var(--teal); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;"><svg viewBox="0 0 8 8" fill="none" width="8" height="8"><polyline points="1.5,4 3,5.5 6.5,2" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-              Each session covers one child
-            </li>
-          </ul>
-          <div style="margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.12);">
-            <div style="font-size: 36px; font-weight: 800; color: #fff; letter-spacing: -0.02em;">&euro;120</div>
-            <div style="font-size: 13px; font-weight: 300; color: rgba(255,255,255,0.5); margin-top: 4px;">60 minutes &middot; Written plan within 48 hours</div>
-          </div>
-          <a href="https://app.paperbell.com/packages/217559" style="display: block; margin-top: 24px; background: var(--orange); color: var(--navy); font-family: 'Poppins', sans-serif; font-size: 14px; font-weight: 700; padding: 14px 24px; border-radius: 8px; text-align: center; text-decoration: none; transition: background 0.2s;" onmouseover="this.style.background='#e8971a'" onmouseout="this.style.background='#F5A623'">Book Your Session</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<style>
-@media (max-width: 768px) {
-  #plss .section-inner > div[style*="grid-template-columns"] {
-    grid-template-columns: 1fr !important;
-    gap: 32px !important;
-  }
-}
-</style>
-
 <!-- SNAPSHOT SECTION -->
 <section class="snapshot-section" id="snapshot">
   <div class="snapshot-inner">
     <div class="snapshot-left">
       <div class="snapshot-label"><span>Free Tool</span></div>
-      <h2 class="snapshot-title">The Reading Mindset Snapshot</h2>
+      <h2 class="snapshot-title">The Reading Mindset Snapshot.</h2>
       <p class="snapshot-body">A short quiz your child completes with you. Takes about 10 minutes. You get a personal profile of your child as a reader, a book recommendation chosen for exactly who they are, and a note on what their answers tell you as their parent, sent to your inbox when they're done.</p>
     </div>
     <div class="snapshot-right">
@@ -2844,7 +2783,7 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
 <section class="section section-teal" id="summer">
   <div class="section-inner">
     <div class="section-label" style="color: var(--teal);">Summer 2026</div>
-    <h2 class="section-title" style="color: var(--navy); margin-bottom: 32px;">Summer Reading Intensive 2026 &#x2600;&#xFE0F;&#x1F4DA;&#x1F60E;&#x1F3D6;&#xFE0F;</h2>
+    <h2 class="section-title" style="color: var(--navy); margin-bottom: 32px;">Summer Reading Intensive 2026. &#x2600;&#xFE0F;&#x1F4DA;&#x1F60E;&#x1F3D6;&#xFE0F;</h2>
     <div class="summer-hero">
       <div class="summer-hero-eyebrow">Online &middot; July &amp; August 2026</div>
       <div class="summer-hero-title">Focused literacy lessons.<br>Real progress in three weeks.</div>
@@ -2891,7 +2830,7 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
       <div class="summer-rounds">
         <div class="round-card">
           <div class="round-label">Round 1</div>
-          <div class="round-dates">July 15 &ndash; 31, 2026</div>
+          <div class="round-dates">July 14 &ndash; 30, 2026</div>
           <div class="round-detail">
             Tue, Wed, Thu<br>
             Morning slots: 9:00 &middot; 9:30 &middot; 10:00 &middot; 10:30 (Rome time)<br>
@@ -2901,7 +2840,7 @@ document.querySelectorAll('.faq-question').forEach(function(btn) {
         </div>
         <div class="round-card">
           <div class="round-label">Round 2</div>
-          <div class="round-dates">August 3 &ndash; 21, 2026</div>
+          <div class="round-dates">August 4 &ndash; 20, 2026</div>
           <div class="round-detail">
             Tue, Wed, Thu<br>
             Morning slots: 9:00 &middot; 9:30 &middot; 10:00 &middot; 10:30 (Rome time)<br>
@@ -3118,7 +3057,6 @@ function bslTrackScrollDepth() {
 
 function bslInitConversionTracking() {
   var PACKAGE_MAP = {
-    '217559': { type: 'plss', name: 'Parent Literacy Strategy Session', price: '€120' },
     '210796': { type: 'discovery', name: 'Discovery Call', price: 'Free' },
     '210780': { type: 'package', name: 'Starter', price: '€100' },
     '210781': { type: 'package', name: 'Foundation', price: '€480' },
@@ -3139,8 +3077,6 @@ function bslInitConversionTracking() {
 
       if (pkg.type === 'discovery') {
         if (typeof gtag !== 'undefined') gtag('event', 'discovery_call_click', { link_location: sectionId });
-      } else if (pkg.type === 'plss') {
-        if (typeof gtag !== 'undefined') gtag('event', 'plss_click', { link_location: sectionId });
       } else if (pkg.type === 'summer') {
         if (typeof gtag !== 'undefined') gtag('event', 'summer_intensive_click', { round: pkg.name });
       } else {
@@ -3156,7 +3092,7 @@ function bslInitConversionTracking() {
 
 function bslGrantConsent() {
   localStorage.setItem('bsl_consent', 'granted');
-  document.getElementById('bslConsentOverlay').style.display = 'none';
+  document.getElementById('bslConsentBanner').style.display = 'none';
   bslLoadGA4();
   bslLoadPixel();
   bslInitConversionTracking();
@@ -3164,7 +3100,7 @@ function bslGrantConsent() {
 
 function bslDeclineConsent() {
   localStorage.setItem('bsl_consent', 'declined');
-  document.getElementById('bslConsentOverlay').style.display = 'none';
+  document.getElementById('bslConsentBanner').style.display = 'none';
 }
 
 (function() {
@@ -3174,7 +3110,7 @@ function bslDeclineConsent() {
     bslLoadPixel();
     bslInitConversionTracking();
   } else if (!consent) {
-    document.getElementById('bslConsentOverlay').style.display = 'flex';
+    document.getElementById('bslConsentBanner').style.display = 'flex';
   }
 })();
 
