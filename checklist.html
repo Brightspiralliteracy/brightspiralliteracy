@@ -407,6 +407,136 @@
   }
   .site-footer a:hover { color: var(--orange); }
 
+  /* ── EMAIL GATE ── */
+  .gate-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(27, 58, 92, 0.7);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+  .gate-overlay.hidden {
+    display: none;
+  }
+  .gate-card {
+    background: var(--white);
+    border-radius: 8px;
+    max-width: 460px;
+    width: 100%;
+    overflow: hidden;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.25);
+    animation: gateIn 0.3s ease both;
+  }
+  @keyframes gateIn {
+    from { opacity: 0; transform: translateY(16px) scale(0.98); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+  .gate-top {
+    background: var(--navy);
+    padding: 32px 32px 28px;
+    border-bottom: 3px solid var(--orange);
+  }
+  .gate-eyebrow {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--orange);
+    margin-bottom: 12px;
+  }
+  .gate-top h2 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.3;
+    letter-spacing: -0.3px;
+    margin-bottom: 10px;
+  }
+  .gate-top p {
+    font-size: 13px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.65;
+  }
+  .gate-body {
+    padding: 28px 32px 32px;
+  }
+  .gate-body label {
+    display: block;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--g500);
+    margin-bottom: 8px;
+  }
+  .gate-input {
+    width: 100%;
+    padding: 13px 16px;
+    border: 1.5px solid #d1c9be;
+    border-radius: 4px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--g800);
+    background: var(--cream);
+    outline: none;
+    transition: border-color 0.15s;
+    margin-bottom: 16px;
+  }
+  .gate-input:focus {
+    border-color: var(--navy);
+    background: var(--white);
+  }
+  .gate-input.error {
+    border-color: var(--red);
+  }
+  .gate-submit {
+    width: 100%;
+    padding: 14px 24px;
+    background: var(--orange);
+    color: var(--navy);
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: -0.1px;
+  }
+  .gate-submit:hover {
+    background: #e8981a;
+  }
+  .gate-submit:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  .gate-error {
+    font-size: 12px;
+    color: var(--red);
+    margin-bottom: 12px;
+    display: none;
+  }
+  .gate-error.visible {
+    display: block;
+  }
+  .gate-note {
+    margin-top: 14px;
+    font-size: 11px;
+    color: var(--g400);
+    line-height: 1.6;
+    text-align: center;
+  }
+  .gate-note a {
+    color: var(--g500);
+  }
+
   /* ── RESPONSIVE ── */
   @media (max-width: 600px) {
     .site-header { padding: 16px 20px; }
@@ -421,6 +551,24 @@
 </style>
 </head>
 <body>
+
+<!-- EMAIL GATE -->
+<div class="gate-overlay" id="gateOverlay">
+  <div class="gate-card">
+    <div class="gate-top">
+      <div class="gate-eyebrow">Free Parent Resource</div>
+      <h2>What to Notice: A Parent's Reading Checklist</h2>
+      <p>Enter your email to access the checklist. You'll also receive BSL's weekly newsletter with practical, specific reading insight for parents.</p>
+    </div>
+    <div class="gate-body">
+      <label for="gateEmail">Your email address</label>
+      <input type="email" id="gateEmail" class="gate-input" placeholder="you@example.com" autocomplete="email" />
+      <div class="gate-error" id="gateError">Please enter a valid email address.</div>
+      <button class="gate-submit" id="gateSubmit" onclick="submitGate()">Get the checklist</button>
+      <p class="gate-note">You can unsubscribe any time. By submitting you agree to our <a href="https://brightspiralliteracy.com/privacy-policy" target="_blank">Privacy Policy</a>.</p>
+    </div>
+  </div>
+</div>
 
 <!-- HEADER -->
 <header class="site-header">
@@ -611,6 +759,65 @@
 </footer>
 
 <script>
+  // ── EMAIL GATE ──
+  const GATE_KEY = 'bsl_checklist_access';
+  const ML_ENDPOINT = 'https://assets.mailerlite.com/jsonp/2274307/forms/185979267251700893/subscribe';
+
+  function initGate() {
+    if (localStorage.getItem(GATE_KEY)) {
+      document.getElementById('gateOverlay').classList.add('hidden');
+    }
+    document.getElementById('gateEmail').addEventListener('keydown', function(e) {
+      if (e.key === 'Enter') submitGate();
+    });
+  }
+
+  function isValidEmail(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
+  }
+
+  async function submitGate() {
+    const emailEl = document.getElementById('gateEmail');
+    const errorEl = document.getElementById('gateError');
+    const submitBtn = document.getElementById('gateSubmit');
+    const email = emailEl.value.trim();
+
+    emailEl.classList.remove('error');
+    errorEl.classList.remove('visible');
+
+    if (!isValidEmail(email)) {
+      emailEl.classList.add('error');
+      errorEl.classList.add('visible');
+      emailEl.focus();
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'One moment...';
+
+    try {
+      const formData = new FormData();
+      formData.append('fields[email]', email);
+      formData.append('ml-submit', '1');
+      formData.append('anticsrf', 'true');
+      formData.append('gdpr[]', 'Email');
+
+      await fetch(ML_ENDPOINT, {
+        method: 'POST',
+        body: formData,
+        mode: 'no-cors'
+      });
+    } catch (e) {
+      // no-cors means we can't read the response — treat as success
+    }
+
+    localStorage.setItem(GATE_KEY, '1');
+    document.getElementById('gateOverlay').classList.add('hidden');
+  }
+
+  initGate();
+
+  // ── CHECKLIST TALLY ──
   let checked = 0;
   const total = 15;
 
