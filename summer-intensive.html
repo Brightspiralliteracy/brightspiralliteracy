@@ -1008,6 +1008,140 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ── LAUNCH: COUNTDOWN ── */
+.countdown {
+  display: inline-flex;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+.cd-unit {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  padding: 12px 16px;
+  min-width: 64px;
+  text-align: center;
+}
+.cd-num {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--orange);
+  line-height: 1;
+  letter-spacing: -1px;
+  font-variant-numeric: tabular-nums;
+}
+.cd-label {
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: rgba(255,255,255,0.45);
+  margin-top: 6px;
+}
+
+/* ── LAUNCH: WAITLIST BUTTON ── */
+.btn-waitlist {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--orange);
+  color: var(--navy);
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 15px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.2px;
+}
+.btn-waitlist:hover {
+  background: #e8961a;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(245,166,35,0.3);
+}
+.btn-waitlist.teal { background: var(--teal); color:#fff; }
+.btn-waitlist.teal:hover { background:#247676; box-shadow: 0 8px 24px rgba(42,138,138,0.3); }
+
+/* ── LAUNCH: LOCK / CLOSED BANNERS ── */
+.lock-strip {
+  background: var(--orange);
+  color: var(--navy);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  padding: 9px 24px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.lock-strip.teal { background: var(--teal); color:#fff; }
+
+.closed-bar {
+  max-width: 860px;
+  margin: 0 auto 0;
+  background: #fdf3e0;
+  border: 1px solid rgba(245,166,35,0.5);
+  border-radius: 8px;
+  padding: 16px 22px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+/* ── LAUNCH: HONEST SPOT METER ── */
+.spot-meter {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 16px;
+  border-top: 1px solid var(--g100);
+  margin-top: 4px;
+}
+.spot-dots { display:flex; gap:5px; }
+.spot-dot {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--orange);
+}
+.spot-dot.taken { background: var(--g300); }
+.spot-meter-text {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+}
+.spot-meter-text .muted { color: var(--g500); font-weight:500; }
+
+/* ── LAUNCH: PROOF / RESEARCH QUOTE ── */
+.research-quote {
+  max-width: 860px;
+  margin: 0 auto;
+  border-left: 3px solid var(--teal);
+  padding: 8px 0 8px 28px;
+}
+.research-quote p {
+  font-size: clamp(17px,2.4vw,21px);
+  font-weight: 500;
+  font-style: italic;
+  color: var(--navy);
+  line-height: 1.5;
+  margin-bottom: 14px;
+}
+.research-quote cite {
+  font-size: 11px;
+  font-weight: 700;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: var(--teal);
+}
 </style>
 </head>
 <body>
@@ -1025,7 +1159,7 @@ body {
 
 <!-- Announcement Bar -->
 <div class="announcement">
-  Summer 2026 — 8 limited spots per round<span>·</span>July 14 to August 20<span>·</span>€675 per round
+  🔒 Booking opens Tuesday, July 7<span>·</span>8 spots per round<span>·</span>€675
 </div>
 
 <!-- Hero -->
@@ -1033,7 +1167,7 @@ body {
   <div class="hero-inner">
     <div class="hero-eyebrow">
       <div class="hero-eyebrow-dot"></div>
-      <span>Bright Spiral Literacy Summer Reading Intensive 2026</span>
+      <span>Summer Reading Intensive 2026 · Doors open July 7</span>
     </div>
 
     <h1>Expert literacy instruction<br>that changes your child's <em>September.</em></h1>
@@ -1063,18 +1197,28 @@ body {
       </div>
     </div>
 
-    <div class="hero-ctas">
-      <a href="https://app.paperbell.com/packages/211534" class="btn-primary" target="_blank" rel="noopener">
-        Book Round 1 — July
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a href="https://app.paperbell.com/packages/211537" class="btn-primary" target="_blank" rel="noopener" style="background:var(--teal); color:#fff;">
-        Book Round 2 — August
-        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      </a>
-      <a href="https://app.paperbell.com/checkout/packages/210796" class="btn-secondary" target="_blank" rel="noopener">Not sure? Book a free Discovery Call first</a>
+    <div class="countdown" id="heroCountdown" aria-label="Time until booking opens">
+      <div class="cd-unit"><div class="cd-num" data-cd="days">--</div><div class="cd-label">Days</div></div>
+      <div class="cd-unit"><div class="cd-num" data-cd="hours">--</div><div class="cd-label">Hours</div></div>
+      <div class="cd-unit"><div class="cd-num" data-cd="mins">--</div><div class="cd-label">Mins</div></div>
+      <div class="cd-unit"><div class="cd-num" data-cd="secs">--</div><div class="cd-label">Secs</div></div>
     </div>
-    <p class="slots-note"><strong>Fixed time slot for all 9 lessons.</strong> You choose once. No rescheduling each week.</p>
+
+    <div class="hero-ctas">
+      <span class="preopen">
+        <a href="https://app.paperbell.com/checkout/packages/210796" class="btn-waitlist" target="_blank" rel="noopener">
+          Book a free Discovery Call
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </span>
+      <span class="postopen" style="display:none;">
+        <a href="#book" class="btn-waitlist">
+          Book your round — €675
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </span>
+    </div>
+    <p class="slots-note"><strong>8 spots per round. Both rounds filled last summer.</strong> Booking opens July 7. A Discovery Call is the best way to know if the Intensive is right for your child before then.</p>
   </div>
 </section>
 
@@ -1204,12 +1348,13 @@ body {
 
     <div class="rounds-grid">
       <div class="round-card">
+        <div class="lock-strip">🔒 Booking opens July 7</div>
         <div class="round-card-header">
           <div>
             <div class="round-label">Round 1</div>
             <div class="round-dates">July 14 to July 30</div>
           </div>
-          <div class="round-badge">8 limited spots</div>
+          <div class="round-badge">8 spots only</div>
         </div>
         <div class="round-card-body">
           <div class="round-detail">
@@ -1227,17 +1372,28 @@ body {
           <div class="round-detail">
             <span class="round-detail-label">Format</span>
             <span class="round-detail-value">Online · one-on-one</span>
+          </div>
+          <div class="spot-meter" data-round="1">
+            <div class="spot-dots">
+              <span class="spot-dot"></span><span class="spot-dot"></span><span class="spot-dot"></span><span class="spot-dot"></span>
+              <span class="spot-dot"></span><span class="spot-dot"></span><span class="spot-dot"></span><span class="spot-dot"></span>
+            </div>
+            <div class="spot-meter-text">8 spots <span class="muted">/ booking opens July 7</span></div>
+          </div>
+          <div class="postopen" style="display:none; margin-top:18px;">
+            <a href="#" class="btn-waitlist" data-cta="r1" target="_blank" rel="noopener" style="width:100%; justify-content:center;">Book Round 1 — July · €675</a>
           </div>
         </div>
       </div>
 
       <div class="round-card">
+        <div class="lock-strip teal">🔒 Booking opens July 28</div>
         <div class="round-card-header">
           <div>
             <div class="round-label">Round 2</div>
             <div class="round-dates">August 4 to August 20</div>
           </div>
-          <div class="round-badge">8 limited spots</div>
+          <div class="round-badge">8 spots only</div>
         </div>
         <div class="round-card-body">
           <div class="round-detail">
@@ -1255,6 +1411,16 @@ body {
           <div class="round-detail">
             <span class="round-detail-label">Format</span>
             <span class="round-detail-value">Online · one-on-one</span>
+          </div>
+          <div class="spot-meter" data-round="2">
+            <div class="spot-dots">
+              <span class="spot-dot"></span><span class="spot-dot"></span><span class="spot-dot"></span><span class="spot-dot"></span>
+              <span class="spot-dot"></span><span class="spot-dot"></span><span class="spot-dot"></span><span class="spot-dot"></span>
+            </div>
+            <div class="spot-meter-text">8 spots <span class="muted">/ booking opens July 28</span></div>
+          </div>
+          <div class="postopen" style="display:none; margin-top:18px;">
+            <a href="#" class="btn-waitlist teal" data-cta="r2" target="_blank" rel="noopener" style="width:100%; justify-content:center;">Book Round 2 — August · €675</a>
           </div>
         </div>
       </div>
@@ -1287,6 +1453,11 @@ body {
       </div>
     </div>
 
+    <div class="research-quote" style="margin-top:40px;">
+      <p>"More time doesn't mean more progress. For young readers, the research consistently shows that short, frequent sessions produce stronger outcomes than long ones."</p>
+      <cite>Nickow, Oreopoulos &amp; Quan — American Educational Research Journal, 2024</cite>
+    </div>
+
     <div class="price-callout">
       <div class="price-left">
         <div class="price-label">Price per round</div>
@@ -1305,14 +1476,17 @@ body {
         </ul>
       </div>
       <div style="display:flex; flex-direction:column; gap:10px;">
-        <a href="https://app.paperbell.com/packages/211534" class="btn-primary" target="_blank" rel="noopener" style="white-space:nowrap;">
-          Book Round 1 — July
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="https://app.paperbell.com/packages/211537" class="btn-primary" target="_blank" rel="noopener" style="white-space:nowrap; background:var(--teal); color:#fff;">
-          Book Round 2 — August
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
+        <div class="preopen" style="display:flex; flex-direction:column; gap:10px;">
+          <div style="background:rgba(245,166,35,0.15); border:1px solid rgba(245,166,35,0.35); border-radius:6px; padding:12px 14px; text-align:center;">
+            <div style="font-size:13px; font-weight:700; color:var(--orange);">🔒 Booking opens July 7</div>
+            <div style="font-size:11px; color:rgba(255,255,255,0.6); margin-top:3px;">8 spots per round. When it's full, it's full.</div>
+          </div>
+          <a href="https://app.paperbell.com/checkout/packages/210796" class="btn-waitlist" target="_blank" rel="noopener" style="white-space:nowrap; justify-content:center;">Book a free Discovery Call</a>
+        </div>
+        <div class="postopen" style="display:none; flex-direction:column; gap:10px;">
+          <a href="#" class="btn-waitlist" data-cta="r1" target="_blank" rel="noopener" style="white-space:nowrap; justify-content:center;">Book Round 1 — July · €675</a>
+          <a href="#" class="btn-waitlist teal" data-cta="r2" target="_blank" rel="noopener" style="white-space:nowrap; justify-content:center;">Book Round 2 — August · €675</a>
+        </div>
       </div>
     </div>
   </div>
@@ -1496,24 +1670,33 @@ body {
 </section>
 
 <!-- Final CTA -->
-<section class="cta-section fade-up">
+<section class="cta-section fade-up" id="book">
   <div class="cta-inner">
-    <p class="cta-eyebrow">Summer 2026 · 8 limited spots per round</p>
-    <h2 class="cta-title">Summer is the window. Nine lessons is enough to change what September looks like.</h2>
-    <p class="cta-body">Reading time does not have to be the hardest part of your day. It does not have to be the thing your child dreads, and it does not have to be the thing you dread watching. Choose your round and let's get started.</p>
+    <p class="cta-eyebrow">Summer 2026 · 8 spots per round · Booking opens July 7</p>
+    <h2 class="cta-title">Nine lessons is enough to change what September looks like.</h2>
+    <p class="cta-body">Booking opens Tuesday, July 7. With 8 spots per round and both rounds filled last summer, the Intensive tends to go quickly once the doors open. The free Discovery Call is the best way to know whether it's the right fit for your child before then, with no pitch and no obligation.</p>
+
+    <div class="closed-bar preopen" style="margin:0 auto 28px; max-width:560px;">
+      <span style="font-size:18px;">🔒</span>
+      <span id="closedBarText">Booking is closed right now. Doors open Tuesday, July 7.</span>
+    </div>
+
     <div class="cta-buttons">
-      <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
-        <a href="https://app.paperbell.com/packages/211534" class="btn-primary" target="_blank" rel="noopener" style="font-size:15px; padding:17px 32px;">
-          Book Round 1 — July · €675
-          <svg width="16" height="16" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </a>
-        <a href="https://app.paperbell.com/packages/211537" class="btn-primary" target="_blank" rel="noopener" style="font-size:15px; padding:17px 32px; background:var(--teal); color:#fff;">
-          Book Round 2 — August · €675
+      <div class="preopen" style="display:flex; flex-direction:column; align-items:center; gap:8px;">
+        <a href="https://app.paperbell.com/checkout/packages/210796" class="btn-waitlist" target="_blank" rel="noopener" style="font-size:15px; padding:17px 32px;">
+          Book a free Discovery Call
           <svg width="16" height="16" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M8 3l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </a>
       </div>
-      <a href="https://app.paperbell.com/checkout/packages/210796" class="cta-secondary-link" target="_blank" rel="noopener">Not sure yet? Book a free Discovery Call first</a>
-      <p class="cta-slots">Fixed time slot for all 9 lessons. No rescheduling each week.</p>
+
+      <div class="postopen" style="display:none;">
+        <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center;">
+          <a href="#" class="btn-waitlist" target="_blank" rel="noopener" data-cta="r1" style="font-size:15px; padding:17px 32px;">Book Round 1 — July · €675</a>
+          <a href="#" class="btn-waitlist teal" target="_blank" rel="noopener" data-cta="r2" style="font-size:15px; padding:17px 32px;">Book Round 2 — August · €675</a>
+        </div>
+      </div>
+
+      <p class="cta-slots">Questions about the Intensive or availability? Email hello@brightspiralliteracy.com</p>
     </div>
   </div>
 </section>
@@ -1530,16 +1713,115 @@ body {
 <!-- Sticky Mobile CTA -->
 <div class="sticky-cta">
   <div class="sticky-cta-text">
-    <strong>Summer Reading Intensive 2026</strong>
-    €675 · 9 lessons · Two rounds
+    <strong>🔒 Doors open July 7</strong>
+    8 spots per round · €675
   </div>
   <div style="display:flex; gap:8px;">
-    <a href="https://app.paperbell.com/packages/211534" class="sticky-cta-btn" target="_blank" rel="noopener">July</a>
-    <a href="https://app.paperbell.com/packages/211537" class="sticky-cta-btn" target="_blank" rel="noopener" style="background:var(--teal); color:#fff;">August</a>
+    <a href="https://app.paperbell.com/checkout/packages/210796" class="sticky-cta-btn" target="_blank" rel="noopener">Discovery Call</a>
   </div>
 </div>
 
 <script>
+// ─────────────────────────────────────────────
+// BSL LAUNCH CONFIG  — edit these as the launch moves
+// ─────────────────────────────────────────────
+var BSL_LAUNCH = {
+  // When Round 1 booking opens. Rome time is CEST (UTC+2) in July.
+  // The countdown + auto-unlock both read this single value.
+  openDate: '2026-07-07T09:00:00+02:00',
+
+  // Real Paperbell booking links — used automatically once doors open.
+  bookRound1: 'https://app.paperbell.com/packages/211534',
+  bookRound2: 'https://app.paperbell.com/packages/211537',
+
+  // HONEST scarcity. Leave null before doors open (page shows "8 spots / opens July 7").
+  // After doors open, set the true number left, e.g. spotsLeftR1: 5.
+  // Only put a number here when it is actually true.
+  spotsLeftR1: null,
+  spotsLeftR2: null,
+
+  // ── THE MASTER SWITCH ──
+  // false = cart CLOSED. The page is informational; CTAs point to the Discovery Call.
+  // true  = cart OPEN. On launch day, flip this to true (and push the file live).
+  //         Every round CTA becomes a live Paperbell booking button automatically.
+  cartOpen: false
+};
+
+// ── CART OPEN / CLOSE ── (flips every tagged CTA in one move)
+(function() {
+  if (!BSL_LAUNCH.cartOpen) return;
+  var links = { r1: BSL_LAUNCH.bookRound1, r2: BSL_LAUNCH.bookRound2 };
+  var labels = { r1: 'Book Round 1 — July · €675', r2: 'Book Round 2 — August · €675' };
+  document.querySelectorAll('[data-cta]').forEach(function(a) {
+    var key = a.getAttribute('data-cta');
+    a.setAttribute('href', links[key]);
+    a.setAttribute('target', '_blank');
+    a.setAttribute('rel', 'noopener');
+    a.textContent = labels[key];
+  });
+  // Unlock the visual furniture
+  document.querySelectorAll('.lock-strip').forEach(function(s) { s.textContent = '✓ Booking open now'; });
+  document.querySelectorAll('.spot-meter-text .muted').forEach(function(m) { m.textContent = '/ booking open now'; });
+  var ann = document.querySelector('.announcement');
+  if (ann) ann.innerHTML = 'Booking is OPEN<span>·</span>8 spots per round<span>·</span>When it\u2019s full, it\u2019s full';
+  var bar = document.getElementById('closedBarText');
+  if (bar) bar.textContent = 'Doors are open. Book your round before it fills.';
+  // Swap every closed-state element for its launch-day counterpart
+  document.querySelectorAll('.preopen').forEach(function(el) { el.style.display = 'none'; });
+  document.querySelectorAll('.postopen').forEach(function(el) {
+    el.style.display = (el.tagName === 'SPAN') ? 'inline-flex' : 'flex';
+  });
+})();
+
+// ── COUNTDOWN ──
+(function() {
+  var target = new Date(BSL_LAUNCH.openDate).getTime();
+  var el = document.getElementById('heroCountdown');
+  if (!el) return;
+  function pad(n){ return n < 10 ? '0'+n : ''+n; }
+  function tick() {
+    var diff = target - Date.now();
+    if (diff <= 0) {
+      el.querySelector('[data-cd="days"]').textContent = '0';
+      el.querySelector('[data-cd="hours"]').textContent = '00';
+      el.querySelector('[data-cd="mins"]').textContent = '00';
+      el.querySelector('[data-cd="secs"]').textContent = '00';
+      var note = document.getElementById('closedBarText');
+      if (note) note.textContent = 'Doors are open. Book your round before it fills.';
+      return;
+    }
+    var d = Math.floor(diff / 86400000);
+    var h = Math.floor((diff % 86400000) / 3600000);
+    var m = Math.floor((diff % 3600000) / 60000);
+    var s = Math.floor((diff % 60000) / 1000);
+    el.querySelector('[data-cd="days"]').textContent = d;
+    el.querySelector('[data-cd="hours"]').textContent = pad(h);
+    el.querySelector('[data-cd="mins"]').textContent = pad(m);
+    el.querySelector('[data-cd="secs"]').textContent = pad(s);
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+
+// ── HONEST SPOT METER ── (only changes dots when a real count is set above)
+(function() {
+  function paint(roundNum, left) {
+    if (left === null || left === undefined) return;
+    var meter = document.querySelector('.spot-meter[data-round="' + roundNum + '"]');
+    if (!meter) return;
+    var dots = meter.querySelectorAll('.spot-dot');
+    var taken = 8 - left;
+    dots.forEach(function(dot, i) { if (i < taken) dot.classList.add('taken'); });
+    var txt = meter.querySelector('.spot-meter-text');
+    if (txt) {
+      txt.innerHTML = left + ' of 8 spots left';
+      if (left <= 3) meter.querySelector('.spot-meter-text').style.color = '#C0392B';
+    }
+  }
+  paint(1, BSL_LAUNCH.spotsLeftR1);
+  paint(2, BSL_LAUNCH.spotsLeftR2);
+})();
+
 // FAQ toggle with GA4 tracking
 function toggleFaq(btn) {
   const answer = btn.nextElementSibling;
